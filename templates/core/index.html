@@ -1017,8 +1017,9 @@
                                         >
                                           <div class="minimog-image-inner">
                                             <div class="minimog-image image">
+                                              {% if walpaper.sub_category %}
                                               <a
-                                                href=""
+                                                href="{% url 'core:sub-category' sub_cat_title=walpaper.sub_category.sub_cat_title %}#{{ walpaper.sid }}"
                                                 class="cat-image minimog-box"
                                               >
                                                 <div
@@ -1040,6 +1041,9 @@
                                               />
                                                 </div>
                                               </a>
+                                              {% else %}
+                                              <div class="placeholder-text">No sub-category available</div>
+                                              {% endif %}
                                             </div>
                                           </div>
                                         </div>
@@ -1047,11 +1051,15 @@
                                         <div class="category-info">
                                           <div class="category-info-wrapper">
                                             <h5 class="category-name">
-                                              <!-- <a
-                                                href=""
+                                              {% if walpaper.sub_category %}
+                                               <a
+                                                href="{% url 'core:sub-category' sub_cat_title=walpaper.sub_category.sub_cat_title %}#{{ walpaper.sid }}"
                                               >
                                                 {{walpaper.sub_cat_title}}
-                                              </a> -->
+                                              </a> 
+                                              {% else %}
+                                              {{ walpaper.company_name_title }}
+                                              {% endif %}
                                             </h5>
 
                                             <!-- <div class="category-count">
@@ -1112,9 +1120,442 @@
                     Your browser does not support the video tag.
                   </video>
                 </div>
-                
-                
-                
+
+                <section
+                  class="elementor-section elementor-top-section elementor-element elementor-element-8f1972d elementor-section-broad elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
+                  data-id="8f1972d"
+                  data-element_type="section"
+                >
+                  <div
+                    class="elementor-container elementor-column-gap-extended"
+                  >
+                    <div class="elementor-row">
+                      <div
+                        class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-336a073"
+                        data-id="336a073"
+                        data-element_type="column"
+                      >
+                        <div
+                          class="elementor-column-wrap elementor-element-populated"
+                        >
+                          <div class="elementor-widget-wrap">
+                            <section
+                              class="elementor-section elementor-inner-section elementor-element elementor-element-6d5883a elementor-section-full_width elementor-section-gap-beside-no elementor-section-column-vertical-align-middle elementor-section-height-default elementor-section-height-default"
+                              data-id="6d5883a"
+                              data-element_type="section"
+                            >
+                              <div
+                                class="elementor-container elementor-column-gap-default"
+                              >
+                                <div class="elementor-row">
+                                  <div
+                                    class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-20b6f4f"
+                                    data-id="20b6f4f"
+                                    data-element_type="column"
+                                  >
+                                    <div
+                                      class="elementor-column-wrap elementor-element-populated"
+                                    >
+                                      <div class="elementor-widget-wrap">
+                                        <div
+                                          class="elementor-element elementor-element-5131d03 elementor-widget elementor-widget-tm-heading"
+                                          data-id="5131d03"
+                                          data-element_type="widget"
+                                          data-widget_type="tm-heading.default"
+                                        >
+                                          <div
+                                            class="elementor-widget-container"
+                                          >
+                                            <div
+                                              class="tm-modern-heading tm-modern-heading--style-01 tm-modern-heading--highlight-style-01"
+                                            >
+                                              <div class="heading-primary-wrap">
+                                                <h2
+                                                  class="heading-primary elementor-heading-title"
+                                                >
+                                                Shop by Window Blinds Brands
+                                                </h2>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-69a3fc3"
+                                    data-id="69a3fc3"
+                                    data-element_type="column"
+                                  >
+                                    <div
+                                      class="elementor-column-wrap elementor-element-populated"
+                                    >
+                                      <div class="elementor-widget-wrap">
+                                        <div
+                                          class="elementor-element elementor-element-5b7b78c elementor-align-right elementor-mobile_extra-align-left elementor-widget elementor-widget-tm-button"
+                                          data-id="5b7b78c"
+                                          data-element_type="widget"
+                                          data-widget_type="tm-button.default"
+                                        >
+                                          <div
+                                            class="elementor-widget-container"
+                                          >
+                                            <div class="tm-button-wrapper">
+                                              <a
+                                                href=""
+                                                class="tm-button-link tm-button style-bottom-line tm-button-nm"
+                                                role="button"
+                                              >
+                                                <div
+                                                  class="button-content-wrapper"
+                                                >
+                                                  <div class="button-text">
+                                                    Shop all Categories
+                                                  </div>
+                                                </div>
+                                              </a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                            <div
+                              class="elementor-element elementor-element-867d796 elementor-align-center elementor-widget elementor-widget-tm-separator"
+                              data-id="867d796"
+                              data-element_type="widget"
+                              data-widget_type="tm-separator.default"
+                            >
+                              <div class="elementor-widget-container">
+                                <div class="tm-separator horizontal-line">
+                                  <div class="inner"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="elementor-element elementor-element-77302f5 minimog-animation-zoom-in elementor-widget elementor-widget-tm-product-categories-grid"
+                              data-id="77302f5"
+                              data-element_type="widget"
+                              data-widget_type="tm-product-categories-grid.default"
+                            >
+                              <div class="elementor-widget-container">
+                                <div
+                                  class="minimog-grid-wrapper minimog-product-categories style-11"
+                                  data-grid='{"type":"grid","columns":4,"columnsTabletExtra":3,"columnsMobileExtra":2,"gutter":30,"gutterLaptop":30,"gutterTablet":20,"gutterMobileExtra":10}'
+                                  style="
+                                    --grid-columns-desktop: 4;
+                                    --grid-columns-tablet-extra: 3;
+                                    --grid-columns-mobile-extra: 2;
+                                    --grid-gutter-desktop: 30;
+                                    --grid-gutter-laptop: 30;
+                                    --grid-gutter-tablet: 20;
+                                    --grid-gutter-mobile-extra: 10;
+                                  "
+                                >
+                                  <div class="minimog-grid lazy-grid">
+                                    <div class="grid-sizer"></div>
+
+                                    {% for blinds in window_blind_brands %}
+                                    <div
+                                      class="grid-item product-category product"
+                                    >
+                                      <div class="cat-wrap minimog-box">
+                                        <div
+                                          class="minimog-image-wrapper grid-item-height"
+                                        >
+                                          <div class="minimog-image-inner">
+                                            <div class="minimog-image image">
+                                              {% if blinds.sub_category %}
+                                              <a
+                                                href="{% url 'core:sub-category' sub_cat_title=blinds.sub_category.sub_cat_title %}#{{ blinds.sid }}"
+                                                class="cat-image minimog-box"
+                                              >
+                                                <div
+                                                  class="minimog-lazy-image"
+                                                  style="
+                                                    --lazy-image-width: 313px;
+                                                    --lazy-image-height: 63.897763578275%;
+                                                  "
+                                                >
+                                                <img
+                                                decoding="async"
+                                                loading="lazy"
+                                                src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20313%20200%22%3E%3C%2Fsvg%3E"
+                                                width="312"
+                                                height="200"
+                                                alt="megamog_room_08"
+                                                data-src="{{blinds.image.url}}"
+                                                class="ll-image"
+                                              />
+                                                </div>
+                                              </a>
+                                              {% else %}
+                                              <div class="placeholder-text">No sub-category available</div>
+                                              {% endif %}
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="category-info">
+                                          <div class="category-info-wrapper">
+                                            <h5 class="category-name">
+                                              {% if blinds.sub_category %}
+                                               <a
+                                                href="{% url 'core:sub-category' sub_cat_title=blinds.sub_category.sub_cat_title %}#{{ blinds.sid }}"
+                                              >
+                                                {{blinds.sub_cat_title}}
+                                              </a> 
+                                              {% else %}
+                                              {{ blinds.company_name_title }}
+                                              {% endif %}
+                                            </h5>
+
+                                            <!-- <div class="category-count">
+                                              <span class="cat-count-number"
+                                                >2</span
+                                              >
+
+                                              <span class="cat-count-text">
+                                                items
+                                              </span>
+                                            </div> -->
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {% endfor %}
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-8f1972d elementor-section-broad elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
+                data-id="8f1972d"
+                data-element_type="section"
+              >
+                <div
+                  class="elementor-container elementor-column-gap-extended"
+                >
+                  <div class="elementor-row">
+                    <div
+                      class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-336a073"
+                      data-id="336a073"
+                      data-element_type="column"
+                    >
+                      <div
+                        class="elementor-column-wrap elementor-element-populated"
+                      >
+                        <div class="elementor-widget-wrap">
+                          <section
+                            class="elementor-section elementor-inner-section elementor-element elementor-element-6d5883a elementor-section-full_width elementor-section-gap-beside-no elementor-section-column-vertical-align-middle elementor-section-height-default elementor-section-height-default"
+                            data-id="6d5883a"
+                            data-element_type="section"
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-default"
+                            >
+                              <div class="elementor-row">
+                                <div
+                                  class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-20b6f4f"
+                                  data-id="20b6f4f"
+                                  data-element_type="column"
+                                >
+                                  <div
+                                    class="elementor-column-wrap elementor-element-populated"
+                                  >
+                                    <div class="elementor-widget-wrap">
+                                      <div
+                                        class="elementor-element elementor-element-5131d03 elementor-widget elementor-widget-tm-heading"
+                                        data-id="5131d03"
+                                        data-element_type="widget"
+                                        data-widget_type="tm-heading.default"
+                                      >
+                                        <div
+                                          class="elementor-widget-container"
+                                        >
+                                          <div
+                                            class="tm-modern-heading tm-modern-heading--style-01 tm-modern-heading--highlight-style-01"
+                                          >
+                                            <div class="heading-primary-wrap">
+                                              <h2
+                                                class="heading-primary elementor-heading-title"
+                                              >
+                                                Shop by Mattresses Brands
+                                              </h2>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-69a3fc3"
+                                  data-id="69a3fc3"
+                                  data-element_type="column"
+                                >
+                                  <div
+                                    class="elementor-column-wrap elementor-element-populated"
+                                  >
+                                    <div class="elementor-widget-wrap">
+                                      <div
+                                        class="elementor-element elementor-element-5b7b78c elementor-align-right elementor-mobile_extra-align-left elementor-widget elementor-widget-tm-button"
+                                        data-id="5b7b78c"
+                                        data-element_type="widget"
+                                        data-widget_type="tm-button.default"
+                                      >
+                                        <div
+                                          class="elementor-widget-container"
+                                        >
+                                          <div class="tm-button-wrapper">
+                                            <a
+                                              href=""
+                                              class="tm-button-link tm-button style-bottom-line tm-button-nm"
+                                              role="button"
+                                            >
+                                              <div
+                                                class="button-content-wrapper"
+                                              >
+                                                <div class="button-text">
+                                                  Shop all Categories
+                                                </div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <div
+                            class="elementor-element elementor-element-867d796 elementor-align-center elementor-widget elementor-widget-tm-separator"
+                            data-id="867d796"
+                            data-element_type="widget"
+                            data-widget_type="tm-separator.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div class="tm-separator horizontal-line">
+                                <div class="inner"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-77302f5 minimog-animation-zoom-in elementor-widget elementor-widget-tm-product-categories-grid"
+                            data-id="77302f5"
+                            data-element_type="widget"
+                            data-widget_type="tm-product-categories-grid.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div
+                                class="minimog-grid-wrapper minimog-product-categories style-11"
+                                data-grid='{"type":"grid","columns":4,"columnsTabletExtra":3,"columnsMobileExtra":2,"gutter":30,"gutterLaptop":30,"gutterTablet":20,"gutterMobileExtra":10}'
+                                style="
+                                  --grid-columns-desktop: 4;
+                                  --grid-columns-tablet-extra: 3;
+                                  --grid-columns-mobile-extra: 2;
+                                  --grid-gutter-desktop: 30;
+                                  --grid-gutter-laptop: 30;
+                                  --grid-gutter-tablet: 20;
+                                  --grid-gutter-mobile-extra: 10;
+                                "
+                              >
+                                <div class="minimog-grid lazy-grid">
+                                  <div class="grid-sizer"></div>
+
+                                  {% for mattresses in mattresses_brands %}
+                                  <div
+                                    class="grid-item product-category product"
+                                  >
+                                    <div class="cat-wrap minimog-box">
+                                      <div
+                                        class="minimog-image-wrapper grid-item-height"
+                                      >
+                                        <div class="minimog-image-inner">
+                                          <div class="minimog-image image">
+                                            {% if mattresses.sub_category %}
+                                            <a
+                                              href="{% url 'core:sub-category' sub_cat_title=mattresses.sub_category.sub_cat_title %}#{{ mattresses.sid }}"
+                                              class="cat-image minimog-box"
+                                            >
+                                              <div
+                                                class="minimog-lazy-image"
+                                                style="
+                                                  --lazy-image-width: 313px;
+                                                  --lazy-image-height: 63.897763578275%;
+                                                "
+                                              >
+                                              <img
+                                              decoding="async"
+                                              loading="lazy"
+                                              src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20313%20200%22%3E%3C%2Fsvg%3E"
+                                              width="312"
+                                              height="200"
+                                              alt="megamog_room_08"
+                                              data-src="{{mattresses.image.url}}"
+                                              class="ll-image"
+                                            />
+                                              </div>
+                                            </a>
+                                            {% else %}
+                                            <div class="placeholder-text">No sub-category available</div>
+                                            {% endif %}
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="category-info">
+                                        <div class="category-info-wrapper">
+                                          <h5 class="category-name">
+                                            {% if mattresses.sub_category %}
+                                             <a
+                                              href="{% url 'core:sub-category' sub_cat_title=mattresses.sub_category.sub_cat_title %}#{{ mattresses.sid }}"
+                                            >
+                                              {{mattresses.sub_cat_title}}
+                                            </a> 
+                                            {% else %}
+                                            {{ walpaper.company_name_title }}
+                                            {% endif %}
+                                          </h5>
+
+                                          <!-- <div class="category-count">
+                                            <span class="cat-count-number"
+                                              >2</span
+                                            >
+
+                                            <span class="cat-count-text">
+                                              items
+                                            </span>
+                                          </div> -->
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {% endfor %}
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
                 <section
                   class="elementor-section elementor-top-section elementor-element elementor-element-8f1972d elementor-section-broad elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
@@ -1326,399 +1767,11 @@
                   </div>
                 </section>
 
-                <section
-                  class="elementor-section elementor-top-section elementor-element elementor-element-8f1972d elementor-section-broad elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
-                  data-id="8f1972d"
-                  data-element_type="section"
-                >
-                  <div
-                    class="elementor-container elementor-column-gap-extended"
-                  >
-                    <div class="elementor-row">
-                      <div
-                        class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-336a073"
-                        data-id="336a073"
-                        data-element_type="column"
-                      >
-                        <div
-                          class="elementor-column-wrap elementor-element-populated"
-                        >
-                          <div class="elementor-widget-wrap">
-                            <section
-                              class="elementor-section elementor-inner-section elementor-element elementor-element-6d5883a elementor-section-full_width elementor-section-gap-beside-no elementor-section-column-vertical-align-middle elementor-section-height-default elementor-section-height-default"
-                              data-id="6d5883a"
-                              data-element_type="section"
-                            >
-                              <div
-                                class="elementor-container elementor-column-gap-default"
-                              >
-                                <div class="elementor-row">
-                                  <div
-                                    class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-20b6f4f"
-                                    data-id="20b6f4f"
-                                    data-element_type="column"
-                                  >
-                                    <div
-                                      class="elementor-column-wrap elementor-element-populated"
-                                    >
-                                      <div class="elementor-widget-wrap">
-                                        <div
-                                          class="elementor-element elementor-element-5131d03 elementor-widget elementor-widget-tm-heading"
-                                          data-id="5131d03"
-                                          data-element_type="widget"
-                                          data-widget_type="tm-heading.default"
-                                        >
-                                          <div
-                                            class="elementor-widget-container"
-                                          >
-                                            <div
-                                              class="tm-modern-heading tm-modern-heading--style-01 tm-modern-heading--highlight-style-01"
-                                            >
-                                              <div class="heading-primary-wrap">
-                                                <h2
-                                                  class="heading-primary elementor-heading-title"
-                                                >
-                                                  Shop by Mattresses Brands
-                                                </h2>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-69a3fc3"
-                                    data-id="69a3fc3"
-                                    data-element_type="column"
-                                  >
-                                    <div
-                                      class="elementor-column-wrap elementor-element-populated"
-                                    >
-                                      <div class="elementor-widget-wrap">
-                                        <div
-                                          class="elementor-element elementor-element-5b7b78c elementor-align-right elementor-mobile_extra-align-left elementor-widget elementor-widget-tm-button"
-                                          data-id="5b7b78c"
-                                          data-element_type="widget"
-                                          data-widget_type="tm-button.default"
-                                        >
-                                          <div
-                                            class="elementor-widget-container"
-                                          >
-                                            <div class="tm-button-wrapper">
-                                              <a
-                                                href=""
-                                                class="tm-button-link tm-button style-bottom-line tm-button-nm"
-                                                role="button"
-                                              >
-                                                <div
-                                                  class="button-content-wrapper"
-                                                >
-                                                  <div class="button-text">
-                                                    Shop all Categories
-                                                  </div>
-                                                </div>
-                                              </a>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </section>
-                            <div
-                              class="elementor-element elementor-element-867d796 elementor-align-center elementor-widget elementor-widget-tm-separator"
-                              data-id="867d796"
-                              data-element_type="widget"
-                              data-widget_type="tm-separator.default"
-                            >
-                              <div class="elementor-widget-container">
-                                <div class="tm-separator horizontal-line">
-                                  <div class="inner"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              class="elementor-element elementor-element-77302f5 minimog-animation-zoom-in elementor-widget elementor-widget-tm-product-categories-grid"
-                              data-id="77302f5"
-                              data-element_type="widget"
-                              data-widget_type="tm-product-categories-grid.default"
-                            >
-                              <div class="elementor-widget-container">
-                                <div
-                                  class="minimog-grid-wrapper minimog-product-categories style-11"
-                                  data-grid='{"type":"grid","columns":4,"columnsTabletExtra":3,"columnsMobileExtra":2,"gutter":30,"gutterLaptop":30,"gutterTablet":20,"gutterMobileExtra":10}'
-                                  style="
-                                    --grid-columns-desktop: 4;
-                                    --grid-columns-tablet-extra: 3;
-                                    --grid-columns-mobile-extra: 2;
-                                    --grid-gutter-desktop: 30;
-                                    --grid-gutter-laptop: 30;
-                                    --grid-gutter-tablet: 20;
-                                    --grid-gutter-mobile-extra: 10;
-                                  "
-                                >
-                                  <div class="minimog-grid lazy-grid">
-                                    <div class="grid-sizer"></div>
+               
 
-                                    {% for mattresses in mattresses_brands %}
-                                    <div
-                                      class="grid-item product-category product"
-                                    >
-                                      <div class="cat-wrap minimog-box">
-                                        <div
-                                          class="minimog-image-wrapper grid-item-height"
-                                        >
-                                          <div class="minimog-image-inner">
-                                            <div class="minimog-image image">
-                                              <a
-                                                href="{% url 'core:sub-category' mattresses.company_name_title %}"
-                                                class="cat-image minimog-box"
-                                              >
-                                                <div
-                                                  class="minimog-lazy-image"
-                                                  style="
-                                                    --lazy-image-width: 313px;
-                                                    --lazy-image-height: 63.897763578275%;
-                                                  "
-                                                >
-                                                <img
-                                                decoding="async"
-                                                loading="lazy"
-                                                src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20313%20200%22%3E%3C%2Fsvg%3E"
-                                                width="312"
-                                                height="200"
-                                                alt="megamog_room_08"
-                                                data-src="{{mattresses.image.url}}"
-                                                class="ll-image"
-                                              />
-                                                </div>
-                                              </a>
-                                            </div>
-                                          </div>
-                                        </div>
+                
 
-                                        <div class="category-info">
-                                          <div class="category-info-wrapper">
-                                            <h5 class="category-name">
-                                              <!-- <a
-                                                href=""
-                                              >
-                                                {{walpaper.sub_cat_title}}
-                                              </a> -->
-                                            </h5>
-
-                                            <!-- <div class="category-count">
-                                              <span class="cat-count-number"
-                                                >2</span
-                                              >
-
-                                              <span class="cat-count-text">
-                                                items
-                                              </span>
-                                            </div> -->
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    {% endfor %}
-
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                <section
-                  class="elementor-section elementor-top-section elementor-element elementor-element-8f1972d elementor-section-broad elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
-                  data-id="8f1972d"
-                  data-element_type="section"
-                >
-                  <div
-                    class="elementor-container elementor-column-gap-extended"
-                  >
-                    <div class="elementor-row">
-                      <div
-                        class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-336a073"
-                        data-id="336a073"
-                        data-element_type="column"
-                      >
-                        <div
-                          class="elementor-column-wrap elementor-element-populated"
-                        >
-                          <div class="elementor-widget-wrap">
-                            <section
-                              class="elementor-section elementor-inner-section elementor-element elementor-element-6d5883a elementor-section-full_width elementor-section-gap-beside-no elementor-section-column-vertical-align-middle elementor-section-height-default elementor-section-height-default"
-                              data-id="6d5883a"
-                              data-element_type="section"
-                            >
-                              <div
-                                class="elementor-container elementor-column-gap-default"
-                              >
-                                <div class="elementor-row">
-                                  <div
-                                    class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-20b6f4f"
-                                    data-id="20b6f4f"
-                                    data-element_type="column"
-                                  >
-                                    <div
-                                      class="elementor-column-wrap elementor-element-populated"
-                                    >
-                                      <div class="elementor-widget-wrap">
-                                        <div
-                                          class="elementor-element elementor-element-5131d03 elementor-widget elementor-widget-tm-heading"
-                                          data-id="5131d03"
-                                          data-element_type="widget"
-                                          data-widget_type="tm-heading.default"
-                                        >
-                                          <div
-                                            class="elementor-widget-container"
-                                          >
-                                            <div
-                                              class="tm-modern-heading tm-modern-heading--style-01 tm-modern-heading--highlight-style-01"
-                                            >
-                                              <div class="heading-primary-wrap">
-                                                <h2
-                                                  class="heading-primary elementor-heading-title"
-                                                >
-                                                  Shop by Window Blinds Brands
-                                                </h2>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-69a3fc3"
-                                    data-id="69a3fc3"
-                                    data-element_type="column"
-                                  >
-                                    <div
-                                      class="elementor-column-wrap elementor-element-populated"
-                                    >
-                                      <div class="elementor-widget-wrap">
-                                        <div
-                                          class="elementor-element elementor-element-5b7b78c elementor-align-right elementor-mobile_extra-align-left elementor-widget elementor-widget-tm-button"
-                                          data-id="5b7b78c"
-                                          data-element_type="widget"
-                                          data-widget_type="tm-button.default"
-                                        >
-                                          <div
-                                            class="elementor-widget-container"
-                                          >
-                                            <div class="tm-button-wrapper">
-                                              <a
-                                                href=""
-                                                class="tm-button-link tm-button style-bottom-line tm-button-nm"
-                                                role="button"
-                                              >
-                                                <div
-                                                  class="button-content-wrapper"
-                                                >
-                                                  <div class="button-text">
-                                                    Shop all Categories
-                                                  </div>
-                                                </div>
-                                              </a>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </section>
-                            <div
-                              class="elementor-element elementor-element-867d796 elementor-align-center elementor-widget elementor-widget-tm-separator"
-                              data-id="867d796"
-                              data-element_type="widget"
-                              data-widget_type="tm-separator.default"
-                            >
-                              <div class="elementor-widget-container">
-                                <div class="tm-separator horizontal-line">
-                                  <div class="inner"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              class="elementor-element elementor-element-77302f5 minimog-animation-zoom-in elementor-widget elementor-widget-tm-product-categories-grid"
-                              data-id="77302f5"
-                              data-element_type="widget"
-                              data-widget_type="tm-product-categories-grid.default"
-                            >
-                              <div class="elementor-widget-container">
-                                <div
-                                  class="minimog-grid-wrapper minimog-product-categories style-11"
-                                  data-grid='{"type":"grid","columns":4,"columnsTabletExtra":3,"columnsMobileExtra":2,"gutter":30,"gutterLaptop":30,"gutterTablet":20,"gutterMobileExtra":10}'
-                                  style="
-                                    --grid-columns-desktop: 4;
-                                    --grid-columns-tablet-extra: 3;
-                                    --grid-columns-mobile-extra: 2;
-                                    --grid-gutter-desktop: 30;
-                                    --grid-gutter-laptop: 30;
-                                    --grid-gutter-tablet: 20;
-                                    --grid-gutter-mobile-extra: 10;
-                                  "
-                                >
-                                  <div class="minimog-grid lazy-grid">
-                                    <div class="grid-sizer"></div>
-
-                                    {% for blinds in window_blind_brands %}
-<div class="grid-item product-category product">
-    <div class="cat-wrap minimog-box">
-        <div class="minimog-image-wrapper grid-item-height">
-            <div class="minimog-image-inner">
-                <div class="minimog-image image">
-                    {% if blinds.sub_category %}
-                        <a href="{% url 'core:sub-category' sub_cat_title=blinds.sub_category.sub_cat_title %}#{{ blinds.sid }}" class="cat-image minimog-box">
-                            <div class="minimog-lazy-image" style="--lazy-image-width: 313px; --lazy-image-height: 63.897763578275%;">
-                                <img decoding="async" loading="lazy" src="{{ blinds.image.url }}" width="312" height="200" alt="megamog_room_08" class="ll-image" />
-                            </div>
-                        </a>
-                    {% else %}
-                        <!-- Handle the case where sub_category is null -->
-                        <div class="placeholder-text">No sub-category available</div>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-
-        <div class="category-info">
-            <div class="category-info-wrapper">
-                <h5 class="category-name">
-                    {% if blinds.sub_category %}
-                        <a href="{% url 'core:sub-category' sub_cat_title=blinds.sub_category.sub_cat_title %}#{{ blinds.sid }}">{{ blinds.company_name_title }}</a>
-                    {% else %}
-                        {{ blinds.company_name_title }}
-                    {% endif %}
-                </h5>
-            </div>
-        </div>
-    </div>
-</div>
-{% endfor %}
-
-
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
+                
 
                 <section
                 class="elementor-section elementor-top-section elementor-element elementor-element-261d927 elementor-section-broad elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"

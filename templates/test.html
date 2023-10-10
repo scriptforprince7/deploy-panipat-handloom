@@ -1,0 +1,69 @@
+{% for walpaper in walpaper_cat %}
+                                    <div
+                                      class="grid-item product-category product"
+                                    >
+                                      <div class="cat-wrap minimog-box">
+                                        <div
+                                          class="minimog-image-wrapper grid-item-height"
+                                        >
+                                          <div class="minimog-image-inner">
+                                            <div class="minimog-image image">
+                                              {% if walpaper.sub_category %}
+                                              <a
+                                                href="{% url 'core:sub-category' sub_cat_title=walpaper.sub_category.sub_cat_title %}#{{ walpaper.sid }}"
+                                                class="cat-image minimog-box"
+                                              >
+                                                <div
+                                                  class="minimog-lazy-image"
+                                                  style="
+                                                    --lazy-image-width: 313px;
+                                                    --lazy-image-height: 63.897763578275%;
+                                                  "
+                                                >
+                                                <img
+                                                decoding="async"
+                                                loading="lazy"
+                                                src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20313%20200%22%3E%3C%2Fsvg%3E"
+                                                width="312"
+                                                height="200"
+                                                alt="megamog_room_08"
+                                                data-src="{{walpaper.image.url}}"
+                                                class="ll-image"
+                                              />
+                                                </div>
+                                              </a>
+                                              {% else %}
+                                              <div class="placeholder-text">No sub-category available</div>
+                                              {% endif %}
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="category-info">
+                                          <div class="category-info-wrapper">
+                                            <h5 class="category-name">
+                                              {% if walpaper.sub_category %}
+                                               <a
+                                                href="{% url 'core:sub-category' sub_cat_title=walpaper.sub_category.sub_cat_title %}#{{ walpaper.sid }}"
+                                              >
+                                                {{walpaper.sub_cat_title}}
+                                              </a> 
+                                              {% else %}
+                                              {{ walpaper.company_name_title }}
+                                              {% endif %}
+                                            </h5>
+
+                                            <!-- <div class="category-count">
+                                              <span class="cat-count-number"
+                                                >2</span
+                                              >
+
+                                              <span class="cat-count-text">
+                                                items
+                                              </span>
+                                            </div> -->
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {% endfor %}

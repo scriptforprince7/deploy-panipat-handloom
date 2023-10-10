@@ -19,7 +19,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_filter = ['main_category']  # Fields to filter by
 
 class CompanyNameAdmin(admin.ModelAdmin):
-    list_display = ['maincat', 'category', 'sub_category', 'company_name_title', 'meta_description', 'meta_title', 'meta_tag', 'image', 'logo_img']
+    list_display = ['maincat', 'category', 'sub_category', 'company_name_title', 'user', 'meta_description', 'meta_title', 'meta_tag', 'image', 'logo_img']
     list_filter = ['maincat', 'category', 'sub_category']  # Add fields you want to filter by
     search_fields = ['company_name_title', 'meta_description', 'meta_title', 'meta_tag']
 

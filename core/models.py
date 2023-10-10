@@ -120,6 +120,7 @@ class Company_name(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     sub_category = models.ForeignKey(Sub_categories, on_delete=models.SET_NULL, null=True)
     company_name_title = models.CharField(max_length=100, default="Mobile & Laptop")
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     meta_description = models.CharField(max_length=100)
     meta_title = models.CharField(max_length=100)
     meta_tag = models.CharField(max_length=100)
