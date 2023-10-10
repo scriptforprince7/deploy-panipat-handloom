@@ -1,0 +1,706 @@
+{% extends 'partials/base.html' %} {% load static %} {% block breadmb %}
+<div id="page-title-bar" class="page-title-bar page-title-bar-minimal-01">
+  <div class="page-title-bar-inner">
+    <div class="page-title-bar-bg"></div>
+
+    <div id="page-breadcrumb" class="page-breadcrumb">
+      <div class="container-broad">
+        <div class="page-breadcrumb-wrap">
+          <ul class="insight_core_breadcrumb">
+            <li class="level-1 top item-home">
+              <a href="/">Home</a>
+            </li>
+            <li class="level-2 sub item-current tail current">
+              <span>Category</span>
+            </li>
+            <li class="level-2 sub item-current tail current">
+              <span>{{category.cat_title}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock breadmb %} {% block innerheader %}
+<div class="header-below">
+  <div class="container-broad">
+    <div class="header-below-wrap">
+      <div class="header-below-left header-col-start">
+        <div class="header-content-inner">
+          <div id="header-categories-nav" class="header-categories-nav">
+            <div class="inner">
+              <span class="nav-toggle-btn" id="nav-toggle-btn">
+                <span class="nav-toggle-bars far fa-bars"></span>
+                Shop by Categories
+              </span>
+              <nav class="category-menu">
+                <ul
+                  id="menu-product-categories"
+                  class="product-category-dropdown menu__container sm sm-simple sm-vertical"
+                  data-sm-options='{"mainMenuSubOffsetX":-15,"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17,"keepInViewport":false}'
+                >
+                  <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"
+                  >
+                    <a href=""
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-icon"
+                          ><svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8.125 13.125V6.25H16.25C16.913 6.25 17.5489 6.51339 18.0178 6.98223C18.4866 7.45107 18.75 8.08696 18.75 8.75V13.125"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M1.25 16.25V3.75"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M1.25 13.125H18.75V16.25"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M8.125 6.25H1.25"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg> </span
+                        ><span class="menu-item-title"></span
+                        ><span class="toggle-sub-menu"> </span></div
+                    ></a>
+
+                    <ul class="sub-menu children mega-menu">
+                      <li
+                        class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305"
+                      >
+                        <div class="mega-menu-content">
+                          <div
+                            data-elementor-type="wp-post"
+                            data-elementor-id="1298"
+                            class="elementor elementor-1298"
+                          >
+                            <div class="elementor-inner">
+                              <div class="elementor-section-wrap">
+                                <section
+                                  class="elementor-section elementor-top-section elementor-element elementor-element-8e1d000 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
+                                  data-id="8e1d000"
+                                  data-element_type="section"
+                                >
+                                  <div
+                                    class="elementor-container elementor-column-gap-extended"
+                                  >
+                                    <div class="elementor-row">
+                                      <div
+                                        class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-4e2db18"
+                                        data-id="4e2db18"
+                                        data-element_type="column"
+                                      >
+                                        <div
+                                          class="elementor-column-wrap elementor-element-populated"
+                                        >
+                                          <div class="elementor-widget-wrap">
+                                            <div
+                                              class="elementor-element elementor-element-16d8c3b elementor-widget elementor-widget-heading"
+                                              data-id="16d8c3b"
+                                              data-element_type="widget"
+                                              data-widget_type="heading.default"
+                                            >
+                                              <div
+                                                class="elementor-widget-container"
+                                              >
+                                                <a href=""
+                                                  ><h2
+                                                    class="elementor-heading-title elementor-size-default"
+                                                  ></h2
+                                                ></a>
+                                              </div>
+                                            </div>
+                                            <div
+                                              class="elementor-element elementor-element-5d6d640 elementor-widget elementor-widget-spacer"
+                                              data-id="5d6d640"
+                                              data-element_type="widget"
+                                              data-widget_type="spacer.default"
+                                            >
+                                              <div
+                                                class="elementor-widget-container"
+                                              >
+                                                <div class="elementor-spacer">
+                                                  <div
+                                                    class="elementor-spacer-inner"
+                                                  ></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div
+                                              class="elementor-element elementor-element-c5d41c6 elementor-widget elementor-widget-tm-simple-list"
+                                              data-id="c5d41c6"
+                                              data-element_type="widget"
+                                              data-widget_type="tm-simple-list.default"
+                                            >
+                                              <div
+                                                class="elementor-widget-container"
+                                              >
+                                                <div
+                                                  class="minimog-simple-list minimog-simple-list--style-03"
+                                                >
+                                                  <div
+                                                    class="item elementor-repeater-item-9c988d6 truncated"
+                                                  >
+                                                    <a
+                                                      class="link"
+                                                      href="https://minimog.thememove.com/megamog/product-category/beds-mattresses/bedding/bed-linen/"
+                                                    >
+                                                      {{sub_cat.title}}
+                                                    </a>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div
+                                        class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
+                                        data-id="877ceeb"
+                                        data-element_type="column"
+                                      >
+                                        <div
+                                          class="elementor-column-wrap elementor-element-populated"
+                                        >
+                                          <div class="elementor-widget-wrap">
+                                            <div
+                                              class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner"
+                                              data-id="9c6cc46"
+                                              data-element_type="widget"
+                                              data-widget_type="tm-banner.default"
+                                            >
+                                              <div
+                                                class="elementor-widget-container"
+                                              >
+                                                <a
+                                                  class="minimog-banner minimog-box link-secret"
+                                                  href="https://minimog.thememove.com/megamog/shop/"
+                                                >
+                                                  <div class="minimog-image">
+                                                    <div
+                                                      class="image ll-background ll-background-unload"
+                                                      data-src="{{p.image.url}}"
+                                                    ></div>
+                                                  </div>
+                                                  <div class="content-wrap">
+                                                    <div
+                                                      class="content-wrap__inner"
+                                                    >
+                                                      <h3 class="title">
+                                                        Shop
+                                                      </h3>
+                                                    </div>
+                                                    <div
+                                                      class="content-wrap__bottom"
+                                                    >
+                                                      <div
+                                                        class="tm-button-wrapper"
+                                                      >
+                                                        <div
+                                                          class="tm-button style-bottom-line tm-button-nm"
+                                                        >
+                                                          <div
+                                                            class="button-content-wrapper"
+                                                          >
+                                                            <span
+                                                              class="button-text"
+                                                              >Shop Now</span
+                                                            >
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </section>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-below-center header-col-center">
+        <div class="header-content-inner">
+          <div id="page-navigation" class="navigation page-navigation">
+            <nav id="menu" class="menu menu--primary">
+              <ul
+                id="menu-primary"
+                class="menu__container sm sm-simple"
+                data-sm-options='{"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17}'
+              >
+                <li
+                  class="menu-item-open-modal-demo-preview menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-330 level-1"
+                >
+                  <a href="https://minimog.thememove.com/megamog/"
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Home</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"
+                >
+                  <a href="https://minimog.thememove.com/megamog/shop/"
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Shop</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"
+                >
+                  <a href="#"
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Products</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"
+                >
+                  <a href="https://minimog.thememove.com/megamog/blog"
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Blog</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"
+                >
+                  <a href="#"
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Features</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"
+                >
+                  <a href="https://minimog.thememove.com/megamog/store-listing/"
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Store List</span>
+                    </div></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="header-below-right header-col-end">
+        <div class="header-content-inner"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock innerheader %} {% block content %}
+<div id="page-content" class="page-content">
+  <div class="container-broad">
+    <div class="dokan-profile-frame-wrapper">
+      <div class="profile-frame">
+        <div class="profile-info-box profile-layout-default">
+          <div class="profile-info-cover">
+            <img
+              src="{{category.big_image.url}}"
+              alt="Good Mood Shop"
+              title="Good Mood Shop"
+              class="profile-info-img"
+            />
+          </div>
+          <style>
+            .store-name {
+              background-image: linear-gradient(
+                45deg,
+                #e6317b,
+                #bd529c,
+                #6b94ce
+              );
+              background-clip: text;
+              -webkit-background-clip: text;
+              color: transparent;
+              margin-top: 3rem;
+              text-align: center;
+              font-size: 3.2rem;
+            }
+            .show{
+              text-align: right;
+            }
+          </style>
+
+          <div class="profile-info-summery-wrapper dokan-clearfix">
+            <div class="profile-info-summery">
+              <div class="profile-info-head">
+                <h1 class="store-name">{{category.cat_title}} </h1>
+                <p class="show">Showing <b>{{company_name.count}}</b> Brands</p>
+              </div>
+              <hr>
+
+              <!-- .profile-info -->
+            </div>
+            <!-- .profile-info-summery -->
+          </div>
+          <!-- .profile-info-summery-wrapper -->
+        </div>
+        <!-- .profile-info-box -->
+      </div>
+      <!-- .profile-frame -->
+    </div>
+
+  
+
+    <div class="row">
+      <div class="page-sidebar page-sidebar-left sidebar-primary">
+        <div
+          class="page-sidebar-inner tm-sticky-column"
+          data-sticky-group="content-sidebar"
+          itemscope="itemscope"
+        >
+          <a href="#" class="btn-close-off-sidebar">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.6465 8.975L16.7012 15.0297C16.8639 15.1924 16.8639 15.3715 16.7012 15.5668L15.5781 16.6898C15.3828 16.8526 15.2038 16.8526 15.041 16.6898L14.0156 15.6156L8.98633 10.6352L2.93164 16.6898C2.76888 16.8526 2.58984 16.8526 2.39453 16.6898L1.27148 15.5668C1.10872 15.3715 1.10872 15.1924 1.27148 15.0297L7.32617 8.975L1.27148 2.92031C1.10872 2.75755 1.10872 2.57852 1.27148 2.3832L2.39453 1.26016C2.58984 1.0974 2.76888 1.0974 2.93164 1.26016L8.98633 7.31484L15.041 1.26016C15.2038 1.0974 15.3828 1.0974 15.5781 1.26016L16.7012 2.3832C16.8639 2.57852 16.8639 2.75755 16.7012 2.92031L15.627 3.9457L10.6465 8.975Z"
+                fill="#000000"
+              />
+            </svg>
+          </a>
+          <div class="page-sidebar-content-wrap">
+            <div class="page-sidebar-content"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-main-content">
+        <div id="dokan-store-tabs-wrap" class="dokan-store-tabs-wrap"></div>
+
+        <div class="dokan-store-wrap layout-left">
+          <div id="dokan-primary" class="dokan-single-store">
+            <div
+              id="dokan-content"
+              class="store-page-wrap woocommerce"
+              role="main"
+            >
+              <div class="seller-items">
+                <div
+                  id="minimog-main-post"
+                  class="minimog-main-post minimog-grid-wrapper minimog-product group-style-06 style-grid-06 caption-style-06"
+                  data-grid='{"type":"grid","columns":"4","columnsTabletExtra":"3","columnsMobileExtra":"2","gutter":"30","gutterTabletExtra":"20","gutterMobileExtra":"16"}'
+                  style="
+                    --grid-columns-desktop: 4;
+                    --grid-columns-tablet-extra: 3;
+                    --grid-columns-mobile-extra: 2;
+                    --grid-gutter-desktop: 30;
+                    --grid-gutter-tablet-extra: 20;
+                    --grid-gutter-mobile-extra: 16;
+                  "
+                >
+                  <div class="minimog-grid lazy-grid">
+                    <div class="grid-sizer"></div>
+                    {% for p in company_name %}
+                    <div
+                      class="grid-item product type-product post-987 status-publish instock product_cat-dishwashers product_tag-dishwasher product_tag-kitchen has-post-thumbnail shipping-taxable purchasable product-type-variable has-default-attributes vi-sctv-product"
+                    >
+                      <div class="product-wrapper">
+                        <div class="product-thumbnail">
+                          <div class="thumbnail">
+                            <a
+                              href="{% url 'core:sub-category' p.company_name_title %}"
+                              class="woocommerce-LoopProduct-link woocommerce-loop-product__link"
+                            >
+                              <div class="product-main-image">
+                                <div
+                                  class="minimog-lazy-image"
+                                  style="
+                                    --lazy-image-width: 450px;
+                                    --lazy-image-height: 100%;
+                                  "
+                                >
+                                  <img
+                                    src="{{p.image.url}}"
+                                    width="450"
+                                    height="450"
+                                    alt=""
+                                    data-src="{{p.image.url}}"
+                                    class="product-main-image-img ll-image"
+                                  />
+                                </div>
+                              </div>
+
+                             
+                            </a>
+                          </div>
+                          
+                        </div>
+
+                        <div class="product-info">
+                          <div class="loop-product-category">
+                            <a
+                              href=""
+                            >
+                            {{category.cat_title}}
+                            </a>
+                          </div>
+
+                          <h3
+                            class="woocommerce-loop-product__title post-title-2-rows"
+                          >
+                            <a
+                              href="{% url 'core:sub-category' p.company_name_title %}"
+                              >{{p.company_name_title}}</a
+                            >
+                          </h3>
+
+                          
+
+                          <div class="price">
+                            <span class="woocommerce-Price-amount amount"
+                              ><i><bdi
+                                >(10 Products)</bdi
+                              ></i></span
+                            >
+                          </div>
+
+                          
+                        </div>
+                      </div>
+                      <div class="background-color-expand">
+                        <div
+                          class="product-action hint--bounce hint--top woocommerce_loop_add_to_cart_wrap"
+                          data-hint="Select options"
+                        >
+                          <a
+                            href="{% url 'core:sub-category' p.company_name_title %}"
+                            data-quantity="1"
+                            class="button wp-element-button product_type_variable add_to_cart_button"
+                            data-product_id="987"
+                            data-product_sku=""
+                            aria-label="Select options for &ldquo;Built-in dishwasher, Stainless steel Essentiell&rdquo;"
+                            rel="nofollow"
+                            ><span>View Products</span></a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- .dokan-single-store -->
+        </div>
+        <!-- .dokan-store-wrap -->
+      </div>
+    </div>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Playfair+Display:wght@500&display=swap');
+    </style>
+    <div class="profile-info-summery-wrapper dokan-clearfix">
+      <div class="profile-info-summery">
+        <div class="profile-info-head">
+          <h1 class="store-name" style="font-family: Dancing Script; font-size: 4rem;">Shop by Category..</h1>
+          <p class="show">Showing <b>{{sub_category.count}}</b> Categories</p>
+        </div>
+        <hr>
+
+        <!-- .profile-info -->
+      </div>
+      <!-- .profile-info-summery -->
+    </div>
+
+<div class="row">
+<div class="page-sidebar page-sidebar-left sidebar-primary">
+  <div
+    class="page-sidebar-inner tm-sticky-column"
+    data-sticky-group="content-sidebar"
+    itemscope="itemscope"
+  >
+    <a href="#" class="btn-close-off-sidebar">
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.6465 8.975L16.7012 15.0297C16.8639 15.1924 16.8639 15.3715 16.7012 15.5668L15.5781 16.6898C15.3828 16.8526 15.2038 16.8526 15.041 16.6898L14.0156 15.6156L8.98633 10.6352L2.93164 16.6898C2.76888 16.8526 2.58984 16.8526 2.39453 16.6898L1.27148 15.5668C1.10872 15.3715 1.10872 15.1924 1.27148 15.0297L7.32617 8.975L1.27148 2.92031C1.10872 2.75755 1.10872 2.57852 1.27148 2.3832L2.39453 1.26016C2.58984 1.0974 2.76888 1.0974 2.93164 1.26016L8.98633 7.31484L15.041 1.26016C15.2038 1.0974 15.3828 1.0974 15.5781 1.26016L16.7012 2.3832C16.8639 2.57852 16.8639 2.75755 16.7012 2.92031L15.627 3.9457L10.6465 8.975Z"
+          fill="#000000"
+        />
+      </svg>
+    </a>
+    <div class="page-sidebar-content-wrap">
+      <div class="page-sidebar-content"></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-main-content">
+  <div id="dokan-store-tabs-wrap" class="dokan-store-tabs-wrap"></div>
+
+  <div class="dokan-store-wrap layout-left">
+    <div id="dokan-primary" class="dokan-single-store">
+      <div
+        id="dokan-content"
+        class="store-page-wrap woocommerce"
+        role="main"
+      >
+        <div class="seller-items">
+          <div
+            id="minimog-main-post"
+            class="minimog-main-post minimog-grid-wrapper minimog-product group-style-06 style-grid-06 caption-style-06"
+            data-grid='{"type":"grid","columns":"4","columnsTabletExtra":"3","columnsMobileExtra":"2","gutter":"30","gutterTabletExtra":"20","gutterMobileExtra":"16"}'
+            style="
+              --grid-columns-desktop: 4;
+              --grid-columns-tablet-extra: 3;
+              --grid-columns-mobile-extra: 2;
+              --grid-gutter-desktop: 30;
+              --grid-gutter-tablet-extra: 20;
+              --grid-gutter-mobile-extra: 16;
+            "
+          >
+            <div class="minimog-grid lazy-grid">
+              <div class="grid-sizer"></div>
+              {% for p in sub_category %}
+              <div
+                class="grid-item product type-product post-987 status-publish instock product_cat-dishwashers product_tag-dishwasher product_tag-kitchen has-post-thumbnail shipping-taxable purchasable product-type-variable has-default-attributes vi-sctv-product"
+              >
+                <div class="product-wrapper">
+                  <div class="product-thumbnail">
+                    <div class="thumbnail">
+                      <a
+                        href="{% url 'core:sub-category' p.sub_cat_title %}"
+                        class="woocommerce-LoopProduct-link woocommerce-loop-product__link"
+                      >
+                        <div class="product-main-image">
+                          <div
+                            class="minimog-lazy-image"
+                            style="
+                              --lazy-image-width: 450px;
+                              --lazy-image-height: 100%;
+                            "
+                          >
+                            <img
+                              src="{{p.image.url}}"
+                              width="450"
+                              height="450"
+                              alt=""
+                              data-src="{{p.image.url}}"
+                              class="product-main-image-img ll-image"
+                            />
+                          </div>
+                        </div>
+
+                       
+                      </a>
+                    </div>
+                    
+                  </div>
+
+                  <div class="product-info">
+                    <div class="loop-product-category">
+                      <a
+                        href=""
+                      >
+                      {{category.cat_title}}
+                      </a>
+                    </div>
+
+                    <h3
+                      class="woocommerce-loop-product__title post-title-2-rows"
+                    >
+                      <a
+                        href="{% url 'core:sub-category' p.sub_cat_title %}"
+                        >{{p.sub_cat_title}}</a
+                      >
+                    </h3>
+
+                    
+
+                    <div class="price">
+                      <span class="woocommerce-Price-amount amount"
+                        ><i><bdi
+                          >(10 Products)</bdi
+                        ></i></span
+                      >
+                    </div>
+
+                    
+                  </div>
+                </div>
+                <div class="background-color-expand">
+                  <div
+                    class="product-action hint--bounce hint--top woocommerce_loop_add_to_cart_wrap"
+                    data-hint="Select options"
+                  >
+                    <a
+                      href="{% url 'core:sub-category' p.sub_cat_title %}"
+                      data-quantity="1"
+                      class="button wp-element-button product_type_variable add_to_cart_button"
+                      data-product_id="987"
+                      data-product_sku=""
+                      aria-label="Select options for &ldquo;Built-in dishwasher, Stainless steel Essentiell&rdquo;"
+                      rel="nofollow"
+                      ><span>View Products</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- .dokan-single-store -->
+  </div>
+  <!-- .dokan-store-wrap -->
+</div>
+</div>
+  </div>
+</div>
+{% endblock content %}

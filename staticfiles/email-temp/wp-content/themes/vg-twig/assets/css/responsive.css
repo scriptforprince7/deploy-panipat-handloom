@@ -1,0 +1,307 @@
+.shop__breadcrumbs {
+    margin: 20px 0 0 0;
+}
+
+.woocommerce-products-header {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product__composer a {
+    margin: 0 0 20px 0;
+}
+
+.product__notices {
+    width: 100%;
+}
+
+.single-product .summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.description-component {
+    background: white;
+    padding: 35px 0;
+}
+
+.woocommerce-view-subscription .button.suspend {
+    display: none;
+}
+
+.woocommerce-edit-address .woocommerce-MyAccount-content {
+    background: #292c34;
+    /*border-radius: 6px;*/
+    margin: 0 auto;
+    /*max-width: 600px;*/
+    padding: 30px;
+}
+
+@media (max-width: 414px) {
+    .single-user_template .header__builder {
+        display: none;
+    }
+}
+
+@media (max-width: 414px) {
+    .access__button a,
+    input[type="submit"], button[type="submit"],
+    a.single_add_to_cart_button,
+    button.single_add_to_cart_button,
+    .product__preview a {
+        min-width: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    .subscriptions__item:nth-child(1) a {
+        min-width: 0;
+    }
+
+    .subscriptions__item a {
+        min-width: 0;
+    }
+
+    #sidebar {
+        display: none;
+    }
+
+    #composer-container {
+        width: 100%;
+        height: calc(100vh - 90px);
+    }
+
+    .features-component {
+        padding: 20px 0 20px 0;
+    }
+
+    .composer__actions a.save, .composer__actions a.update, .composer__actions a.download {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+
+    .user-template {
+        flex-wrap: wrap;
+        padding: 20px 20px 20px 20px;
+    }
+
+    .user-template__info {
+        margin: 15px 0;
+    }
+
+    .user-template__preview {
+        width: 100%;
+        margin: 0;
+    }
+
+    .user-template__actions {
+        width: 100%;
+    }
+
+    .is-customer #header {
+        padding: 0 25px 0 0;
+    }
+
+    .woocommerce-orders-table__cell-order-actions .pdf {
+        display: none;
+    }
+
+    .woocommerce-table--order-downloads .button {
+        margin: 0;
+        min-width: 0;
+    }
+
+    .is-customer .header__logo {
+        width: 100px;
+    }
+
+    .is-customer .header__logo img {
+        max-height: 65px;
+    }
+
+    .woocommerce-table--order-downloads .download-file {
+        line-height: 0;
+        padding: 15px 0 15px 0;
+    }
+
+    .woocommerce-table--order-downloads .download-file a {
+        margin: 5px 0;
+        display: block;
+    }
+
+    .woocommerce-table--order-downloads .download-product {
+        display: none;
+    }
+
+    .woocommerce-orders-table__cell-order-total,
+    .woocommerce-orders-table__header-order-total,
+    .woocommerce-orders-table__cell-order-status,
+    .woocommerce-orders-table__header-order-status,
+    .woocommerce-orders-table__cell-order-date,
+    .woocommerce-orders-table__header-order-date {
+        display: none;
+    }
+
+    .home__intro__title {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .home__intro__text {
+        font-size: 23px;
+        line-height: 33px;
+    }
+
+    .composer__title {
+        font-size: 35px;
+    }
+
+    .composer__text {
+        font-size: 23px;
+        line-height: 33px;
+    }
+
+    .testimonials-component {
+        padding: 35px 0;
+    }
+
+    .testimonial__content {
+        padding: 15px;
+    }
+
+    .compatibility__title {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .has-white {
+        padding: 15px;
+    }
+
+    .compatibility__text {
+        font-size: 23px;
+        line-height: 33px;
+    }
+
+    a.single_add_to_cart_button,
+    button.single_add_to_cart_button {
+        margin: 0 0 15px 0;
+    }
+
+    .subscriptions__item:nth-child(2) .subscriptions__subscription {
+        padding: 60px 15px 15px 15px;
+    }
+
+    .woocommerce-product-details__short-description {
+        padding: 0;
+    }
+
+    .subscriptions__subscription {
+        padding: 15px;
+    }
+
+    .access__title {
+        font-size: 23px;
+        line-height: 30px;
+    }
+
+    .access__text {
+        font-size: 23px;
+        line-height: 30px;
+    }
+
+    #header {
+        height: 90px;
+    }
+
+    .header__logo {
+        max-width: 200px;
+    }
+
+    .page__header__text {
+        padding: 0;
+    }
+
+    .form {
+        padding: 15px;
+    }
+
+    .woocommerce-products-header > div {
+        padding: 0;
+    }
+
+    ul.products .product a {
+        padding: 15px;
+    }
+
+    .archive ul.products {
+        padding: 0 0 10px 0;
+    }
+
+    #footer {
+        padding: 25px 0;
+    }
+
+    .footer__social {
+        margin: 15px 0;
+    }
+
+    .container--customer {
+    }
+
+    .woocommerce-edit-account .woocommerce-MyAccount-content {
+        padding: 15px;
+    }
+
+    .content__account {
+    }
+
+    .container {
+        max-width: calc(100% - 50px);
+    }
+
+    .container--medium {
+        max-width: calc(100% - 50px);
+    }
+
+    .container--small {
+        max-width: calc(100% - 50px);
+    }
+
+    .home__intro {
+        padding: 20px 30px 50px 30px;
+    }
+
+    .features__feature {
+        width: 100%;
+    }
+
+    .feature {
+        margin: 0 0 25px 0;
+    }
+
+    .subscriptions-component {
+        padding: 35px 0 0 0;
+    }
+
+    .subscriptions__text {
+        padding: 0;
+    }
+
+    .compatibility__logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .footer__menu li {
+        margin: 0;
+    }
+
+    .footer__menu ul {
+        display: block;
+    }
+}

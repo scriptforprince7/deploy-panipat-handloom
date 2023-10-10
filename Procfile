@@ -1,0 +1,1 @@
+web: gunicorn ecomproj.wsgi --log-file 

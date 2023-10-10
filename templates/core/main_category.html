@@ -1,0 +1,299 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block breadmb %}
+<div id="page-title-bar" class="page-title-bar page-title-bar-minimal-01">
+  <div class="page-title-bar-inner">
+    <div class="page-title-bar-bg"></div>
+
+    <div id="page-breadcrumb" class="page-breadcrumb">
+      <div class="container-broad">
+        <div class="page-breadcrumb-wrap">
+          <ul class="insight_core_breadcrumb">
+            <li class="level-1 top item-home">
+              <a href="/">Home</a>
+            </li>
+            <li class="level-2 sub item-current tail current">
+              <span>Shop Category</span>
+            </li>
+            <li class="level-2 sub item-current tail current">
+                <span>{{main_categories.main_title}}</span>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock breadmb %} 
+
+{% block content %}
+<div id="page-content" class="page-content">
+  <div class="container-broad">
+    <div class="row">
+      <div class="page-sidebar page-sidebar-left sidebar-primary">
+        <div
+          class="page-sidebar-inner tm-sticky-column"
+          data-sticky-group="content-sidebar"
+          itemscope="itemscope"
+        >
+          <a href="#" class="btn-close-off-sidebar">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.6465 8.975L16.7012 15.0297C16.8639 15.1924 16.8639 15.3715 16.7012 15.5668L15.5781 16.6898C15.3828 16.8526 15.2038 16.8526 15.041 16.6898L14.0156 15.6156L8.98633 10.6352L2.93164 16.6898C2.76888 16.8526 2.58984 16.8526 2.39453 16.6898L1.27148 15.5668C1.10872 15.3715 1.10872 15.1924 1.27148 15.0297L7.32617 8.975L1.27148 2.92031C1.10872 2.75755 1.10872 2.57852 1.27148 2.3832L2.39453 1.26016C2.58984 1.0974 2.76888 1.0974 2.93164 1.26016L8.98633 7.31484L15.041 1.26016C15.2038 1.0974 15.3828 1.0974 15.5781 1.26016L16.7012 2.3832C16.8639 2.57852 16.8639 2.75755 16.7012 2.92031L15.627 3.9457L10.6465 8.975Z"
+                fill="#000000"
+              />
+            </svg>
+          </a>
+          <div class="page-sidebar-content-wrap">
+            <div class="page-sidebar-content"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-main-content">
+        <div id="dokan-store-tabs-wrap" class="dokan-store-tabs-wrap"></div>
+
+        <div class="dokan-store-wrap layout-left">
+          <div id="dokan-primary" class="dokan-single-store">
+            <div
+              id="dokan-content"
+              class="store-page-wrap woocommerce"
+              role="main"
+            >
+              <div class="seller-items">
+                <div
+                  id="minimog-main-post"
+                  class="minimog-main-post minimog-grid-wrapper minimog-product group-style-06 style-grid-06 caption-style-06"
+                  data-grid='{"type":"grid","columns":"4","columnsTabletExtra":"3","columnsMobileExtra":"2","gutter":"30","gutterTabletExtra":"20","gutterMobileExtra":"16"}'
+                  style="
+                    --grid-columns-desktop: 4;
+                    --grid-columns-tablet-extra: 3;
+                    --grid-columns-mobile-extra: 2;
+                    --grid-gutter-desktop: 30;
+                    --grid-gutter-tablet-extra: 20;
+                    --grid-gutter-mobile-extra: 16;
+                  "
+                >
+                  <div class="minimog-grid lazy-grid">
+                    <div class="grid-sizer"></div>
+                   {% for main in categories %}
+                    <div
+                      class="grid-item has-hover-thumbnail product type-product post-987 status-publish instock product_cat-dishwashers product_tag-dishwasher product_tag-kitchen has-post-thumbnail shipping-taxable purchasable product-type-variable has-default-attributes vi-sctv-product"
+                    >
+                      <div class="product-wrapper">
+                        <div class="product-thumbnail">
+                          <div class="thumbnail">
+                            <a
+                              href="{% url 'core:inner-category' main.cat_title %}"
+                              class="woocommerce-LoopProduct-link woocommerce-loop-product__link"
+                            >
+                              <div class="product-main-image">
+                                <div
+                                  class="minimog-lazy-image"
+                                  style="
+                                    --lazy-image-width: 450px;
+                                    --lazy-image-height: 100%;
+                                  "
+                                >
+                                  <img
+                                    src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20450%20450%22%3E%3C%2Fsvg%3E"
+                                    width="450"
+                                    height="450"
+                                    alt=""
+                                    data-src="{{main.image.url}}"
+                                    class="product-main-image-img ll-image"
+                                  />
+                                </div>
+                              </div>
+
+                              <div class="product-hover-image">
+                                <div
+                                  class="minimog-lazy-image"
+                                  style="
+                                    --lazy-image-width: 450px;
+                                    --lazy-image-height: 100%;
+                                  "
+                                >
+                                  <img
+                                    src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20450%20450%22%3E%3C%2Fsvg%3E"
+                                    width="450"
+                                    height="450"
+                                    alt="product_kitchen_2_3"
+                                    data-src=""
+                                    class="ll-image"
+                                  />
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          <div class="product-actions">
+                            <div
+                              class="product-action wishlist-btn style-01 icon-star hint--bounce hint--left"
+                              data-hint="Add to wishlist"
+                            >
+                              <a
+                                href="?add-to-wishlist=987"
+                                class="woosw-btn woosw-btn-987"
+                                data-id="987"
+                                data-product_name="Built-in dishwasher, Stainless steel Essentiell"
+                                data-product_image=""
+                                >Add to wishlist</a
+                              >
+                            </div>
+                            <div
+                              class="product-action compare-btn style-01 hint--bounce hint--left"
+                              data-hint="Compare"
+                            >
+                              <a
+                                href="?add-to-compare=987"
+                                class="woosc-btn woosc-btn-987"
+                                data-id="987"
+                                data-product_name=""
+                                data-product_image=""
+                                >Compare</a
+                              >
+                            </div>
+                            <div
+                              class="product-action quick-view-btn style-01 hint--bounce hint--left"
+                              data-hint="Quick view"
+                              data-pid="987"
+                            >
+                              <a class="quick-view-icon" href="#">Quick view</a>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="product-info">
+                          <div class="loop-product-category">
+                            <a
+                              href=""
+                            >
+                            {{main_categories.main_title}}
+                            </a>
+                          </div>
+
+                          <h3
+                            class="woocommerce-loop-product__title post-title-2-rows"
+                          >
+                            <a
+                              href="{% url 'core:inner-category' main.cat_title %}"
+                              >  {{main.cat_title}}</a
+                            >
+                          </h3>
+
+                          
+
+                          <div class="price">
+                            <span class="woocommerce-Price-amount amount"
+                              ><i><bdi
+                                >(10 Products)</bdi
+                              ></i></span
+                            >
+                          </div>
+
+                          <div class="content-view-list">
+                            <div
+                              class="woocommerce-loop-product__desc post-title-2-rows"
+                            >
+                              This dishwasher beats the chore of doing the
+                              dishes by hand any day - and it uses less energy
+                              and water too! You get all&hellip;
+                            </div>
+
+                            <div class="product-list-view-actions">
+                              <div
+                                class="product-action hint--bounce hint--top woocommerce_loop_add_to_cart_wrap"
+                                data-hint="Select options"
+                              >
+                                <a
+                                  href="{% url 'core:inner-category' main.cat_title %}"
+                                  data-quantity="1"
+                                  class="button wp-element-button product_type_variable add_to_cart_button"
+                                  data-product_id="987"
+                                  data-product_sku=""
+                                  aria-label="Select options for &ldquo;Built-in dishwasher, Stainless steel Essentiell&rdquo;"
+                                  rel="nofollow"
+                                  ><span>View Products</span></a
+                                >
+                              </div>
+                              <div
+                                class="product-action wishlist-btn style-01 icon-star hint--bounce hint--top"
+                                data-hint="Add to wishlist"
+                              >
+                                <a
+                                  href="?add-to-wishlist=987"
+                                  class="woosw-btn woosw-btn-987"
+                                  data-id="987"
+                                  data-product_name="Built-in dishwasher, Stainless steel Essentiell"
+                                  data-product_image=""
+                                  >Add to wishlist</a
+                                >
+                              </div>
+                              <div
+                                class="product-action compare-btn style-01 hint--bounce hint--top"
+                                data-hint="Compare"
+                              >
+                                <a
+                                  href="?add-to-compare=987"
+                                  class="woosc-btn woosc-btn-987"
+                                  data-id="987"
+                                  data-product_name="Built-in dishwasher, Stainless steel Essentiell"
+                                  data-product_image=""
+                                  >Compare</a
+                                >
+                              </div>
+                              <div
+                                class="product-action quick-view-btn style-01 hint--bounce hint--top"
+                                data-hint="Quick view"
+                                data-pid="987"
+                              >
+                                <a class="quick-view-icon" href="#"
+                                  >Quick view</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="background-color-expand">
+                        <div
+                          class="product-action hint--bounce hint--top woocommerce_loop_add_to_cart_wrap"
+                          data-hint="Select options"
+                        >
+                          <a
+                            href="{% url 'core:inner-category' main.cat_title %}"
+                            data-quantity="1"
+                            class="button wp-element-button product_type_variable add_to_cart_button"
+                            data-product_id="987"
+                            data-product_sku=""
+                            aria-label="Select options for &ldquo;Built-in dishwasher, Stainless steel Essentiell&rdquo;"
+                            rel="nofollow"
+                            ><span>View Products</span></a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                 
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- .dokan-single-store -->
+        </div>
+        <!-- .dokan-store-wrap -->
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

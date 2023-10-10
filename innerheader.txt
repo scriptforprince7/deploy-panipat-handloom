@@ -1,0 +1,355 @@
+    {% block innerheader %}
+<div class="header-below">
+    <div class="container-broad">
+      <div class="header-below-wrap">
+        <div class="header-below-left header-col-start">
+          <div class="header-content-inner lingrad">
+            <div
+              id="header-categories-nav"
+              class="header-categories-nav"
+            >
+              <div class="inner">
+                <span class="nav-toggle-btn" id="nav-toggle-btn">
+                  <span class="nav-toggle-bars fa fa-bars"></span>
+                  Shop by Categories
+                </span>
+                <nav class="category-menu">
+                  <ul
+                    id="menu-product-categories"
+                    class="product-category-dropdown menu__container sm sm-simple sm-vertical"
+                    data-sm-options='{"mainMenuSubOffsetX":-15,"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17,"keepInViewport":false}'
+                  >
+                    {% for p in main_cat %}
+                    <li
+                      class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"
+                    >
+                      <a
+                        href=""
+                        ><div class="menu-item-wrap">
+                          <span class="menu-item-icon"
+                            ><svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 20 20"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.125 13.125V6.25H16.25C16.913 6.25 17.5489 6.51339 18.0178 6.98223C18.4866 7.45107 18.75 8.08696 18.75 8.75V13.125"
+                                stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M1.25 16.25V3.75"
+                                stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M1.25 13.125H18.75V16.25"
+                                stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M8.125 6.25H1.25"
+                                stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg> </span
+                          ><span class="menu-item-title"
+                            >{{p.main_title}}</span
+                          ><span class="toggle-sub-menu"> </span></div
+                      ></a>
+
+                      <ul class="sub-menu children mega-menu">
+
+                        {% for cat in p.category_set.all %}
+
+                        <li
+                          class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305"
+                        >
+                          <div class="mega-menu-content">
+                            <div
+                              data-elementor-type="wp-post"
+                              data-elementor-id="1298"
+                              class="elementor elementor-1298"
+                            >
+                              <div class="elementor-inner">
+                                <div class="elementor-section-wrap">
+                                  <section
+                                    class="elementor-section elementor-top-section elementor-element elementor-element-8e1d000 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
+                                    data-id="8e1d000"
+                                    data-element_type="section"
+                                  >
+                                    <div
+                                      class="elementor-container elementor-column-gap-extended"
+                                    >
+                                      <div class="elementor-row">
+                                        
+                                        
+                                        <div
+                                          class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-4e2db18"
+                                          data-id="4e2db18"
+                                          data-element_type="column"
+                                        >
+                                          <div
+                                            class="elementor-column-wrap elementor-element-populated"
+                                          >
+                                            <div
+                                              class="elementor-widget-wrap"
+                                            >
+                                              <div
+                                                class="elementor-element elementor-element-16d8c3b elementor-widget elementor-widget-heading"
+                                                data-id="16d8c3b"
+                                                data-element_type="widget"
+                                                data-widget_type="heading.default"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                 <a href="{% url 'core:inner-category' cat.cat_title %}"><h2
+                                                  class="elementor-heading-title elementor-size-default"
+                                                >
+                                                  {{cat.cat_title}}
+                                                </h2></a>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="elementor-element elementor-element-5d6d640 elementor-widget elementor-widget-spacer"
+                                                data-id="5d6d640"
+                                                data-element_type="widget"
+                                                data-widget_type="spacer.default"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                  <div
+                                                    class="elementor-spacer"
+                                                  >
+                                                    <div
+                                                      class="elementor-spacer-inner"
+                                                    ></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="elementor-element elementor-element-c5d41c6 elementor-widget elementor-widget-tm-simple-list"
+                                                data-id="c5d41c6"
+                                                data-element_type="widget"
+                                                data-widget_type="tm-simple-list.default"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+
+                                                  <div
+                                                    class="minimog-simple-list minimog-simple-list--style-03"
+                                                  >
+                                                  {% for sub_cat in cat.sub_category_set.all %}
+
+                                                    <div
+                                                      class="item elementor-repeater-item-9c988d6 truncated"
+                                                    >
+                                                      <a
+                                                        class="link"
+                                                        href="{% url 'core:sub-category' sub_cat.sub_cat_title %}"
+                                                      >
+                                                        {{sub_cat.sub_cat_title}}
+                                                      </a>
+                                                    </div>
+
+                                                    {% endfor %}
+
+                                                  </div>
+
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+
+
+                                        <div
+                                          class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
+                                          data-id="877ceeb"
+                                          data-element_type="column"
+                                        >
+                                          <div
+                                            class="elementor-column-wrap elementor-element-populated"
+                                          >
+                                            <div
+                                              class="elementor-widget-wrap"
+                                            >
+                                              <div
+                                                class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner"
+                                                data-id="9c6cc46"
+                                                data-element_type="widget"
+                                                data-widget_type="tm-banner.default"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                  <a
+                                                    class="minimog-banner minimog-box link-secret"
+                                                    href=""
+                                                  >
+                                                    <div
+                                                      class="minimog-image"
+                                                    >
+                                                      <div
+                                                        class="image ll-background ll-background-unload"
+                                                        data-src="{{p.image.url}}"
+                                                      ></div>
+                                                    </div>
+                                                    <div
+                                                      class="content-wrap"
+                                                    >
+                                                      <div
+                                                        class="content-wrap__inner"
+                                                      >
+                                                        <h3
+                                                          class="title"
+                                                        >
+                                                        Shop 
+                                                        </h3>
+                                                      </div>
+                                                      <div
+                                                        class="content-wrap__bottom"
+                                                      >
+                                                        <div
+                                                          class="tm-button-wrapper"
+                                                        >
+                                                          <div
+                                                            class="tm-button style-bottom-line tm-button-nm"
+                                                          >
+                                                            <div
+                                                              class="button-content-wrapper"
+                                                            >
+                                                              <span
+                                                                class="button-text"
+                                                                >Shop
+                                                                Now</span
+                                                              >
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        
+                                      </div>
+                                    </div>
+                                  </section>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+
+                        {% endfor %}
+                        
+                      </ul>
+
+                    </li>
+                    {% endfor %}
+                 
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="header-below-center header-col-center lingrad">
+          <div class="header-content-inner">
+            <div
+              id="page-navigation"
+              class="navigation page-navigation"
+            >
+              <nav id="menu" class="menu menu--primary">
+                <ul
+                  id="menu-primary"
+                  class="menu__container sm sm-simple"
+                  data-sm-options='{"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17}'
+                >
+                  <li
+                    class="menu-item-open-modal-demo-preview menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-330 level-1"
+                  >
+                    <a href=""
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-title">Home</span>
+                      </div></a
+                    >
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"
+                  >
+                    <a
+                      href=""
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-title">Shop</span>
+                      </div></a
+                    >
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"
+                  >
+                    <a href="#"
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-title">Products</span>
+                      </div></a
+                    >
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"
+                  >
+                    <a
+                      href="
+                      "
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-title">Blog</span>
+                      </div></a
+                    >
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"
+                  >
+                    <a href="#"
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-title">Features</span>
+                      </div></a
+                    >
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"
+                  >
+                    <a
+                      href=""
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-title"
+                          >Store List</span
+                        >
+                      </div></a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="header-below-right header-col-end">
+          <div class="header-content-inner"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock innerheader %}

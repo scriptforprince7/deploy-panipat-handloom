@@ -1,0 +1,163 @@
+body[data-select2-id] {
+  overflow: hidden !important;
+}
+
+#composer table td {
+  max-width: 800px;
+}
+
+.composer--mobile table td {
+  max-width: 320px !important;
+}
+
+.composer--mobile [data-text-edit] {
+  max-width: 290px !important;
+  overflow: hidden;
+  margin: auto;
+}
+
+#media {
+  background: #f9f9f9;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateY(100%);
+  transition: all 0.35s;
+  z-index: 10;
+}
+
+#media.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#media iframe {
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar__option__input .label {
+  white-space: nowrap;
+}
+
+.sidebar__option--width input {
+  width: 80px;
+}
+
+.composer__actions {
+  z-index: 1;
+}
+
+.sidebar__actions {
+  position: relative;
+}
+
+.sidebar__toggle {
+  background: #33363f;
+  align-items: center;
+  cursor: pointer;
+  display: none;
+  height: 70px;
+  justify-content: center;
+  transition: all 0.35s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.sidebar__toggle img {
+  transform: rotate(90deg);
+  max-width: 32px;
+}
+
+@media (max-width: 1024px) {
+  .sidebar__toggle.is-active {
+    display: flex;
+  }
+}
+
+.composer__actions {
+  position: fixed;
+  left: 580px;
+  z-index: 2;
+}
+
+@media (max-width: 1460px) {
+  .composer__actions {
+    left: 440px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .composer__actions {
+    left: 70px;
+  }
+}
+
+@media (max-width: 1460px) {
+  .content__account {
+    padding: 100px 30px 30px 30px;
+  }
+
+  .content__account__title {
+    height: 70px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #composer.composer--desktop {
+    width: 100%;
+  }
+
+  .content__account {
+    padding: 100px 30px 30px 0;
+  }
+}
+
+@media (max-width: 870px) {
+  #composer-container {
+    padding: 70px 0px 0px 0px;
+  }
+
+  .module__actions {
+    left: 0;
+    right: auto;
+  }
+}
+
+@media (max-width: 869px) {
+  .do-viewport {
+    display: none;
+  }
+
+  #composer {
+    width: 320px;
+  }
+}
+
+.module__actions {
+  transform: none;
+  top: 0;
+}
+
+.module__actions:after {
+  top: 20px;
+}
+
+.sidebar__option--checkbox input {
+  width: auto;
+}
+
+#builder {
+  height: 100vh;
+}
+
+.sidebar__content {
+  z-index: 3;
+}
