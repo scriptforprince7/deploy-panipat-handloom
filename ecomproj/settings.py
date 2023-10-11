@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-=gz6u1d6i@v#$c@(zxy_@4+c7w)5hlumrdyu_ru^(_!kc!b5_8"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.1.30', '192.168.248.230', '127.0.0.1', '*']
+ALLOWED_HOSTS = ['192.168.1.30', '192.168.248.230', '127.0.0.1', '.vercel.app', 'now.sh']
 
 
 # Application definition
@@ -84,9 +84,13 @@ WSGI_APPLICATION = "ecomproj.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'IAvoKP0epSiFjVuEMPkw',
+        'HOST': 'containers-us-west-128.railway.app',
+        'PORT': '5758',
     }
 }
 
