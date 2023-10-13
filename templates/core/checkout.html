@@ -149,6 +149,32 @@ var dokan = {"ajaxurl":"https:\/\/minimog.thememove.com\/megamog\/wp-admin\/admi
 </script>
 <script type='text/javascript' src='https://minimog-4437.kxcdn.com/megamog/wp-content/plugins/dokan-lite/assets/vendors/i18n/jed.js?ver=3.4.2' id='dokan-i18n-jed-js'></script>
 <script type='text/javascript' src='https://minimog-4437.kxcdn.com/megamog/wp-content/plugins/dokan-lite/assets/vendors/sweetalert2/sweetalert2.all.min.js?ver=1650874832' id='dokan-sweetalert2-js'></script>
+<script>
+	"use strict";
+	
+	!function() {
+	  var t = window.driftt = window.drift = window.driftt || [];
+	  if (!t.init) {
+		if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+		t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+		t.factory = function(e) {
+		  return function() {
+			var n = Array.prototype.slice.call(arguments);
+			return n.unshift(e), t.push(n), t;
+		  };
+		}, t.methods.forEach(function(e) {
+		  t[e] = t.factory(e);
+		}), t.load = function(t) {
+		  var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+		  o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+		  var i = document.getElementsByTagName("script")[0];
+		  i.parentNode.insertBefore(o, i);
+		};
+	  }
+	}();
+	drift.SNIPPET_VERSION = '0.3.1';
+	drift.load('mcktnm7k4bhg');
+	</script>
 <script type='text/javascript' id='dokan-util-helper-js-extra'>
 /* <![CDATA[ */
 var dokan_helper = {"i18n_date_format":"F j, Y","i18n_time_format":"g:i a","week_starts_day":"1"};
@@ -191,6 +217,277 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
 
 <body class="page-template-default page page-id-8 wp-embed-responsive theme-minimog woocommerce-checkout woocommerce-page woocommerce-no-js desktop desktop-menu primary-nav-rendering header-sticky-enable page-has-mobile-tabs page-has-no-sidebar page-blocks-style-normal title-bar-standard-03 title-bar-has-post-title woocommerce elementor-default elementor-kit-4 dokan-theme-minimog" >
 
+	<style>
+		.call-button {
+		 position: fixed;
+		 bottom: 20px;
+		 right: 20px;
+		 /* Add styles for both icons */
+		 display: flex;
+		 flex-direction: column;
+		 align-items: center;
+		 margin-bottom: 70px;
+		 margin-right: 15px;
+	   }
+   
+	   .call-button-icon {
+		 width: 60px;
+		 height: 60px;
+		 background-color: #25d366; /* Change the WhatsApp icon background color */
+		 border-radius: 50%;
+		 display: flex;
+		 align-items: center;
+		 justify-content: center;
+		 cursor: pointer;
+		 transition: transform 0.3s ease-in-out;
+		 z-index: 9999; /* Higher z-index value to appear above other elements */
+	   }
+   
+	   .call-button-icon i {
+		 font-size: 24px;
+		 color: #fff; /* Change the WhatsApp icon color */
+	   }
+   
+	   .call-button-icon-phone {
+		 width: 60px;
+		 height: 60px;
+		 background-color: #f00; /* Change the call icon background color */
+		 border-radius: 50%;
+		 display: flex;
+		 align-items: center;
+		 justify-content: center;
+		 cursor: pointer;
+		 transition: transform 0.3s ease-in-out;
+		 z-index: 9999; /* Higher z-index value to appear above other elements */
+		 margin-top: 10px; /* Adjust the distance between WhatsApp and call icons */
+	   }
+   
+	   .call-button-icon {
+	   margin-bottom: 5px; /* Add space below the enquiry button */
+	 }
+   
+	   .call-button-icon-phone i {
+		 font-size: 24px;
+		 color: #fff; /* Change the call icon color */
+	   }
+   
+	   .call-button:hover .call-button-icon,
+	   .call-button:hover .call-button-icon-phone {
+		 transform: scale(1.1);
+	   }
+   
+	   .call-button-content {
+		 display: none;
+		 position: absolute;
+		 top: -60px;
+		 right: -20px;
+		 width: 160px;
+		 padding: 10px;
+		 background-color: #fff;
+		 color: #000;
+		 border-radius: 4px;
+		 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		 animation: slide-down 0.3s ease-in-out forwards;
+		 transform-origin: top center;
+		 z-index: 9999; /* Higher z-index value to appear above other elements */
+		 text-align: center;
+	   }
+   
+	   .call-button-content::after {
+		 content: '';
+		 position: absolute;
+		 top: 100%;
+		 left: 50%;
+		 transform: translateX(-50%);
+		 border-top: 10px solid #fff;
+		 border-left: 10px solid transparent;
+		 border-right: 10px solid transparent;
+	   }
+   
+	   @keyframes slide-down {
+		 0% {
+		   opacity: 0;
+		   transform: translateY(-20px);
+		 }
+		 100% {
+		   opacity: 1;
+		   transform: translateY(0);
+		 }
+	   }
+   
+	   .phone-number {
+		 margin: 0;
+		 font-size: 18px;
+		 font-weight: bold;
+		 color: #f00; /* Change the phone number color */
+		 margin-bottom: 10px;
+	   }
+   
+	   .call-button:hover .call-button-icon i {
+		 color: #fff; /* Change the WhatsApp icon color on hover */
+	   }
+   
+	   .call-button:hover .call-button-icon-phone i {
+		 color: #FFFFFF; /* Change the call icon color on hover */
+	   }
+   
+	   .call-button:hover .call-button-content {
+		 background-color: #fffff; /* Change the background color of content on hover */
+		 color: black; /* Change the text color of content on hover */
+	   }
+   
+	   .call-button-content::after {
+		 border-top-color: #f00; /* Change the arrow color of content on hover */
+	   }
+	   .call-button {
+	   position: fixed;
+	   bottom: 20px;
+	   right: 20px;
+	   z-index: 9999; /* Higher z-index value to appear above other elements */
+	 }
+   
+	 .modal-overlay {
+	   display: none;
+	   position: fixed;
+	   top: 0;
+	   left: 0;
+	   width: 100%;
+	   height: 100%;
+	   background-color: rgba(255, 255, 255, 0.9); /* White background with opacity */
+	   z-index: 9999; /* Ensure the modal is above other content */
+	 }
+   
+	 /* Styles for the modal content */
+	 .modal-content {
+	   position: absolute;
+	   top: 50%;
+	   left: 50%;
+	   transform: translate(-50%, -50%);
+	   background-color: #fff; /* White background */
+	   padding: 20px;
+	   border-radius: 5px;
+	   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	   z-index: 10000; /* Ensure the modal content is above the overlay */
+	 }
+   
+	 .enquiry-form input[type="text"],
+	 .enquiry-form input[type="email"],
+	 .enquiry-form input[type="tel"],
+	 .enquiry-form input[type="category"],
+	 .enquiry-form textarea {
+	   margin-bottom: 10px; /* Adjust the margin as needed */
+	 }
+   
+	 .submit-button {
+	 background-color: #ec0f82;
+	 /* Add any other button styles you need */
+	 color: #fff; /* Text color */
+	 /* padding: 10px 20px; Adjust padding as needed */
+	 border: none;
+	 border-radius: 5px;
+   }
+   .phone-number {
+	 /* Create a linear gradient background for text */
+	 background: linear-gradient(45deg, #e6317b, #bd529c, #6b94ce);
+	 background-clip: text;
+	 -webkit-background-clip: text; /* For older browsers */
+	 color: transparent; /* Set text color to transparent */
+	 padding: 10px; /* Adjust padding as needed */
+	 border-radius: 5px;
+	 font-size: 1.8rem;
+	 text-align: center; /* Center the text within the element */
+   }
+   
+   .call-button-icon {
+	 background-color: #ec0f82;
+	 /* Add any other styles you need for the icon container */
+   }
+   
+   @media (max-width: 767px) {
+    .call-button {
+      right: -4px;
+      bottom: 1px;
+    }
+  }
+   
+   </style>
+   
+   
+   <div class="call-button" id="callButton">
+	 <a href="#" id="enquiryButton">
+	   <div class="call-button-icon">
+		 <i class="fas fa-envelope"></i> <!-- Replace with an envelope icon for enquiry -->
+	   </div>
+	 </a>
+	 <a href="https://api.whatsapp.com/send?phone=919899073000" target="_blank" rel="noopener noreferrer">
+	   <div class="call-button-icon">
+		 <i class="fab fa-whatsapp"></i>
+	   </div>
+	 </a>
+	 <div class="call-button-content">
+	   <!-- Form for enquiry -->
+	   <form id="enquiryForm" class="enquiry-form" style="display: none;">
+		 <p class="phone-number">Enquiry Form</p>
+		 <!-- Add your form fields here -->
+		 <input type="text" placeholder="Name" />
+		 <input type="email" placeholder="Email" />
+		 <textarea placeholder="Message"></textarea>
+		 <button type="submit">Submit</button>
+	   </form>
+	 </div>
+   </div>
+   
+   <div class="modal-overlay" id="enquiryModal">
+	 <div class="modal-content">
+	   <!-- Form for enquiry -->
+	   <form id="enquiryForm" class="enquiry-form">
+		 <p class="phone-number">Enquiry Form</p>
+		 <!-- Add your form fields here -->
+		 <input type="text" placeholder="Name" />
+		 <input type="email" placeholder="Email" />
+		 <input type="tel" placeholder="Phone Number" /> <!-- Phone number input -->
+		 <select name="category" id="category">
+		   <!-- Category dropdown -->
+		   <option value="General">Product</option>
+		   <option value="Sales">Window Treatment</option>
+		   <option value="Support">Wall Decor</option>
+		   <option value="Support">Bed Decor</option>
+		   <option value="Support">Upholstery</option>
+		   <option value="Support">Flooring</option>
+		   <option value="Support">Door Mats</option>
+		   <option value="Support">Exteriors</option>
+		   <!-- Add more options as needed -->
+		 </select>
+		 <textarea placeholder="Message"></textarea>
+		 <button type="submit" class="submit-button">Submit</button>
+	   </form>
+	 </div>
+   </div>
+   
+   
+   
+   <script>
+	 // JavaScript to handle modal popup
+	 const enquiryButton = document.getElementById("enquiryButton");
+	 const enquiryModal = document.getElementById("enquiryModal");
+   
+	 enquiryButton.addEventListener("click", function (event) {
+	   event.preventDefault(); // Prevent the default link behavior
+	   openEnquiryModal(); // Open the modal
+	 });
+   
+	 function openEnquiryModal() {
+	   enquiryModal.style.display = "block"; // Show the modal
+	 }
+   
+	 // Close the modal when the user clicks outside of it
+	 window.addEventListener("click", function (event) {
+	   if (event.target === enquiryModal) {
+		 enquiryModal.style.display = "none"; // Close the modal
+	   }
+	 });
+   </script>
+
 
 
 <div id="page" class="site">
@@ -201,257 +498,300 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
         class="page-header header-06 nav-links-hover-style-line header-dark header-sticky-dark-logo header-icon-set-01 header-icon-badge-large"
       >
         <div class="page-header-place-holder"></div>
-        <div id="page-header-inner" class="page-header-inner" data-sticky="1">
-          <div class="header-above hide-on-pinned hide-sm">
-            <div class="container-broad">
-              <div class="header-above-wrap">
-                <div class="header-above-left header-col-start hide-md">
-                  <div class="header-content-inner">
-                    <div class="header-info-list">
-                      <ul class="info-list">
-                        <li class="info-item">
-                          <a
-                            class="info-link"
-                            href="https://www.instagram.com/thepanipathandloom1976/"
-                            ><i class="info-icon fab fa-instagram"></i
-                            ><span class="info-text">100k Followers</span></a
-                          >
-                        </li>
-                        <li class="info-item">
-                          <a
-                            class="info-link"
-                            href="https://www.facebook.com/thepanipathandloom"
-                            ><i class="info-icon fab fa-facebook"></i
-                            ><span class="info-text">300k Followers</span></a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="header-above-center header-col-center">
-                  <div class="header-content-inner">
-                    <div class="header-text">
-                      <span class="header-tag">Hot</span
-                      ><span>✌🏼 Free Express Shipping on orders ₹1499/-</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="header-above-right header-col-end">
-                  <div class="header-content-inner">
-                    <div
-                      id="switcher-language-wrapper"
-                      class="switcher-language-wrapper wpml"
-                    >
-                      <div
-                        class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-dropdown js-wpml-ls-legacy-dropdown"
-                      >
-                        <ul>
-                          <li
-                            tabindex="0"
-                            class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-dropdown"
-                          >
+		<div id="page-header-inner" class="page-header-inner" data-sticky="1">
+            <div class="header-above hide-on-pinned hide-sm">
+              <div class="container-broad">
+                <div class="header-above-wrap">
+                  <div class="header-above-left header-col-start hide-md">
+                    <div class="header-content-inner">
+                      <div class="header-info-list">
+                        <ul class="info-list">
+                          <li class="info-item">
                             <a
-                              href="#"
-                              class="js-wpml-ls-item-toggle wpml-ls-item-toggle"
+                              class="info-link"
+                              href="https://www.instagram.com/thepanipathandloom1976/"
+                              ><i class="info-icon fab fa-instagram"></i
+                              ><span class="info-text">100k Followers</span></a
                             >
-                              <img
-                                class="wpml-ls-flag"
-                                src="{% static 'wp-content/themes/minimog-child-demo/assets/images/flags/en-us.png' %}"
-                                alt="en"
-                                title="English"
-                                loading="lazy"
-                                width="25"
-                                height="16"
-                              />
-                              <span class="wpml-ls-native">English</span>
-                            </a>
-                            <ul class="wpml-ls-sub-menu">
-                              <li
-                                class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr"
+                          </li>
+                          <li class="info-item">
+                            <a
+                              class="info-link"
+                              href="https://www.facebook.com/thepanipathandloom"
+                              ><i class="info-icon fab fa-facebook"></i
+                              ><span class="info-text">300k Followers</span></a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header-above-center header-col-center">
+                    <div class="header-content-inner">
+                      <div class="header-text">
+                        <span class="header-tag">Hot</span
+                        ><span>✌🏼 Free Express Shipping on orders ₹1499/-</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header-above-right header-col-end">
+                    <div class="header-content-inner">
+                      <div
+                        id="switcher-language-wrapper"
+                        class="switcher-language-wrapper wpml"
+                      >
+                        <div
+                          class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-dropdown js-wpml-ls-legacy-dropdown"
+                        >
+                          <ul>
+                            <li
+                              tabindex="0"
+                              class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-dropdown"
+                            >
+                              <a
+                                href="#"
+                                class="js-wpml-ls-item-toggle wpml-ls-item-toggle"
                               >
-                                <a href="#" class="wpml-ls-link">
-                                  <img
-                                    class="wpml-ls-flag"
-                                    src="{% static 'wp-content/themes/minimog-child-demo/assets/images/flags/fr.png' %}"
-                                    alt="fr"
-                                    title="Français"
-                                    loading="lazy"
-                                    width="35"
-                                    height="23"
-                                  />
-                                  <span class="wpml-ls-native">Français</span>
+                                <img
+                                  class="wpml-ls-flag"
+                                  src="{% static 'wp-content/themes/minimog-child-demo/assets/images/flags/en-us.png' %}"
+                                  alt="en"
+                                  title="English"
+                                  loading="lazy"
+                                  width="25"
+                                  height="16"
+                                />
+                                <span class="wpml-ls-native">English</span>
+                              </a>
+                              <ul class="wpml-ls-sub-menu">
+                                <li
+                                  class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr"
+                                >
+                                  <a href="#" class="wpml-ls-link">
+                                    <img
+                                      class="wpml-ls-flag"
+                                      src="{% static 'wp-content/themes/minimog-child-demo/assets/images/flags/fr.png' %}"
+                                      alt="fr"
+                                      title="Français"
+                                      loading="lazy"
+                                      width="35"
+                                      height="23"
+                                    />
+                                    <span class="wpml-ls-native">Français</span>
+                                  </a>
+                                </li>
+                                <li
+                                  class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-de wpml-ls-last-item"
+                                >
+                                  <a href="#" class="wpml-ls-link">
+                                    <img
+                                      class="wpml-ls-flag"
+                                      src="{% static 'wp-content/themes/minimog-child-demo/assets/images/flags/de.png' %}"
+                                      alt="de"
+                                      title="Deutsch"
+                                      loading="lazy"
+                                      width="35"
+                                      height="23"
+                                    />
+                                    <span class="wpml-ls-native">Deutsch</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                        <script
+                          defer
+                          src="data:text/javascript;base64,CgkJCWpRdWVyeSggZG9jdW1lbnQgKS5yZWFkeSggZnVuY3Rpb24oICQgKSB7CgkJCQkkKCAnI3N3aXRjaGVyLWxhbmd1YWdlLXdyYXBwZXInICkub24oICdjbGljaycsICcud3BtbC1scy1saW5rJywgZnVuY3Rpb24oIGUgKSB7CgkJCQkJZS5wcmV2ZW50RGVmYXVsdCgpOwoJCQkJCWFsZXJ0KCAnVGhlIGxhbmd1YWdlIHN3aXRjaGVyIHNob3dpbmcgZm9yIGRlbW8gcHVycG9zZS4nICk7CgkJCQl9ICk7CgkJCX0gKTsKCQk="
+                        ></script>
+                      </div>
+
+                      <div class="currency-switcher-menu-wrap curcy">
+                        <ul
+                          class="menu currency-switcher-menu woo-multi-currency-menu"
+                        >
+                          <li class="menu-item-has-children">
+                            <a href="#">
+                              <span class="current-currency-text">INR</span>
+                            </a>
+                            <ul class="sub-menu">
+                              <li>
+                                <a
+                                  href="/megamog/?add-to-cart=1743&#038;wmc-currency=USD"
+                                  class="currency-switcher-link"
+                                >
+                                  <span class="currency-text">USD</span>
                                 </a>
                               </li>
-                              <li
-                                class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-de wpml-ls-last-item"
-                              >
-                                <a href="#" class="wpml-ls-link">
-                                  <img
-                                    class="wpml-ls-flag"
-                                    src="{% static 'wp-content/themes/minimog-child-demo/assets/images/flags/de.png' %}"
-                                    alt="de"
-                                    title="Deutsch"
-                                    loading="lazy"
-                                    width="35"
-                                    height="23"
-                                  />
-                                  <span class="wpml-ls-native">Deutsch</span>
+                              <li>
+                                <a
+                                  href="/megamog/?add-to-cart=1743&#038;wmc-currency=EUR"
+                                  class="currency-switcher-link"
+                                >
+                                  <span class="currency-text">EUR</span>
                                 </a>
                               </li>
                             </ul>
                           </li>
                         </ul>
                       </div>
-                      <script
-                        defer
-                        src="data:text/javascript;base64,CgkJCWpRdWVyeSggZG9jdW1lbnQgKS5yZWFkeSggZnVuY3Rpb24oICQgKSB7CgkJCQkkKCAnI3N3aXRjaGVyLWxhbmd1YWdlLXdyYXBwZXInICkub24oICdjbGljaycsICcud3BtbC1scy1saW5rJywgZnVuY3Rpb24oIGUgKSB7CgkJCQkJZS5wcmV2ZW50RGVmYXVsdCgpOwoJCQkJCWFsZXJ0KCAnVGhlIGxhbmd1YWdlIHN3aXRjaGVyIHNob3dpbmcgZm9yIGRlbW8gcHVycG9zZS4nICk7CgkJCQl9ICk7CgkJCX0gKTsKCQk="
-                      ></script>
-                    </div>
-    
-                    <div class="currency-switcher-menu-wrap curcy">
-                      <ul
-                        class="menu currency-switcher-menu woo-multi-currency-menu"
-                      >
-                        <li class="menu-item-has-children">
-                          <a href="#">
-                            <span class="current-currency-text">INR</span>
-                          </a>
-                          <ul class="sub-menu">
-                            <li>
-                              <a
-                                href="/megamog/?add-to-cart=1743&#038;wmc-currency=USD"
-                                class="currency-switcher-link"
-                              >
-                                <span class="currency-text">USD</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="/megamog/?add-to-cart=1743&#038;wmc-currency=EUR"
-                                class="currency-switcher-link"
-                              >
-                                <span class="currency-text">EUR</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="container-broad">
-            <div class="header-wrap">
-              <div class="header-left header-col-start">
-                <div class="header-content-inner">
-                  <div
-                    id="page-open-mobile-menu"
-                    class="header-icon page-open-mobile-menu style-01"
-                    data-menu-settings='{"direction":"right","animation":"slide"}'
+            <div class="container-broad">
+              <div class="header-wrap">
+                <div class="header-left header-col-start">
+                  <div class="header-content-inner">
+                    <div
+                      id="page-open-mobile-menu"
+                      class="header-icon page-open-mobile-menu style-01"
+                      data-menu-settings='{"direction":"right","animation":"slide"}'
+                    >
+                      <div class="icon">
+                        <svg
+                          width="22"
+                          height="22"
+                          viewBox="0 0 22 22"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M19.2812 5.84375H2.71875C2.58854 5.84375 2.47135 5.80469 2.36719 5.72656C2.28906 5.6224 2.25 5.50521 2.25 5.375V4.125C2.25 3.99479 2.28906 3.89062 2.36719 3.8125C2.47135 3.70833 2.58854 3.65625 2.71875 3.65625H19.2812C19.4115 3.65625 19.5156 3.70833 19.5938 3.8125C19.6979 3.89062 19.75 3.99479 19.75 4.125V5.375C19.75 5.50521 19.6979 5.6224 19.5938 5.72656C19.5156 5.80469 19.4115 5.84375 19.2812 5.84375ZM19.2812 12.0938H2.71875C2.58854 12.0938 2.47135 12.0547 2.36719 11.9766C2.28906 11.8724 2.25 11.7552 2.25 11.625V10.375C2.25 10.2448 2.28906 10.1406 2.36719 10.0625C2.47135 9.95833 2.58854 9.90625 2.71875 9.90625H19.2812C19.4115 9.90625 19.5156 9.95833 19.5938 10.0625C19.6979 10.1406 19.75 10.2448 19.75 10.375V11.625C19.75 11.7552 19.6979 11.8724 19.5938 11.9766C19.5156 12.0547 19.4115 12.0938 19.2812 12.0938ZM19.2812 18.3438H2.71875C2.58854 18.3438 2.47135 18.3047 2.36719 18.2266C2.28906 18.1224 2.25 18.0052 2.25 17.875V16.625C2.25 16.4948 2.28906 16.3906 2.36719 16.3125C2.47135 16.2083 2.58854 16.1562 2.71875 16.1562H19.2812C19.4115 16.1562 19.5156 16.2083 19.5938 16.3125C19.6979 16.3906 19.75 16.4948 19.75 16.625V17.875C19.75 18.0052 19.6979 18.1224 19.5938 18.2266C19.5156 18.3047 19.4115 18.3438 19.2812 18.3438Z"
+                            fill="black"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="branding" style="margin-left:4.5rem;">
+                      <div class="branding__logo">
+                        <a href="/" rel="home"
+                          ><div
+                            class="minimog-lazy-image logo dark-logo"
+                            style="
+                              --lazy-image-width: 322px;
+                              --lazy-image-height: 38.509316770186%;
+                            "
+                          >
+                            <img
+                              src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20161%2062%22%3E%3C%2Fsvg%3E"
+                              class="logo dark-logo ll-image"
+                              alt="Megamog"
+                              width="200"
+                              height="100"
+                              data-src="{% static 'wp-content/themes/minimog-child-demo/assets/demos/megamog/tph.png' %}"
+                            /></div
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="header-center header-col-center hide-sm">
+                  <div class="header-content-inner">
+                    <div class="header-search-form hide-sm">
+                      <form
+                        role="search"
+                        method="GET"
+                        class="search-form popup-search-form style-button-fill woocommerce-product-search search-form-categories"
+                        action="{% url 'core:search' %}"
+                      >
+                        <div class="search-category-field">
+                          <select
+                            name="placeholder_cat_dropdown"
+                            id="placeholder_cat_dropdown"
+                            class="search-select"
+                          >
+                            <option value="0">All Categories</option>
+                          </select>
+                        </div>
+                        <span class="screen-reader-text"> Search for: </span>
+                        <input
+                          type="search"
+                          class="search-field"
+                          placeholder="Search products"
+                          value=""
+                          name="q"
+                          title="Search for:"
+                        />
+                        <button type="submit" class="search-submit">
+                          <span class="search-btn-icon">
+                            <svg
+                              width="22"
+                              height="22"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M20.8438 19.3203C21.0781 19.5286 21.0781 19.75 20.8438 19.9844L19.9844 20.8438C19.75 21.0781 19.5286 21.0781 19.3203 20.8438L14.5938 16.1172C14.4896 16.013 14.4375 15.9089 14.4375 15.8047V15.2578C12.901 16.5859 11.1302 17.25 9.125 17.25C6.88542 17.25 4.97135 16.4557 3.38281 14.8672C1.79427 13.2786 1 11.3646 1 9.125C1 6.88542 1.79427 4.97135 3.38281 3.38281C4.97135 1.79427 6.88542 1 9.125 1C11.3646 1 13.2786 1.79427 14.8672 3.38281C16.4557 4.97135 17.25 6.88542 17.25 9.125C17.25 11.1302 16.5859 12.901 15.2578 14.4375H15.8047C15.9349 14.4375 16.0391 14.4896 16.1172 14.5938L20.8438 19.3203ZM4.71094 13.5391C5.9349 14.763 7.40625 15.375 9.125 15.375C10.8438 15.375 12.3151 14.763 13.5391 13.5391C14.763 12.3151 15.375 10.8438 15.375 9.125C15.375 7.40625 14.763 5.9349 13.5391 4.71094C12.3151 3.48698 10.8438 2.875 9.125 2.875C7.40625 2.875 5.9349 3.48698 4.71094 4.71094C3.48698 5.9349 2.875 7.40625 2.875 9.125C2.875 10.8438 3.48698 12.3151 4.71094 13.5391Z"
+                                fill="#000000"
+                              />
+                            </svg>
+                          </span>
+                          <span class="search-btn-text"> Search </span>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="header-right header-col-end">
+                  <div class="header-content-inner">
+                    
+
+                    <a
+                    href="{% url 'userauths:sign-up' %}"
+                    class="wishlist-link header-icon has-badge header-wishlist-link hint--bounce hint--bottom icon-set-01 icon-display--icon"
+                    aria-label="Account"
                   >
                     <div class="icon">
                       <svg
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M19.2812 5.84375H2.71875C2.58854 5.84375 2.47135 5.80469 2.36719 5.72656C2.28906 5.6224 2.25 5.50521 2.25 5.375V4.125C2.25 3.99479 2.28906 3.89062 2.36719 3.8125C2.47135 3.70833 2.58854 3.65625 2.71875 3.65625H19.2812C19.4115 3.65625 19.5156 3.70833 19.5938 3.8125C19.6979 3.89062 19.75 3.99479 19.75 4.125V5.375C19.75 5.50521 19.6979 5.6224 19.5938 5.72656C19.5156 5.80469 19.4115 5.84375 19.2812 5.84375ZM19.2812 12.0938H2.71875C2.58854 12.0938 2.47135 12.0547 2.36719 11.9766C2.28906 11.8724 2.25 11.7552 2.25 11.625V10.375C2.25 10.2448 2.28906 10.1406 2.36719 10.0625C2.47135 9.95833 2.58854 9.90625 2.71875 9.90625H19.2812C19.4115 9.90625 19.5156 9.95833 19.5938 10.0625C19.6979 10.1406 19.75 10.2448 19.75 10.375V11.625C19.75 11.7552 19.6979 11.8724 19.5938 11.9766C19.5156 12.0547 19.4115 12.0938 19.2812 12.0938ZM19.2812 18.3438H2.71875C2.58854 18.3438 2.47135 18.3047 2.36719 18.2266C2.28906 18.1224 2.25 18.0052 2.25 17.875V16.625C2.25 16.4948 2.28906 16.3906 2.36719 16.3125C2.47135 16.2083 2.58854 16.1562 2.71875 16.1562H19.2812C19.4115 16.1562 19.5156 16.2083 19.5938 16.3125C19.6979 16.3906 19.75 16.4948 19.75 16.625V17.875C19.75 18.0052 19.6979 18.1224 19.5938 18.2266C19.5156 18.3047 19.4115 18.3438 19.2812 18.3438Z"
-                          fill="black"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-    
-                  <div class="branding" style="margin-left:4.5rem;">
-                    <div class="branding__logo">
-                      <a href="/" rel="home"
-                        ><div
-                          class="minimog-lazy-image logo dark-logo"
-                          style="
-                            --lazy-image-width: 322px;
-                            --lazy-image-height: 38.509316770186%;
-                          "
-                        >
-                          <img
-                            src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20161%2062%22%3E%3C%2Fsvg%3E"
-                            class="logo dark-logo ll-image"
-                            alt="Megamog"
-                            width="200"
-                            height="100"
-                            data-src="{% static 'wp-content/themes/minimog-child-demo/assets/demos/megamog/tph.png' %}"
-                          /></div
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="header-center header-col-center hide-sm">
-                <div class="header-content-inner">
-                  <div class="header-search-form hide-sm">
-                    <form
-                      role="search"
-                      method="get"
-                      class="search-form popup-search-form style-button-fill woocommerce-product-search search-form-categories"
-                      action="https://minimog.thememove.com/megamog/"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 22 22"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div class="search-category-field">
-                        <select
-                          name="placeholder_cat_dropdown"
-                          id="placeholder_cat_dropdown"
-                          class="search-select"
-                        >
-                          <option value="0">All Categories</option>
-                        </select>
-                      </div>
-                      <span class="screen-reader-text"> Search for: </span>
-                      <input
-                        type="search"
-                        class="search-field"
-                        placeholder="Search products"
-                        value=""
-                        name="s"
-                        title="Search for:"
+                      <path
+                        d="M14.5156 12.875C15.9479 12.875 17.1719 13.3958 18.1875 14.4375C19.2292 15.4531 19.75 16.6771 19.75 18.1094V19.125C19.75 19.6458 19.5677 20.0885 19.2031 20.4531C18.8385 20.8177 18.3958 21 17.875 21H4.125C3.60417 21 3.16146 20.8177 2.79688 20.4531C2.43229 20.0885 2.25 19.6458 2.25 19.125V18.1094C2.25 16.6771 2.75781 15.4531 3.77344 14.4375C4.8151 13.3958 6.05208 12.875 7.48438 12.875C7.82292 12.875 8.31771 12.9792 8.96875 13.1875C9.64583 13.3958 10.3229 13.5 11 13.5C11.6771 13.5 12.3542 13.3958 13.0312 13.1875C13.7083 12.9792 14.2031 12.875 14.5156 12.875ZM17.875 19.125V18.1094C17.875 17.1979 17.5365 16.4167 16.8594 15.7656C16.2083 15.0885 15.4271 14.75 14.5156 14.75C14.4375 14.75 14.0208 14.8542 13.2656 15.0625C12.5365 15.2708 11.7812 15.375 11 15.375C10.2188 15.375 9.45052 15.2708 8.69531 15.0625C7.96615 14.8542 7.5625 14.75 7.48438 14.75C6.57292 14.75 5.77865 15.0885 5.10156 15.7656C4.45052 16.4167 4.125 17.1979 4.125 18.1094V19.125H17.875ZM14.9844 10.6094C13.8906 11.7031 12.5625 12.25 11 12.25C9.4375 12.25 8.10938 11.7031 7.01562 10.6094C5.92188 9.51562 5.375 8.1875 5.375 6.625C5.375 5.0625 5.92188 3.73438 7.01562 2.64062C8.10938 1.54688 9.4375 1 11 1C12.5625 1 13.8906 1.54688 14.9844 2.64062C16.0781 3.73438 16.625 5.0625 16.625 6.625C16.625 8.1875 16.0781 9.51562 14.9844 10.6094ZM13.6562 3.96875C12.9271 3.23958 12.0417 2.875 11 2.875C9.95833 2.875 9.07292 3.23958 8.34375 3.96875C7.61458 4.69792 7.25 5.58333 7.25 6.625C7.25 7.66667 7.61458 8.55208 8.34375 9.28125C9.07292 10.0104 9.95833 10.375 11 10.375C12.0417 10.375 12.9271 10.0104 13.6562 9.28125C14.3854 8.55208 14.75 7.66667 14.75 6.625C14.75 5.58333 14.3854 4.69792 13.6562 3.96875Z"
+                        fill="#000000"
                       />
-                      <button type="submit" class="search-submit">
-                        <span class="search-btn-icon">
-                          <svg
-                            width="22"
-                            height="22"
-                            viewBox="0 0 22 22"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M20.8438 19.3203C21.0781 19.5286 21.0781 19.75 20.8438 19.9844L19.9844 20.8438C19.75 21.0781 19.5286 21.0781 19.3203 20.8438L14.5938 16.1172C14.4896 16.013 14.4375 15.9089 14.4375 15.8047V15.2578C12.901 16.5859 11.1302 17.25 9.125 17.25C6.88542 17.25 4.97135 16.4557 3.38281 14.8672C1.79427 13.2786 1 11.3646 1 9.125C1 6.88542 1.79427 4.97135 3.38281 3.38281C4.97135 1.79427 6.88542 1 9.125 1C11.3646 1 13.2786 1.79427 14.8672 3.38281C16.4557 4.97135 17.25 6.88542 17.25 9.125C17.25 11.1302 16.5859 12.901 15.2578 14.4375H15.8047C15.9349 14.4375 16.0391 14.4896 16.1172 14.5938L20.8438 19.3203ZM4.71094 13.5391C5.9349 14.763 7.40625 15.375 9.125 15.375C10.8438 15.375 12.3151 14.763 13.5391 13.5391C14.763 12.3151 15.375 10.8438 15.375 9.125C15.375 7.40625 14.763 5.9349 13.5391 4.71094C12.3151 3.48698 10.8438 2.875 9.125 2.875C7.40625 2.875 5.9349 3.48698 4.71094 4.71094C3.48698 5.9349 2.875 7.40625 2.875 9.125C2.875 10.8438 3.48698 12.3151 4.71094 13.5391Z"
-                              fill="#000000"
-                            />
-                          </svg>
-                        </span>
-                        <span class="search-btn-text"> Search </span>
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="header-right header-col-end">
-                <div class="header-content-inner">
-                  
-    
-                  <a
-                  href="{% url 'userauths:sign-up' %}"
-                  class="wishlist-link header-icon has-badge header-wishlist-link hint--bounce hint--bottom icon-set-01 icon-display--icon"
-                  aria-label="Account"
-                >
-                  <div class="icon">
-                    <svg
+                    </svg>
+                    </div>
+                  </a>
+
+                    <a
+                      href=""
+                      class="wishlist-link header-icon has-badge header-wishlist-link hint--bounce hint--bottom icon-set-01 icon-display--icon"
+                      aria-label="Wishlist"
+                    >
+                      <div class="icon">
+                        <svg
+                          width="22"
+                          height="22"
+                          viewBox="0 0 22 22"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M20.425 7.71875C20.9458 7.77083 21.2844 8.04427 21.4406 8.53906C21.5969 9.03385 21.4927 9.46354 21.1281 9.82812L16.9875 13.8516L17.9641 19.5547C18.0422 20.0495 17.8729 20.4401 17.4562 20.7266C17.0396 21.0391 16.6099 21.0781 16.1672 20.8438L11.05 18.1875L5.93281 20.8438C5.4901 21.1042 5.06042 21.0781 4.64375 20.7656C4.22708 20.4531 4.05781 20.0495 4.13594 19.5547L5.1125 13.8516L0.971875 9.82812C0.607292 9.46354 0.503125 9.03385 0.659375 8.53906C0.815625 8.04427 1.15417 7.77083 1.675 7.71875L7.37812 6.85938L9.91719 1.70312C10.1516 1.23438 10.5292 1 11.05 1C11.5708 1 11.9484 1.23438 12.1828 1.70312L14.7219 6.85938L20.425 7.71875ZM14.9953 13.1875L18.9016 9.35938L13.4719 8.57812L11.05 3.65625L8.62812 8.57812L3.19844 9.35938L7.10469 13.1875L6.20625 18.6172L11.05 16.0391L15.8937 18.6172L14.9953 13.1875Z"
+                            fill="#000000"
+                          />
+                        </svg>
+                        <span class="icon-badge" data-count="1">1</span>
+                      </div>
+                    </a>
+
+                    <a
+                href="/cart"
+                class="mini-cart__button has-badge hint--bounce hint--bottom style-icon-set-01 icon-display--icon header-icon"
+                aria-label="Cart"
+              >
+                <div class="icon">
+                  <svg
                     width="22"
                     height="22"
                     viewBox="0 0 22 22"
@@ -459,474 +799,480 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M14.5156 12.875C15.9479 12.875 17.1719 13.3958 18.1875 14.4375C19.2292 15.4531 19.75 16.6771 19.75 18.1094V19.125C19.75 19.6458 19.5677 20.0885 19.2031 20.4531C18.8385 20.8177 18.3958 21 17.875 21H4.125C3.60417 21 3.16146 20.8177 2.79688 20.4531C2.43229 20.0885 2.25 19.6458 2.25 19.125V18.1094C2.25 16.6771 2.75781 15.4531 3.77344 14.4375C4.8151 13.3958 6.05208 12.875 7.48438 12.875C7.82292 12.875 8.31771 12.9792 8.96875 13.1875C9.64583 13.3958 10.3229 13.5 11 13.5C11.6771 13.5 12.3542 13.3958 13.0312 13.1875C13.7083 12.9792 14.2031 12.875 14.5156 12.875ZM17.875 19.125V18.1094C17.875 17.1979 17.5365 16.4167 16.8594 15.7656C16.2083 15.0885 15.4271 14.75 14.5156 14.75C14.4375 14.75 14.0208 14.8542 13.2656 15.0625C12.5365 15.2708 11.7812 15.375 11 15.375C10.2188 15.375 9.45052 15.2708 8.69531 15.0625C7.96615 14.8542 7.5625 14.75 7.48438 14.75C6.57292 14.75 5.77865 15.0885 5.10156 15.7656C4.45052 16.4167 4.125 17.1979 4.125 18.1094V19.125H17.875ZM14.9844 10.6094C13.8906 11.7031 12.5625 12.25 11 12.25C9.4375 12.25 8.10938 11.7031 7.01562 10.6094C5.92188 9.51562 5.375 8.1875 5.375 6.625C5.375 5.0625 5.92188 3.73438 7.01562 2.64062C8.10938 1.54688 9.4375 1 11 1C12.5625 1 13.8906 1.54688 14.9844 2.64062C16.0781 3.73438 16.625 5.0625 16.625 6.625C16.625 8.1875 16.0781 9.51562 14.9844 10.6094ZM13.6562 3.96875C12.9271 3.23958 12.0417 2.875 11 2.875C9.95833 2.875 9.07292 3.23958 8.34375 3.96875C7.61458 4.69792 7.25 5.58333 7.25 6.625C7.25 7.66667 7.61458 8.55208 8.34375 9.28125C9.07292 10.0104 9.95833 10.375 11 10.375C12.0417 10.375 12.9271 10.0104 13.6562 9.28125C14.3854 8.55208 14.75 7.66667 14.75 6.625C14.75 5.58333 14.3854 4.69792 13.6562 3.96875Z"
+                      d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z"
                       fill="#000000"
                     />
                   </svg>
+                  <div class="icon-badge mini-cart-badge cart-items-count">{{ request.session.cart_data_obj|length }}
                   </div>
-                </a>
-    
-                  <a
-                    href="https://minimog.thememove.com/megamog/wishlist/"
-                    class="wishlist-link header-icon has-badge header-wishlist-link hint--bounce hint--bottom icon-set-01 icon-display--icon"
-                    aria-label="Wishlist"
-                  >
-                    <div class="icon">
-                      <svg
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M20.425 7.71875C20.9458 7.77083 21.2844 8.04427 21.4406 8.53906C21.5969 9.03385 21.4927 9.46354 21.1281 9.82812L16.9875 13.8516L17.9641 19.5547C18.0422 20.0495 17.8729 20.4401 17.4562 20.7266C17.0396 21.0391 16.6099 21.0781 16.1672 20.8438L11.05 18.1875L5.93281 20.8438C5.4901 21.1042 5.06042 21.0781 4.64375 20.7656C4.22708 20.4531 4.05781 20.0495 4.13594 19.5547L5.1125 13.8516L0.971875 9.82812C0.607292 9.46354 0.503125 9.03385 0.659375 8.53906C0.815625 8.04427 1.15417 7.77083 1.675 7.71875L7.37812 6.85938L9.91719 1.70312C10.1516 1.23438 10.5292 1 11.05 1C11.5708 1 11.9484 1.23438 12.1828 1.70312L14.7219 6.85938L20.425 7.71875ZM14.9953 13.1875L18.9016 9.35938L13.4719 8.57812L11.05 3.65625L8.62812 8.57812L3.19844 9.35938L7.10469 13.1875L6.20625 18.6172L11.05 16.0391L15.8937 18.6172L14.9953 13.1875Z"
-                          fill="#000000"
-                        />
-                      </svg>
-                      <span class="icon-badge" data-count="1">1</span>
-                    </div>
-                  </a>
-    
-                  <a
-                    href="/cart"
-                    class="mini-cart__button has-badge hint--bounce hint--bottom style-icon-set-01 icon-display--icon header-icon"
-                    aria-label="Cart"
-                  >
-                    <div class="icon">
-                      <svg
-                        width="22"
-                        height="22"
-                        viewBox="0 0 22 22"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z"
-                          fill="#000000"
-                        />
-                      </svg>
-                      <div class="icon-badge mini-cart-badge cart-items-count">{{ request.session.cart_data_obj|length }}
-                      </div>
-                    </div>
-                  </a>
+                </div>
+              </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          
-    <div class="header-below">
+            
+<div class="header-below">
     <div class="container-broad">
-    <div class="header-below-wrap">
-      <div class="header-below-left header-col-start">
-        <div class="header-content-inner lingrad">
-          <div
-            id="header-categories-nav"
-            class="header-categories-nav"
-          >
-            <div class="inner">
-              <span class="nav-toggle-btn" id="nav-toggle-btn">
-                <span class="nav-toggle-bars fa fa-bars"></span>
-                Shop by Categories
-              </span>
-              <nav class="category-menu">
-                <ul
-                  id="menu-product-categories"
-                  class="product-category-dropdown menu__container sm sm-simple sm-vertical"
-                  data-sm-options='{"mainMenuSubOffsetX":-15,"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17,"keepInViewport":false}'
-                >
-                  {% for p in main_cat %}
-                  <li
-                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"
+      <div class="header-below-wrap">
+        <div class="header-below-left header-col-start">
+          <div class="header-content-inner lingrad">
+            <div
+              id="header-categories-nav"
+              class="header-categories-nav"
+            >
+              <div class="inner">
+                <span class="nav-toggle-btn" id="nav-toggle-btn">
+                  <span class="nav-toggle-bars fa fa-bars"></span>
+                  Shop by Categories
+                </span>
+                <nav class="category-menu">
+                  <ul
+                    id="menu-product-categories"
+                    class="product-category-dropdown menu__container sm sm-simple sm-vertical"
+                    data-sm-options='{"mainMenuSubOffsetX":-15,"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17,"keepInViewport":false}'
                   >
-                    <a
-                      href=""
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-icon"
-                          ><svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.125 13.125V6.25H16.25C16.913 6.25 17.5489 6.51339 18.0178 6.98223C18.4866 7.45107 18.75 8.08696 18.75 8.75V13.125"
-                              stroke="black"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            />
-                            <path
-                              d="M1.25 16.25V3.75"
-                              stroke="black"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            />
-                            <path
-                              d="M1.25 13.125H18.75V16.25"
-                              stroke="black"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            />
-                            <path
-                              d="M8.125 6.25H1.25"
-                              stroke="black"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            />
-                          </svg> </span
-                        ><span class="menu-item-title"
-                          >{{p.main_title}}</span
-                        ><span class="toggle-sub-menu"> </span></div
-                    ></a>
-    
-                    <ul class="sub-menu children mega-menu">
-    
-                      {% for cat in p.category_set.all %}
-    
-                      <li
-                        class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305"
-                      >
-                        <div class="mega-menu-content">
-                          <div
-                            data-elementor-type="wp-post"
-                            data-elementor-id="1298"
-                            class="elementor elementor-1298"
-                          >
-                            <div class="elementor-inner">
-                              <div class="elementor-section-wrap">
-                                <section
-                                  class="elementor-section elementor-top-section elementor-element elementor-element-8e1d000 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
-                                  data-id="8e1d000"
-                                  data-element_type="section"
-                                >
-                                  <div
-                                    class="elementor-container elementor-column-gap-extended"
+                    {% for p in main_cat %}
+                    <li
+                      class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"
+                    >
+                      <a
+                        href=""
+                        ><div class="menu-item-wrap">
+                          <span class="menu-item-icon"
+                            ><svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 20 20"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.125 13.125V6.25H16.25C16.913 6.25 17.5489 6.51339 18.0178 6.98223C18.4866 7.45107 18.75 8.08696 18.75 8.75V13.125"
+                                stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M1.25 16.25V3.75"
+                                stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M1.25 13.125H18.75V16.25"
+                                stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M8.125 6.25H1.25"
+                                stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg> </span
+                          ><span class="menu-item-title"
+                            >{{p.main_title}}</span
+                          ><span class="toggle-sub-menu"> </span></div
+                      ></a>
+
+                      <ul class="sub-menu children mega-menu">
+
+                        {% for cat in p.category_set.all %}
+
+                        <li
+                          class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305"
+                        >
+                          <div class="mega-menu-content">
+                            <div
+                              data-elementor-type="wp-post"
+                              data-elementor-id="1298"
+                              class="elementor elementor-1298"
+                            >
+                              <div class="elementor-inner">
+                                <div class="elementor-section-wrap">
+                                  <section
+                                    class="elementor-section elementor-top-section elementor-element elementor-element-8e1d000 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
+                                    data-id="8e1d000"
+                                    data-element_type="section"
                                   >
-                                    <div class="elementor-row">
-                                      
-                                      
-                                      <div
-                                        class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-4e2db18"
-                                        data-id="4e2db18"
-                                        data-element_type="column"
-                                      >
+                                    <div
+                                      class="elementor-container elementor-column-gap-extended"
+                                    >
+                                      <div class="elementor-row">
+                                        
+                                        
                                         <div
-                                          class="elementor-column-wrap elementor-element-populated"
+                                          class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-4e2db18"
+                                          data-id="4e2db18"
+                                          data-element_type="column"
                                         >
                                           <div
-                                            class="elementor-widget-wrap"
+                                            class="elementor-column-wrap elementor-element-populated"
                                           >
                                             <div
-                                              class="elementor-element elementor-element-16d8c3b elementor-widget elementor-widget-heading"
-                                              data-id="16d8c3b"
-                                              data-element_type="widget"
-                                              data-widget_type="heading.default"
+                                              class="elementor-widget-wrap"
                                             >
                                               <div
-                                                class="elementor-widget-container"
-                                              >
-                                               <a href="{% url 'core:inner-category' cat.cat_title %}"><h2
-                                                class="elementor-heading-title elementor-size-default"
-                                              >
-                                                {{cat.cat_title}}
-                                              </h2></a>
-                                              </div>
-                                            </div>
-                                            <div
-                                              class="elementor-element elementor-element-5d6d640 elementor-widget elementor-widget-spacer"
-                                              data-id="5d6d640"
-                                              data-element_type="widget"
-                                              data-widget_type="spacer.default"
-                                            >
-                                              <div
-                                                class="elementor-widget-container"
+                                                class="elementor-element elementor-element-16d8c3b elementor-widget elementor-widget-heading"
+                                                data-id="16d8c3b"
+                                                data-element_type="widget"
+                                                data-widget_type="heading.default"
                                               >
                                                 <div
-                                                  class="elementor-spacer"
+                                                  class="elementor-widget-container"
                                                 >
-                                                  <div
-                                                    class="elementor-spacer-inner"
-                                                  ></div>
+                                                 <a href="{% url 'core:inner-category' cat.cat_title %}"><h2
+                                                  class="elementor-heading-title elementor-size-default"
+                                                >
+                                                  {{cat.cat_title}}
+                                                </h2></a>
                                                 </div>
                                               </div>
-                                            </div>
-                                            <div
-                                              class="elementor-element elementor-element-c5d41c6 elementor-widget elementor-widget-tm-simple-list"
-                                              data-id="c5d41c6"
-                                              data-element_type="widget"
-                                              data-widget_type="tm-simple-list.default"
-                                            >
                                               <div
-                                                class="elementor-widget-container"
+                                                class="elementor-element elementor-element-5d6d640 elementor-widget elementor-widget-spacer"
+                                                data-id="5d6d640"
+                                                data-element_type="widget"
+                                                data-widget_type="spacer.default"
                                               >
-    
                                                 <div
-                                                  class="minimog-simple-list minimog-simple-list--style-03"
+                                                  class="elementor-widget-container"
                                                 >
-                                                {% for sub_cat in cat.sub_category_set.all %}
-    
                                                   <div
-                                                    class="item elementor-repeater-item-9c988d6 truncated"
+                                                    class="elementor-spacer"
                                                   >
-                                                    <a
-                                                      class="link"
-                                                      href="{% url 'core:sub-category' sub_cat.sub_cat_title %}"
-                                                    >
-                                                      {{sub_cat.sub_cat_title}}
-                                                    </a>
+                                                    <div
+                                                      class="elementor-spacer-inner"
+                                                    ></div>
                                                   </div>
-    
-                                                  {% endfor %}
-    
                                                 </div>
-    
+                                              </div>
+                                              <div
+                                                class="elementor-element elementor-element-c5d41c6 elementor-widget elementor-widget-tm-simple-list"
+                                                data-id="c5d41c6"
+                                                data-element_type="widget"
+                                                data-widget_type="tm-simple-list.default"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                <style>
+                                                  .dropdown-icon {
+                                                      display: inline-block;
+                                                      width: 8px; 
+                                                      height: 8px;
+                                                      border-left: 2px solid rgb(101, 96, 96);
+                                                      border-bottom: 2px solid rgb(101, 96, 96);
+                                                      transform: rotate(-45deg); 
+                                                      margin-left: 5px; /* Add margin to the left of the dropdown icon */
+                                                      cursor: pointer; /* Change cursor to indicate interactivity */
+                                                  }
+                                                  
+                                                  .dropdown-container {
+                                                      display: none;
+                                                      margin-top: 5px;
+                                                      padding: 10px;
+                                                      border: 1px solid #ccc;
+                                                      background-color: white;
+                                                      position: absolute;
+                                                      z-index: 1;
+                                                      padding: 20px;
+                                                  }
+                                              </style>
+                                              
+                                              <div class="minimog-simple-list minimog-simple-list--style-03">
+                                                  {% for sub_cat in cat.sub_categories_set.all %}
+                                                  <div class="item elementor-repeater-item-9c988d6 truncated">
+                                                    <a class="link" href="{% url 'core:sub-category' sub_cat.sub_cat_title %}">
+                                                        {{ sub_cat.sub_cat_title }}
+                                                    </a>
+                                                    <i class="dropdown-icon"></i>
+                                                    <div class="dropdown-container">
+                                                      <ul>
+                                                        {% for company in sub_cat.company_name_set.all %}
+                                                            {% with company_name=company.company_name_title %}
+                                                                {% if company_name %}
+                                                                    <a href="{% url 'core:sub-category' sub_cat_title=sub_cat.sub_cat_title %}#{{ company.sid }}">
+                                                                        <li>{{ company_name }}</li>
+                                                                    </a>
+                                                                {% else %}
+                                                                    <li>No brands available</li>
+                                                                {% endif %}
+                                                            {% endwith %}
+                                                        {% empty %}
+                                                            <li>No brands available</li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                    </div>
+                                                </div>
+                                                
+                                                  {% endfor %}
+                                              </div>
+                                              
+                                              <script>
+                                                  document.addEventListener("DOMContentLoaded", function() {
+                                                      const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+                                                      
+                                                      dropdownIcons.forEach(icon => {
+                                                          icon.addEventListener('click', () => {
+                                                              const dropdownContainer = icon.nextElementSibling;
+                                                              dropdownContainer.style.display = (dropdownContainer.style.display === 'none' || dropdownContainer.style.display === '') ? 'block' : 'none';
+                                                          });
+                                                      });
+                                                  });
+                                              </script>
+                                              
+                                            
+                                                                                          
+                                              
+
+                                                </div>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
-                                      </div>
-    
-    
-    
-                                      <div
-                                        class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
-                                        data-id="877ceeb"
-                                        data-element_type="column"
-                                      >
+
+
+
                                         <div
-                                          class="elementor-column-wrap elementor-element-populated"
+                                          class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
+                                          data-id="877ceeb"
+                                          data-element_type="column"
                                         >
                                           <div
-                                            class="elementor-widget-wrap"
+                                            class="elementor-column-wrap elementor-element-populated"
                                           >
                                             <div
-                                              class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner"
-                                              data-id="9c6cc46"
-                                              data-element_type="widget"
-                                              data-widget_type="tm-banner.default"
+                                              class="elementor-widget-wrap"
                                             >
                                               <div
-                                                class="elementor-widget-container"
+                                                class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner"
+                                                data-id="9c6cc46"
+                                                data-element_type="widget"
+                                                data-widget_type="tm-banner.default"
                                               >
-                                                <a
-                                                  class="minimog-banner minimog-box link-secret"
-                                                  href=""
+                                                <div
+                                                  class="elementor-widget-container"
                                                 >
-                                                  <div
-                                                    class="minimog-image"
+                                                  <a
+                                                    class="minimog-banner minimog-box link-secret"
+                                                    href=""
                                                   >
                                                     <div
-                                                      class="image ll-background ll-background-unload"
-                                                      data-src="{{p.image.url}}"
-                                                    ></div>
-                                                  </div>
-                                                  <div
-                                                    class="content-wrap"
-                                                  >
-                                                    <div
-                                                      class="content-wrap__inner"
-                                                    >
-                                                      <h3
-                                                        class="title"
-                                                      >
-                                                      Shop 
-                                                      </h3>
-                                                    </div>
-                                                    <div
-                                                      class="content-wrap__bottom"
+                                                      class="minimog-image"
                                                     >
                                                       <div
-                                                        class="tm-button-wrapper"
+                                                        class="image ll-background ll-background-unload"
+                                                        data-src="{{p.image.url}}"
+                                                      ></div>
+                                                    </div>
+                                                    <div
+                                                      class="content-wrap"
+                                                    >
+                                                      <div
+                                                        class="content-wrap__inner"
+                                                      >
+                                                        <h3
+                                                          class="title"
+                                                        >
+                                                        Shop 
+                                                        </h3>
+                                                      </div>
+                                                      <div
+                                                        class="content-wrap__bottom"
                                                       >
                                                         <div
-                                                          class="tm-button style-bottom-line tm-button-nm"
+                                                          class="tm-button-wrapper"
                                                         >
                                                           <div
-                                                            class="button-content-wrapper"
+                                                            class="tm-button style-bottom-line tm-button-nm"
                                                           >
-                                                            <span
-                                                              class="button-text"
-                                                              >Shop
-                                                              Now</span
+                                                            <div
+                                                              class="button-content-wrapper"
                                                             >
+                                                              <span
+                                                                class="button-text"
+                                                                >Shop
+                                                                Now</span
+                                                              >
+                                                            </div>
                                                           </div>
                                                         </div>
                                                       </div>
                                                     </div>
-                                                  </div>
-                                                </a>
+                                                  </a>
+                                                </div>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
+                                        
                                       </div>
-                                      
                                     </div>
-                                  </div>
-                                </section>
+                                  </section>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </li>
-    
-                      {% endfor %}
-                      
-                    </ul>
-    
+                        </li>
+
+                        {% endfor %}
+                        
+                      </ul>
+
+                    </li>
+                    {% endfor %}
+                 
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="header-below-center header-col-center lingrad">
+          <div class="header-content-inner">
+            <div
+              id="page-navigation"
+              class="navigation page-navigation"
+            >
+              <nav id="menu" class="menu menu--primary">
+                <ul
+                  id="menu-primary"
+                  class="menu__container sm sm-simple"
+                  data-sm-options='{"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17}'
+                >
+                  <li
+                    class=""
+                  >
+                    <a href=""
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-title">Home</span>
+                      </div></a
+                    >
                   </li>
-                  {% endfor %}
-               
+                  <li
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"
+                  >
+                    <a
+                      href="http://127.0.0.1:8000/shop-category/Wall%20Decor/"
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-title">Shop</span>
+                      </div></a
+                    >
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"
+                  >
+                    <a href="#"
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-title">About</span>
+                      </div></a
+                    >
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"
+                  >
+                    <a
+                      href="
+                      "
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-title">Blog</span>
+                      </div></a
+                    >
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"
+                  >
+                    <a href="#"
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-title">Reach Us</span>
+                      </div></a
+                    >
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"
+                  >
+                    <a
+                      href=""
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-title"
+                          >Store List</span
+                        >
+                      </div></a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
           </div>
         </div>
-      </div>
-      
-      <div class="header-below-center header-col-center lingrad">
-        <div class="header-content-inner">
-          <div
-            id="page-navigation"
-            class="navigation page-navigation"
-          >
-            <nav id="menu" class="menu menu--primary">
-              <ul
-                id="menu-primary"
-                class="menu__container sm sm-simple"
-                data-sm-options='{"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17}'
-              >
-                <li
-                  class=""
-                >
-                  <a href=""
-                    ><div class="menu-item-wrap">
-                      <span class="menu-item-title">Home</span>
-                    </div></a
-                  >
-                </li>
-                <li
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"
-                >
-                  <a
-                    href=""
-                    ><div class="menu-item-wrap">
-                      <span class="menu-item-title">Shop</span>
-                    </div></a
-                  >
-                </li>
-                <li
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"
-                >
-                  <a href="#"
-                    ><div class="menu-item-wrap">
-                      <span class="menu-item-title">Products</span>
-                    </div></a
-                  >
-                </li>
-                <li
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"
-                >
-                  <a
-                    href="
-                    "
-                    ><div class="menu-item-wrap">
-                      <span class="menu-item-title">Blog</span>
-                    </div></a
-                  >
-                </li>
-                <li
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"
-                >
-                  <a href="#"
-                    ><div class="menu-item-wrap">
-                      <span class="menu-item-title">Features</span>
-                    </div></a
-                  >
-                </li>
-                <li
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"
-                >
-                  <a
-                    href=""
-                    ><div class="menu-item-wrap">
-                      <span class="menu-item-title"
-                        >Store List</span
-                      >
-                    </div></a
-                  >
-                </li>
-              </ul>
-            </nav>
-          </div>
+        <div class="header-below-right header-col-end">
+          <div class="header-content-inner"></div>
         </div>
       </div>
-      <div class="header-below-right header-col-end">
-        <div class="header-content-inner"></div>
-      </div>
     </div>
-    </div>
-    </div>
-           {% if messages %}
-          <div id="message-container">
-            {% for message in messages %}
-            <style>
-              {% if message.tags == "success" %}
-              .alert.alert-success {
-                padding: .75rem 1.25rem;
-                color: #155724;
-                background-color: #d4edda;
-                border-color: #c3e6cb;
-              }
-              {% elif message.tags == "warning" %}
-              .alert.alert-warning {
-                padding: .75rem 1.25rem;
-                  color: #721c24;
-                  background-color: #f8d7da;
-                  border-color: #f5c6cb;
-              }
-              {% endif %}
-            </style>
-            <script>
-              document.addEventListener("DOMContentLoaded", function() {
-                  {% if message.tags == "success" %}
-                  var iconType = 'success';
-                  {% else %}
-                  var iconType = 'warning';
-                  {% endif %}
-    
-                  Swal.fire({
-                      position: 'top-end',
-                      icon: iconType,
-                      title: '{{ message }}',
-                      showConfirmButton: false,
-                      timer: 3000, // Adjust the timer as needed
-                      customClass: {
-                          popup: 'small-sweetalert' // Add your custom class here
-                      }
-                  });
-    
-                  var alertDiv = document.querySelector(".alert");
-                  if (alertDiv) {
-                      setTimeout(function() {
-                          alertDiv.style.transition = "opacity 1s";
-                          alertDiv.style.opacity = "0";
-                          setTimeout(function() {
-                              alertDiv.remove();
-                              var messageContainer = document.querySelector("#message-container");
-                              if (messageContainer) {
-                                  messageContainer.remove();
-                              }
-                          }, 1000); // 1000 milliseconds = 1 second (transition duration)
-                      }, 3000); // 3000 milliseconds = 3 seconds
-                  }
-              });
-            </script>
-            {% endfor %}
+  </div>
+             {% if messages %}
+            <div id="message-container">
+              {% for message in messages %}
+              <style>
+                {% if message.tags == "success" %}
+                .alert.alert-success {
+                  padding: .75rem 1.25rem;
+                  color: #155724;
+                  background-color: #d4edda;
+                  border-color: #c3e6cb;
+                }
+                {% elif message.tags == "warning" %}
+                .alert.alert-warning {
+                  padding: .75rem 1.25rem;
+                    color: #721c24;
+                    background-color: #f8d7da;
+                    border-color: #f5c6cb;
+                }
+                {% endif %}
+              </style>
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    {% if message.tags == "success" %}
+                    var iconType = 'success';
+                    {% else %}
+                    var iconType = 'warning';
+                    {% endif %}
+
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: iconType,
+                        title: '{{ message }}',
+                        showConfirmButton: false,
+                        timer: 3000, // Adjust the timer as needed
+                        customClass: {
+                            popup: 'small-sweetalert' // Add your custom class here
+                        }
+                    });
+
+                    var alertDiv = document.querySelector(".alert");
+                    if (alertDiv) {
+                        setTimeout(function() {
+                            alertDiv.style.transition = "opacity 1s";
+                            alertDiv.style.opacity = "0";
+                            setTimeout(function() {
+                                alertDiv.remove();
+                                var messageContainer = document.querySelector("#message-container");
+                                if (messageContainer) {
+                                    messageContainer.remove();
+                                }
+                            }, 1000); // 1000 milliseconds = 1 second (transition duration)
+                        }, 3000); // 3000 milliseconds = 3 seconds
+                    }
+                });
+              </script>
+              {% endfor %}
+            </div>
+            {% endif %}
           </div>
-          {% endif %}
-        </div>
       </header>
 
 				<div id="page-title-bar" class="page-title-bar page-title-bar-standard-03">
@@ -1768,532 +2114,653 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
 
 							                        </div>
                     </div>
-					<div id="woosw_wishlist" class="woosw-popup woosw-popup-center"></div>		<div class="tm-demo-options-toolbar">
-						<a href="#" id="open-modal-demo-preview"
-			   class="toggle-quick-options open-quick-options hint--bounce hint--left hint--black"
-			   aria-label="Preview Demos">
-				<i class="fal fa-palette"></i>
-			</a>
-			<a href="https://thememove.ticksy.com/submit/#100019229"
-			   target="_blank"
-			   rel="nofollow"
-			   class="hint--bounce hint--left hint--black"
-			   aria-label="Support Channel">
-				<i class="fal fa-life-ring"></i>
-			</a>
-			<a href="https://minimog-wp.gitbook.io/minimog-ecommerce-wordpress-theme/"
-			   target="_blank"
-			   rel="nofollow"
-			   class="hint--bounce hint--left hint--black"
-			   aria-label="Documentation">
-				<i class="fal fa-book"></i>
-			</a>
-			<a href="https://themeforest.net/item/minimog-the-high-converting-ecommerce-wordpress-theme/36947163"
-			   target="_blank"
-			   rel="nofollow"
-			   class="hint--bounce hint--left hint--black"
-			   aria-label="Purchase Minimog">
-				<i class="fal fa-shopping-bag"></i>
-			</a>
-		</div>
+					<div id="woosw_wishlist" class="woosw-popup woosw-popup-center"></div>		
+					<style>
+						.tm-demo-options-toolbar a{
+						  color: white;
+						}
+					  </style>
+					  
+				  
+					  <div class="tm-demo-options-toolbar">
+						<a href="https://www.instagram.com/thepanipathandloom1976/" class="toggle-quick-options open-quick-options hint--bounce hint--left hint--black" aria-label="Instagram" style="background-color: #bc2a8d;">
+						  <i class="fab fa-instagram"></i>
+						</a>
+						<a href="https://www.facebook.com/thepanipathandloom" class="hint--bounce hint--left hint--black" aria-label="Facebook" style="background-color: #1877f2;">
+						  <i class="fab fa-facebook"></i>
+						</a>
+						<a href="https://www.youtube.com/@thepanipathandloom" class="hint--bounce hint--left hint--black" aria-label="YouTube" style="background-color: #ff0000;">
+						  <i class="fab fa-youtube"></i>
+						</a>
+						<a href="https://twitter.com/HandloomPanipat" class="hint--bounce hint--left hint--black" aria-label="Twitter" style="background-color: #1da1f2;">
+						  <i class="fab fa-twitter"></i>
+						</a>
+						<a href="https://www.linkedin.com/in/panipathandloom/" class="hint--bounce hint--left hint--black" aria-label="Twitter" style="background-color: #0077b5;">
+						  <i class="fab fa-linkedin"></i>
+						</a>
+						<a href="https://api.whatsapp.com/send/?phone=%2B919899073000&text&type=phone_number&app_absent=0" class="hint--bounce hint--left hint--black" aria-label="WhatsApp" style="background-color: #25d366;">
+						  <i class="fab fa-whatsapp"></i>
+						</a>      
+					  </div>
 		<div class="minimog-modal modal-demo-preview" id="modal-demo-preview"></div>
-<div id="popup-search" class="page-search-popup" aria-hidden="true" role="dialog" hidden>
-	<div class="inner scroll-y">
-		<div class="container-wide">
+		<div
+		id="popup-search"
+		class="page-search-popup"
+		aria-hidden="true"
+		role="dialog"
+		hidden
+	  >
+		<div class="inner scroll-y">
+		  <div class="container-wide">
 			<div class="row-search-popup-heading row-flex row-middle">
-				<div class="search-popup-heading col-grow">
-					<h4>Search our store</h4>
-				</div>
-				<div class="col-shrink">
-					<a href="#" id="search-popup-close" class="search-popup-close">
-						<span class="fal fa-times"></span>
-					</a>
-				</div>
+			  <div class="search-popup-heading col-grow">
+				<h4>Search our store</h4>
+			  </div>
+			  <div class="col-shrink">
+				<a href="#" id="search-popup-close" class="search-popup-close">
+				  <span class="fal fa-times"></span>
+				</a>
+			  </div>
 			</div>
 			<div class="row row-xs-center">
-				<div class="col-md-3 col-search-popup-branding">
-					<div class="popup-search-logo">
-								<a href="https://minimog.thememove.com/megamog/" rel="home"><div class="minimog-lazy-image logo dark-logo" style="--lazy-image-width: 322px;--lazy-image-height: 38.509316770186%;"><img  src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20161%2062%22%3E%3C%2Fsvg%3E" class="logo dark-logo ll-image" alt="Megamog" width="161" height="62" data-src="https://minimog-4437.kxcdn.com/megamog/wp-content/themes/minimog-child-demo/assets/demos/megamog/dark-logo.png" /></div></a>
-							</div>
+			  <div class="col-md-3 col-search-popup-branding">
+				<div class="popup-search-logo">
+				  <a href="" rel="home"
+					><div
+					  class="minimog-lazy-image logo dark-logo"
+					  style="
+						--lazy-image-width: 322px;
+						--lazy-image-height: 38.509316770186%;
+					  "
+					>
+					  <img
+						src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20161%2062%22%3E%3C%2Fsvg%3E"
+						class="logo dark-logo ll-image"
+						alt="Megamog"
+						width="161"
+						height="62"
+						data-src="{% static 'wp-content/themes/minimog-child-demo/assets/demos/megamog/tph.png' %}"
+					  /></div
+				  ></a>
 				</div>
-				<div class="col-md-6">
-					<div class="page-search-popup-content">
-						<form role="search" method="get" class="search-form popup-search-form style-button-fill woocommerce-product-search search-form-categories"
-      action="https://minimog.thememove.com/megamog/">
-
-			<div class="search-category-field">
-			<select  name='product_cat' id='product_cat' class='search-select'>
-	<option value='0'>All Categories</option>
-	<option class="level-0" value="furniture">Furniture</option>
-	<option class="level-1" value="gaming-furniture">&nbsp;&nbsp;&nbsp;Gaming furniture</option>
-	<option class="level-1" value="sofas-sectionals">&nbsp;&nbsp;&nbsp;Sofas &amp; sectionals</option>
-	<option class="level-1" value="beds-furniture">&nbsp;&nbsp;&nbsp;Beds</option>
-	<option class="level-1" value="armoires-wardrobes">&nbsp;&nbsp;&nbsp;Armoires &amp; wardrobes</option>
-	<option class="level-1" value="tables-desks">&nbsp;&nbsp;&nbsp;Tables &amp; desks</option>
-	<option class="level-1" value="chairs">&nbsp;&nbsp;&nbsp;Chairs</option>
-	<option class="level-1" value="bookcases-storage">&nbsp;&nbsp;&nbsp;Bookcases &amp; Storage</option>
-	<option class="level-1" value="dressers-storage-drawers">&nbsp;&nbsp;&nbsp;Dressers &amp; storage drawers</option>
-	<option class="level-1" value="display-storage-cabinets">&nbsp;&nbsp;&nbsp;Display &amp; storage cabinets</option>
-	<option class="level-1" value="utility-storage-carts">&nbsp;&nbsp;&nbsp;Utility &amp; storage carts</option>
-	<option class="level-1" value="patio-furniture">&nbsp;&nbsp;&nbsp;Patio furniture</option>
-	<option class="level-1" value="cafe-furniture">&nbsp;&nbsp;&nbsp;Café furniture</option>
-	<option class="level-1" value="kids-furniture">&nbsp;&nbsp;&nbsp;Kids furniture</option>
-	<option class="level-0" value="beds-mattresses">Beds &amp; Mattresses</option>
-	<option class="level-1" value="beds">&nbsp;&nbsp;&nbsp;Beds</option>
-	<option class="level-2" value="queen-king-size">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Queen &amp; King size</option>
-	<option class="level-2" value="twin-beds">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Twin beds</option>
-	<option class="level-2" value="beds-with-storage">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beds with storage</option>
-	<option class="level-2" value="guest-beds-daybeds">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guest beds &amp; daybeds</option>
-	<option class="level-2" value="kids-beds">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kids beds</option>
-	<option class="level-2" value="cribs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cribs</option>
-	<option class="level-1" value="mattresses">&nbsp;&nbsp;&nbsp;Mattresses</option>
-	<option class="level-2" value="spring-mattresses">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spring mattresses</option>
-	<option class="level-2" value="foam-and-memory-foam">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Foam and memory foam</option>
-	<option class="level-2" value="crib-mattresses">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crib mattresses</option>
-	<option class="level-2" value="mattress-toppers">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mattress toppers</option>
-	<option class="level-1" value="bedding">&nbsp;&nbsp;&nbsp;Bedding</option>
-	<option class="level-2" value="pillows">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pillows</option>
-	<option class="level-2" value="bed-linen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bed linen</option>
-	<option class="level-2" value="bedspreads">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bedspreads</option>
-	<option class="level-2" value="bed-skirts">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bed skirts</option>
-	<option class="level-2" value="comforters-duvet-inserts">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comforters &amp; duvet inserts</option>
-	<option class="level-0" value="storage-organization">Storage &amp; Organization</option>
-	<option class="level-0" value="working-from-home">Working From Home</option>
-	<option class="level-0" value="kitchen-appliances">Kitchen &amp; Appliances</option>
-	<option class="level-1" value="appliances">&nbsp;&nbsp;&nbsp;Appliances</option>
-	<option class="level-2" value="cooktops">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cooktops</option>
-	<option class="level-2" value="dishwashers">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dishwashers</option>
-	<option class="level-2" value="ovens">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ovens</option>
-	<option class="level-2" value="microwaves">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Microwaves</option>
-	<option class="level-2" value="range-hoods">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Range hoods</option>
-	<option class="level-1" value="kitchen-cabinets">&nbsp;&nbsp;&nbsp;Kitchen cabinets</option>
-	<option class="level-2" value="base-cabinets">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Base cabinets</option>
-	<option class="level-2" value="high-cabinets">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;High cabinets</option>
-	<option class="level-2" value="cabinets-for-built-in-appliances">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cabinets for built-in appliances</option>
-	<option class="level-2" value="wall-cabinets">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wall cabinets</option>
-	<option class="level-1" value="kitchen-faucets-sinks">&nbsp;&nbsp;&nbsp;Kitchen faucets &amp; sinks</option>
-	<option class="level-2" value="kitchen-sinks">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kitchen sinks</option>
-	<option class="level-2" value="sink-parts">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sink parts</option>
-	<option class="level-2" value="kitchen-faucets">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kitchen faucets</option>
-	<option class="level-1" value="other">&nbsp;&nbsp;&nbsp;Other</option>
-	<option class="level-2" value="kitchen-lighting">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kitchen lighting</option>
-	<option class="level-2" value="modular-kitchen-cabinets-mini-kitchens">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Modular kitchen cabinets &amp; mini-kitchens</option>
-	<option class="level-2" value="knobs-handles-pulls">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Knobs, handles, &amp; pulls</option>
-	<option class="level-2" value="drawer-dividers">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drawer dividers</option>
-	<option class="level-2" value="serveware">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Serveware</option>
-	<option class="level-0" value="baby-kids">Baby &amp; Kids</option>
-	<option class="level-0" value="home-textiles">Home Textiles</option>
-	<option class="level-1" value="cushion-covers">&nbsp;&nbsp;&nbsp;Cushion covers</option>
-	<option class="level-1" value="throw-blankets">&nbsp;&nbsp;&nbsp;Throw blankets</option>
-	<option class="level-1" value="window-treatments">&nbsp;&nbsp;&nbsp;Window treatments</option>
-	<option class="level-1" value="bedding-home-textiles">&nbsp;&nbsp;&nbsp;Bedding</option>
-	<option class="level-1" value="bathroom-textiles">&nbsp;&nbsp;&nbsp;Bathroom textiles</option>
-	<option class="level-1" value="baby-textiles">&nbsp;&nbsp;&nbsp;Baby textiles</option>
-	<option class="level-1" value="textiles-for-kids">&nbsp;&nbsp;&nbsp;Textiles for kids</option>
-	<option class="level-1" value="table-linens">&nbsp;&nbsp;&nbsp;Table linens</option>
-	<option class="level-1" value="outdoor-cushions">&nbsp;&nbsp;&nbsp;Outdoor cushions</option>
-	<option class="level-1" value="fabrics-sewing">&nbsp;&nbsp;&nbsp;Fabrics &amp; sewing</option>
-	<option class="level-0" value="home-decor">Home Decor</option>
-	<option class="level-0" value="lighting">Lighting</option>
-	<option class="level-0" value="cookware-tableware">Cookware &amp; Tableware</option>
-	<option class="level-0" value="bathroom">Bathroom</option>
-	<option class="level-0" value="pet-accessories">Pet Accessories</option>
-	<option class="level-0" value="garden-outdoor">Garden &amp; Outdoor</option>
-	<option class="level-0" value="laundry-cleaning">Laundry &amp; cleaning</option>
-</select>
-		</div>
-			<span class="screen-reader-text">
-		Search for:	</span>
-	<input type="search" class="search-field"
-	       placeholder="Search products"
-	       value="" name="s"
-	       autocomplete="off"
-	       title="Search for:"/>
-	<button type="submit" class="search-submit">
-		<span class="search-btn-icon">
-			<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.8438 19.3203C21.0781 19.5286 21.0781 19.75 20.8438 19.9844L19.9844 20.8438C19.75 21.0781 19.5286 21.0781 19.3203 20.8438L14.5938 16.1172C14.4896 16.013 14.4375 15.9089 14.4375 15.8047V15.2578C12.901 16.5859 11.1302 17.25 9.125 17.25C6.88542 17.25 4.97135 16.4557 3.38281 14.8672C1.79427 13.2786 1 11.3646 1 9.125C1 6.88542 1.79427 4.97135 3.38281 3.38281C4.97135 1.79427 6.88542 1 9.125 1C11.3646 1 13.2786 1.79427 14.8672 3.38281C16.4557 4.97135 17.25 6.88542 17.25 9.125C17.25 11.1302 16.5859 12.901 15.2578 14.4375H15.8047C15.9349 14.4375 16.0391 14.4896 16.1172 14.5938L20.8438 19.3203ZM4.71094 13.5391C5.9349 14.763 7.40625 15.375 9.125 15.375C10.8438 15.375 12.3151 14.763 13.5391 13.5391C14.763 12.3151 15.375 10.8438 15.375 9.125C15.375 7.40625 14.763 5.9349 13.5391 4.71094C12.3151 3.48698 10.8438 2.875 9.125 2.875C7.40625 2.875 5.9349 3.48698 4.71094 4.71094C3.48698 5.9349 2.875 7.40625 2.875 9.125C2.875 10.8438 3.48698 12.3151 4.71094 13.5391Z" fill="#000000"/></svg>		</span>
-		<span class="search-btn-text">
-			Search		</span>
-	</button>
-</form>
+			  </div>
+			  <div class="col-md-6">
+				<div class="page-search-popup-content">
+				  <form
+					role="search"
+					method="GET"
+					class="search-form popup-search-form style-button-fill woocommerce-product-search search-form-categories"
+					action="{% url 'core:search' %}"
+				  >
+					<div class="search-category-field">
+					  <select
+						name=""
+						id=""
+						class="search-select"
+					  >
+						<option value="0">All Categories</option>
+  
+						{% for maincat in main_cat %}
+						<option class="level-0" value="garden-outdoor">
+						  {{maincat.main_title}}
+						</option>
+						{% endfor %}
+					  </select>
 					</div>
+					<span class="screen-reader-text"> Search for: </span>
+					<input
+					  type="search"
+					  class="search-field"
+					  placeholder="Search products"
+					  value=""
+					  name="q"
+					  autocomplete="off"
+					  title="Search for:"
+					/>
+					<button type="submit" class="search-submit">
+					  <span class="search-btn-icon">
+						<svg
+						  width="22"
+						  height="22"
+						  viewBox="0 0 22 22"
+						  fill="none"
+						  xmlns="http://www.w3.org/2000/svg"
+						>
+						  <path
+							d="M20.8438 19.3203C21.0781 19.5286 21.0781 19.75 20.8438 19.9844L19.9844 20.8438C19.75 21.0781 19.5286 21.0781 19.3203 20.8438L14.5938 16.1172C14.4896 16.013 14.4375 15.9089 14.4375 15.8047V15.2578C12.901 16.5859 11.1302 17.25 9.125 17.25C6.88542 17.25 4.97135 16.4557 3.38281 14.8672C1.79427 13.2786 1 11.3646 1 9.125C1 6.88542 1.79427 4.97135 3.38281 3.38281C4.97135 1.79427 6.88542 1 9.125 1C11.3646 1 13.2786 1.79427 14.8672 3.38281C16.4557 4.97135 17.25 6.88542 17.25 9.125C17.25 11.1302 16.5859 12.901 15.2578 14.4375H15.8047C15.9349 14.4375 16.0391 14.4896 16.1172 14.5938L20.8438 19.3203ZM4.71094 13.5391C5.9349 14.763 7.40625 15.375 9.125 15.375C10.8438 15.375 12.3151 14.763 13.5391 13.5391C14.763 12.3151 15.375 10.8438 15.375 9.125C15.375 7.40625 14.763 5.9349 13.5391 4.71094C12.3151 3.48698 10.8438 2.875 9.125 2.875C7.40625 2.875 5.9349 3.48698 4.71094 4.71094C3.48698 5.9349 2.875 7.40625 2.875 9.125C2.875 10.8438 3.48698 12.3151 4.71094 13.5391Z"
+							fill="#000000"
+						  />
+						</svg>
+					  </span>
+					  <span class="search-btn-text"> Search </span>
+					</button>
+				  </form>
 				</div>
-				<div class="col-md-3 flex justify-end items-center col-search-popup-icons">
-					<a href="#" class="popup-search-icon login-link hint--bounce hint--bottom open-modal-login"
-   aria-label="Log in">
-		<span class="icon">
-		<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.5156 12.875C15.9479 12.875 17.1719 13.3958 18.1875 14.4375C19.2292 15.4531 19.75 16.6771 19.75 18.1094V19.125C19.75 19.6458 19.5677 20.0885 19.2031 20.4531C18.8385 20.8177 18.3958 21 17.875 21H4.125C3.60417 21 3.16146 20.8177 2.79688 20.4531C2.43229 20.0885 2.25 19.6458 2.25 19.125V18.1094C2.25 16.6771 2.75781 15.4531 3.77344 14.4375C4.8151 13.3958 6.05208 12.875 7.48438 12.875C7.82292 12.875 8.31771 12.9792 8.96875 13.1875C9.64583 13.3958 10.3229 13.5 11 13.5C11.6771 13.5 12.3542 13.3958 13.0312 13.1875C13.7083 12.9792 14.2031 12.875 14.5156 12.875ZM17.875 19.125V18.1094C17.875 17.1979 17.5365 16.4167 16.8594 15.7656C16.2083 15.0885 15.4271 14.75 14.5156 14.75C14.4375 14.75 14.0208 14.8542 13.2656 15.0625C12.5365 15.2708 11.7812 15.375 11 15.375C10.2188 15.375 9.45052 15.2708 8.69531 15.0625C7.96615 14.8542 7.5625 14.75 7.48438 14.75C6.57292 14.75 5.77865 15.0885 5.10156 15.7656C4.45052 16.4167 4.125 17.1979 4.125 18.1094V19.125H17.875ZM14.9844 10.6094C13.8906 11.7031 12.5625 12.25 11 12.25C9.4375 12.25 8.10938 11.7031 7.01562 10.6094C5.92188 9.51562 5.375 8.1875 5.375 6.625C5.375 5.0625 5.92188 3.73438 7.01562 2.64062C8.10938 1.54688 9.4375 1 11 1C12.5625 1 13.8906 1.54688 14.9844 2.64062C16.0781 3.73438 16.625 5.0625 16.625 6.625C16.625 8.1875 16.0781 9.51562 14.9844 10.6094ZM13.6562 3.96875C12.9271 3.23958 12.0417 2.875 11 2.875C9.95833 2.875 9.07292 3.23958 8.34375 3.96875C7.61458 4.69792 7.25 5.58333 7.25 6.625C7.25 7.66667 7.61458 8.55208 8.34375 9.28125C9.07292 10.0104 9.95833 10.375 11 10.375C12.0417 10.375 12.9271 10.0104 13.6562 9.28125C14.3854 8.55208 14.75 7.66667 14.75 6.625C14.75 5.58333 14.3854 4.69792 13.6562 3.96875Z" fill="#000000"/></svg>	</span>
-</a>
-					<a href="https://minimog.thememove.com/megamog/wishlist/"
-   class="popup-search-icon has-badge wishlist-link hint--bounce hint--bottom" aria-label="Wishlist">
-	<div class="icon">
-		<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.425 7.71875C20.9458 7.77083 21.2844 8.04427 21.4406 8.53906C21.5969 9.03385 21.4927 9.46354 21.1281 9.82812L16.9875 13.8516L17.9641 19.5547C18.0422 20.0495 17.8729 20.4401 17.4562 20.7266C17.0396 21.0391 16.6099 21.0781 16.1672 20.8438L11.05 18.1875L5.93281 20.8438C5.4901 21.1042 5.06042 21.0781 4.64375 20.7656C4.22708 20.4531 4.05781 20.0495 4.13594 19.5547L5.1125 13.8516L0.971875 9.82812C0.607292 9.46354 0.503125 9.03385 0.659375 8.53906C0.815625 8.04427 1.15417 7.77083 1.675 7.71875L7.37812 6.85938L9.91719 1.70312C10.1516 1.23438 10.5292 1 11.05 1C11.5708 1 11.9484 1.23438 12.1828 1.70312L14.7219 6.85938L20.425 7.71875ZM14.9953 13.1875L18.9016 9.35938L13.4719 8.57812L11.05 3.65625L8.62812 8.57812L3.19844 9.35938L7.10469 13.1875L6.20625 18.6172L11.05 16.0391L15.8937 18.6172L14.9953 13.1875Z" fill="#000000"/></svg>		<span class="icon-badge">1</span>
-	</div>
-</a>
-					<a href="https://minimog.thememove.com/megamog/cart/" class="mini-cart__button has-badge hint--bounce hint--bottom popup-search-icon"
-   aria-label="Cart">
-	<div class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z" fill="#000000"/></svg><div class="icon-badge mini-cart-badge" data-count="18">18</div></div></a>
-				</div>
+			  </div>
+			  <div
+				class="col-md-3 flex justify-end items-center col-search-popup-icons"
+			  >
+				<a
+				  href="#"
+				  class="popup-search-icon login-link hint--bounce hint--bottom open-modal-login"
+				  aria-label="Log in"
+				>
+				  <span class="icon">
+					<svg
+					  width="22"
+					  height="22"
+					  viewBox="0 0 22 22"
+					  fill="none"
+					  xmlns="http://www.w3.org/2000/svg"
+					>
+					  <path
+						d="M14.5156 12.875C15.9479 12.875 17.1719 13.3958 18.1875 14.4375C19.2292 15.4531 19.75 16.6771 19.75 18.1094V19.125C19.75 19.6458 19.5677 20.0885 19.2031 20.4531C18.8385 20.8177 18.3958 21 17.875 21H4.125C3.60417 21 3.16146 20.8177 2.79688 20.4531C2.43229 20.0885 2.25 19.6458 2.25 19.125V18.1094C2.25 16.6771 2.75781 15.4531 3.77344 14.4375C4.8151 13.3958 6.05208 12.875 7.48438 12.875C7.82292 12.875 8.31771 12.9792 8.96875 13.1875C9.64583 13.3958 10.3229 13.5 11 13.5C11.6771 13.5 12.3542 13.3958 13.0312 13.1875C13.7083 12.9792 14.2031 12.875 14.5156 12.875ZM17.875 19.125V18.1094C17.875 17.1979 17.5365 16.4167 16.8594 15.7656C16.2083 15.0885 15.4271 14.75 14.5156 14.75C14.4375 14.75 14.0208 14.8542 13.2656 15.0625C12.5365 15.2708 11.7812 15.375 11 15.375C10.2188 15.375 9.45052 15.2708 8.69531 15.0625C7.96615 14.8542 7.5625 14.75 7.48438 14.75C6.57292 14.75 5.77865 15.0885 5.10156 15.7656C4.45052 16.4167 4.125 17.1979 4.125 18.1094V19.125H17.875ZM14.9844 10.6094C13.8906 11.7031 12.5625 12.25 11 12.25C9.4375 12.25 8.10938 11.7031 7.01562 10.6094C5.92188 9.51562 5.375 8.1875 5.375 6.625C5.375 5.0625 5.92188 3.73438 7.01562 2.64062C8.10938 1.54688 9.4375 1 11 1C12.5625 1 13.8906 1.54688 14.9844 2.64062C16.0781 3.73438 16.625 5.0625 16.625 6.625C16.625 8.1875 16.0781 9.51562 14.9844 10.6094ZM13.6562 3.96875C12.9271 3.23958 12.0417 2.875 11 2.875C9.95833 2.875 9.07292 3.23958 8.34375 3.96875C7.61458 4.69792 7.25 5.58333 7.25 6.625C7.25 7.66667 7.61458 8.55208 8.34375 9.28125C9.07292 10.0104 9.95833 10.375 11 10.375C12.0417 10.375 12.9271 10.0104 13.6562 9.28125C14.3854 8.55208 14.75 7.66667 14.75 6.625C14.75 5.58333 14.3854 4.69792 13.6562 3.96875Z"
+						fill="#000000"
+					  />
+					</svg>
+				  </span>
+				</a>
+				<a
+				  href=""
+				  class="popup-search-icon has-badge wishlist-link hint--bounce hint--bottom"
+				  aria-label="Wishlist"
+				>
+				  <div class="icon">
+					<svg
+					  width="22"
+					  height="22"
+					  viewBox="0 0 22 22"
+					  fill="none"
+					  xmlns="http://www.w3.org/2000/svg"
+					>
+					  <path
+						d="M20.425 7.71875C20.9458 7.77083 21.2844 8.04427 21.4406 8.53906C21.5969 9.03385 21.4927 9.46354 21.1281 9.82812L16.9875 13.8516L17.9641 19.5547C18.0422 20.0495 17.8729 20.4401 17.4562 20.7266C17.0396 21.0391 16.6099 21.0781 16.1672 20.8438L11.05 18.1875L5.93281 20.8438C5.4901 21.1042 5.06042 21.0781 4.64375 20.7656C4.22708 20.4531 4.05781 20.0495 4.13594 19.5547L5.1125 13.8516L0.971875 9.82812C0.607292 9.46354 0.503125 9.03385 0.659375 8.53906C0.815625 8.04427 1.15417 7.77083 1.675 7.71875L7.37812 6.85938L9.91719 1.70312C10.1516 1.23438 10.5292 1 11.05 1C11.5708 1 11.9484 1.23438 12.1828 1.70312L14.7219 6.85938L20.425 7.71875ZM14.9953 13.1875L18.9016 9.35938L13.4719 8.57812L11.05 3.65625L8.62812 8.57812L3.19844 9.35938L7.10469 13.1875L6.20625 18.6172L11.05 16.0391L15.8937 18.6172L14.9953 13.1875Z"
+						fill="#000000"
+					  />
+					</svg>
+					<span class="icon-badge">1</span>
+				  </div>
+				</a>
+				<a
+				  href=""
+				  class="mini-cart__button has-badge hint--bounce hint--bottom popup-search-icon"
+				  aria-label="Cart"
+				>
+				  <div class="icon">
+					<svg
+					  width="22"
+					  height="22"
+					  viewBox="0 0 22 22"
+					  fill="none"
+					  xmlns="http://www.w3.org/2000/svg"
+					>
+					  <path
+						d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z"
+						fill="#000000"
+					  />
+					</svg>
+					<div class="icon-badge mini-cart-badge" data-count="16">
+					  16
+					</div>
+				  </div></a
+				>
+			  </div>
 			</div>
 			<div class="row row-popular-search-keywords">
-				<div class="col-md-push-3 col-md-6">
-					<div class="popular-search-keywords">
-	<span class="label">Popular Searches:</span>
-			<a href="https://minimog.thememove.com/megamog/search/Chair/">Chair</a>			<a href="https://minimog.thememove.com/megamog/search/Table/">Table</a>			<a href="https://minimog.thememove.com/megamog/search/Lamp/">Lamp</a>	</div>
+			  <div class="col-md-push-3 col-md-6">
+				<div class="popular-search-keywords">
+				  <span class="label">Popular Searches:</span>
+				  <a href=""
+					>Walpapers</a
+				  >
+				  <a href=""
+					>Window Blinds</a
+				  >
+				  <a href=""
+					>Sabysachi Walpaper</a
+				  >
 				</div>
+			  </div>
 			</div>
-			<div class="popup-search-results" style="display: none;">
-				<div class="popup-search-results-title">
-					Results for &quot;<span class="popup-search-current"></span>&quot;				</div>
-									<div class="minimog-grid-wrapper minimog-product group-style-06 style-grid-06 caption-style-06"
-     data-grid="{&quot;type&quot;:&quot;grid&quot;,&quot;columns&quot;:5,&quot;columnsTabletExtra&quot;:3,&quot;columnsMobileExtra&quot;:2,&quot;gutter&quot;:&quot;30&quot;,&quot;gutterTabletExtra&quot;:&quot;20&quot;,&quot;gutterMobileExtra&quot;:&quot;16&quot;}"
-	 style="--grid-columns-desktop: 5;--grid-columns-tablet-extra: 3;--grid-columns-mobile-extra: 2;--grid-gutter-desktop: 30;--grid-gutter-tablet-extra: 20;--grid-gutter-mobile-extra: 16;">
-	<div class="minimog-grid lazy-grid">
-		<div class="grid-sizer"></div>
-
-					</div></div>
-							</div>
-		</div>
-	</div>
-</div>
-<div id="page-mobile-main-menu" class="page-mobile-main-menu" aria-hidden="true" role="dialog" hidden>
-	<div class="inner">
-		<div id="page-close-mobile-menu" class="page-close-mobile-menu">
-			<span class="fal fa-times"></span>
-		</div>
-		<div class="page-mobile-menu-content scroll-y">
-							<ul class="mobile-nav-tabs" role="tablist">
-					<li class="active"
-					    id="tab-title-main-menu"
-					    aria-controls="tab-content-main-menu"
-					    role="tab"
-					    aria-selected="true"
-					    tabindex="0">Menu</li>
-					<li id="tab-title-cat-menu"
-					    aria-controls="tab-content-cat-menu"
-					    role="tab"
-					    aria-selected="false"
-					    tabindex="-1">Categories</li>
-				</ul>
-			
-			<div class="mobile-menu-nav-menus">
-						<div class="mobile-nav-tab mobile-nav-tab-main-menu"
-							id="tab-content-main-menu"
-				aria-labelledby="tab-title-main-menu"
-				role="tabpanel"
-				tabindex="0"
-				aria-expanded="true"
-					>
-			<ul id="mobile-menu-primary" class="menu__container"><li class="menu-item-open-modal-demo-preview menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-330 level-1"><a href="https://minimog.thememove.com/megamog/"><div class="menu-item-wrap"><span class="menu-item-title">Home</span></div></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"><a href="https://minimog.thememove.com/megamog/shop/"><div class="menu-item-wrap"><span class="menu-item-title">Shop</span></div></a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"><a href="#"><div class="menu-item-wrap"><span class="menu-item-title">Products</span></div></a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"><a href="https://minimog.thememove.com/megamog/blog"><div class="menu-item-wrap"><span class="menu-item-title">Blog</span></div></a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"><a href="#"><div class="menu-item-wrap"><span class="menu-item-title">Features</span></div></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"><a href="https://minimog.thememove.com/megamog/store-listing/"><div class="menu-item-wrap"><span class="menu-item-title">Store List</span></div></a></li>
-</ul>		</div>
-		
-<div
-class="mobile-nav-tab mobile-nav-tab-cat-menu"
-id="tab-content-cat-menu"
-aria-labelledby="tab-title-cat-menu"
-role="tabpanel"
-tabindex="0"
-hidden
-aria-expanded="false"
->
-<ul
-  id="menu-product-categories-1"
-  class="product-category-dropdown menu__container"
->
-{% for cate in main_cat %}
-<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu">
-  <a href="">
-	<div class="menu-item-wrap">
-	  <span class="menu-item-icon"
-		  ><svg
-			width="20"
-			height="20"
-			viewBox="0 0 20 20"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		  >
-			<path
-			  d="M8.125 13.125V6.25H16.25C16.913 6.25 17.5489 6.51339 18.0178 6.98223C18.4866 7.45107 18.75 8.08696 18.75 8.75V13.125"
-			  stroke="black"
-			  stroke-linecap="round"
-			  stroke-linejoin="round"
-			/>
-			<path
-			  d="M1.25 16.25V3.75"
-			  stroke="black"
-			  stroke-linecap="round"
-			  stroke-linejoin="round"
-			/>
-			<path
-			  d="M1.25 13.125H18.75V16.25"
-			  stroke="black"
-			  stroke-linecap="round"
-			  stroke-linejoin="round"
-			/>
-			<path
-			  d="M8.125 6.25H1.25"
-			  stroke="black"
-			  stroke-linecap="round"
-			  stroke-linejoin="round"
-			/>
-		  </svg> </span
-		>
-	  <span class="menu-item-title">{{ cate.main_title }}</span>
-	  <span class="toggle-sub-menu"></span>
-	</div>
-  </a>
-  <ul class="sub-menu children mega-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305">
-	  <div class="mega-menu-content">
-		<div data-elementor-type="wp-post" data-elementor-id="1298" class="elementor elementor-1298">
-		  <!-- Your Elementor content here -->
-		  <div class="elementor-section elementor-top-section elementor-element elementor-element-8e1d000 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch" data-id="8e1d000" data-element_type="section">
-			<div class="elementor-container elementor-column-gap-extended">
-			  <div class="elementor-row">
-				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-4e2db18" data-id="4e2db18" data-element_type="column">
-				  <div class="elementor-column-wrap elementor-element-populated">
-					<div class="elementor-widget-wrap">
-					  {% for cat in cate.category_set.all %}
-					  <div class="elementor-element elementor-element-16d8c3b elementor-widget elementor-widget-heading" data-id="16d8c3b" data-element_type="widget" data-widget_type="heading.default">
-						<div class="elementor-widget-container">
-						  <h2 class="elementor-heading-title elementor-size-default">{{ cat.cat_title }}</h2>
-						</div>
-					  </div>
-
-					  <div class="elementor-element elementor-element-c5d41c6 elementor-widget elementor-widget-tm-simple-list" data-id="c5d41c6" data-element_type="widget" data-widget_type="tm-simple-list.default">
-						<div class="elementor-widget-container">
-						  <div class="minimog-simple-list minimog-simple-list--style-03">
-							{% for sub_cat in cat.sub_categories_set.all %}
-							<div class="item elementor-repeater-item-2e6a9a8 truncated">
-							  <a class="link" href="{% url 'core:sub-category' sub_cat.sub_cat_title %}">{{ sub_cat.sub_cat_title }}</a>
-							</div>
-							{% endfor %}
-						  </div>
-						</div>
-					  </div>
-					  {% endfor %}
-					</div>
-				  </div>
+			<div class="popup-search-results" style="display: none">
+			  <div class="popup-search-results-title">
+				Results for &quot;<span class="popup-search-current"></span>&quot;
+			  </div>
+			  <div
+				class="minimog-grid-wrapper minimog-product group-style-06 style-grid-06 caption-style-06"
+				data-grid='{"type":"grid","columns":5,"columnsTabletExtra":3,"columnsMobileExtra":2,"gutter":"30","gutterTabletExtra":"20","gutterMobileExtra":"16"}'
+				style="
+				  --grid-columns-desktop: 5;
+				  --grid-columns-tablet-extra: 3;
+				  --grid-columns-mobile-extra: 2;
+				  --grid-gutter-desktop: 30;
+				  --grid-gutter-tablet-extra: 20;
+				  --grid-gutter-mobile-extra: 16;
+				"
+			  >
+				<div class="minimog-grid lazy-grid">
+				  <div class="grid-sizer"></div>
 				</div>
-				<div
-						class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
-						data-id="877ceeb"
-						data-element_type="column"
-					  >
-						<div
-						  class="elementor-column-wrap elementor-element-populated"
-						>
-						  <div class="elementor-widget-wrap">
-							<div
-							  class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner"
-							  data-id="9c6cc46"
-							  data-element_type="widget"
-							  data-widget_type="tm-banner.default"
-							>
-							  <div
-								class="elementor-widget-container"
-							  >
-								<a
-								  class="minimog-banner minimog-box link-secret"
-								  href=""
-								>
-								  <div class="minimog-image">
-									<div
-									  class="image ll-background ll-background-unload"
-									  data-src="{{cate.image.url}}"
-									></div>
-								  </div>
-								  <div class="content-wrap">
-									<div
-									  class="content-wrap__inner"
-									>
-									  <h3 class="title">
-										{{cate.main_title}}
-									  </h3>
-									</div>
-									<div
-									  class="content-wrap__bottom"
-									>
-									  <div
-										class="tm-button-wrapper"
-									  >
-										<div
-										  class="tm-button style-bottom-line tm-button-nm"
-										>
-										  <div
-											class="button-content-wrapper"
-										  >
-											<span
-											  class="button-text"
-											  >Shop Now</span
-											>
-										  </div>
-										</div>
-									  </div>
-									</div>
-								  </div>
-								</a>
-							  </div>
-							</div>
-						  </div>
-						</div>
-					  </div>
 			  </div>
 			</div>
 		  </div>
 		</div>
 	  </div>
-	</li>
-  </ul>
-</li>
-{% endfor %}
-
-
- 
-</ul>
-</div>
-						</div>
-
-			<div class="mobile-menu-components">
-				
-					<div class="mobile-menu-my-account">
-		<span class="button-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.5156 12.875C15.9479 12.875 17.1719 13.3958 18.1875 14.4375C19.2292 15.4531 19.75 16.6771 19.75 18.1094V19.125C19.75 19.6458 19.5677 20.0885 19.2031 20.4531C18.8385 20.8177 18.3958 21 17.875 21H4.125C3.60417 21 3.16146 20.8177 2.79688 20.4531C2.43229 20.0885 2.25 19.6458 2.25 19.125V18.1094C2.25 16.6771 2.75781 15.4531 3.77344 14.4375C4.8151 13.3958 6.05208 12.875 7.48438 12.875C7.82292 12.875 8.31771 12.9792 8.96875 13.1875C9.64583 13.3958 10.3229 13.5 11 13.5C11.6771 13.5 12.3542 13.3958 13.0312 13.1875C13.7083 12.9792 14.2031 12.875 14.5156 12.875ZM17.875 19.125V18.1094C17.875 17.1979 17.5365 16.4167 16.8594 15.7656C16.2083 15.0885 15.4271 14.75 14.5156 14.75C14.4375 14.75 14.0208 14.8542 13.2656 15.0625C12.5365 15.2708 11.7812 15.375 11 15.375C10.2188 15.375 9.45052 15.2708 8.69531 15.0625C7.96615 14.8542 7.5625 14.75 7.48438 14.75C6.57292 14.75 5.77865 15.0885 5.10156 15.7656C4.45052 16.4167 4.125 17.1979 4.125 18.1094V19.125H17.875ZM14.9844 10.6094C13.8906 11.7031 12.5625 12.25 11 12.25C9.4375 12.25 8.10938 11.7031 7.01562 10.6094C5.92188 9.51562 5.375 8.1875 5.375 6.625C5.375 5.0625 5.92188 3.73438 7.01562 2.64062C8.10938 1.54688 9.4375 1 11 1C12.5625 1 13.8906 1.54688 14.9844 2.64062C16.0781 3.73438 16.625 5.0625 16.625 6.625C16.625 8.1875 16.0781 9.51562 14.9844 10.6094ZM13.6562 3.96875C12.9271 3.23958 12.0417 2.875 11 2.875C9.95833 2.875 9.07292 3.23958 8.34375 3.96875C7.61458 4.69792 7.25 5.58333 7.25 6.625C7.25 7.66667 7.61458 8.55208 8.34375 9.28125C9.07292 10.0104 9.95833 10.375 11 10.375C12.0417 10.375 12.9271 10.0104 13.6562 9.28125C14.3854 8.55208 14.75 7.66667 14.75 6.625C14.75 5.58333 14.3854 4.69792 13.6562 3.96875Z" fill="#000000"/></svg></span>
-		<span class="button-text">My Account</span>
-	</div>
-	<div class="tm-button-wrapper mobile-menu-login-btn" >		<a  class="tm-button style-flat tm-button-sm tm-button-full-wide  open-modal-login" href="#">		<div class="button-content-wrapper">
-
-			
-							<span class="button-text">Log in</span>
-			
-			
+	  <div
+		id="page-mobile-main-menu"
+		class="page-mobile-main-menu"
+		aria-hidden="true"
+		role="dialog"
+		hidden
+	  >
+		<div class="inner">
+		  <div id="page-close-mobile-menu" class="page-close-mobile-menu">
+			<span class="fal fa-times"></span>
+		  </div>
+		  <div class="page-mobile-menu-content scroll-y">
+			<ul class="mobile-nav-tabs" role="tablist">
+			  <li
+				class="active"
+				id="tab-title-main-menu"
+				aria-controls="tab-content-main-menu"
+				role="tab"
+				aria-selected="true"
+				tabindex="0"
+			  >
+				Menu
+			  </li>
+			  <li
+				id="tab-title-cat-menu"
+				aria-controls="tab-content-cat-menu"
+				role="tab"
+				aria-selected="false"
+				tabindex="-1"
+			  >
+				Categories
+			  </li>
+			</ul>
+  
+			<div class="mobile-menu-nav-menus">
+			  <div
+				class="mobile-nav-tab mobile-nav-tab-main-menu"
+				id="tab-content-main-menu"
+				aria-labelledby="tab-title-main-menu"
+				role="tabpanel"
+				tabindex="0"
+				aria-expanded="true"
+			  >
+				<ul id="mobile-menu-primary" class="menu__container">
+				  <li
+					class="menu-item-open-modal-demo-preview menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-327 current_page_item menu-item-330 level-1"
+				  >
+					<a href=""
+					  ><div class="menu-item-wrap">
+						<span class="menu-item-title">Home</span>
+					  </div></a
+					>
+				  </li>
+				  <li
+					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"
+				  >
+					<a href=""
+					  ><div class="menu-item-wrap">
+						<span class="menu-item-title">Shop</span>
+					  </div></a
+					>
+				  </li>
+				  <li
+					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"
+				  >
+					<a href="#"
+					  ><div class="menu-item-wrap">
+						<span class="menu-item-title">Products</span>
+					  </div></a
+					>
+				  </li>
+				  <li
+					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"
+				  >
+					<a href=""
+					  ><div class="menu-item-wrap">
+						<span class="menu-item-title">Blog</span>
+					  </div></a
+					>
+				  </li>
+				  <li
+					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"
+				  >
+					<a href="#"
+					  ><div class="menu-item-wrap">
+						<span class="menu-item-title">Features</span>
+					  </div></a
+					>
+				  </li>
+				  <li
+					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"
+				  >
+					<a href="{% url 'userauths:sign-out' %}"
+					  ><div class="menu-item-wrap">
+						<span class="menu-item-title">Store List</span>
+					  </div></a
+					>
+				  </li>
+				</ul>
+			  </div>
+  
+			  <div
+				class="mobile-nav-tab mobile-nav-tab-cat-menu"
+				id="tab-content-cat-menu"
+				aria-labelledby="tab-title-cat-menu"
+				role="tabpanel"
+				tabindex="0"
+				hidden
+				aria-expanded="false"
+			  >
+				<ul
+				  id="menu-product-categories-1"
+				  class="product-category-dropdown menu__container"
+				>
+				{% for cate in main_cat %}
+				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu">
+				  <a href="">
+					<div class="menu-item-wrap">
+					  <span class="menu-item-icon"
+						  ><svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						  >
+							<path
+							  d="M8.125 13.125V6.25H16.25C16.913 6.25 17.5489 6.51339 18.0178 6.98223C18.4866 7.45107 18.75 8.08696 18.75 8.75V13.125"
+							  stroke="black"
+							  stroke-linecap="round"
+							  stroke-linejoin="round"
+							/>
+							<path
+							  d="M1.25 16.25V3.75"
+							  stroke="black"
+							  stroke-linecap="round"
+							  stroke-linejoin="round"
+							/>
+							<path
+							  d="M1.25 13.125H18.75V16.25"
+							  stroke="black"
+							  stroke-linecap="round"
+							  stroke-linejoin="round"
+							/>
+							<path
+							  d="M8.125 6.25H1.25"
+							  stroke="black"
+							  stroke-linecap="round"
+							  stroke-linejoin="round"
+							/>
+						  </svg> </span
+						>
+					  <span class="menu-item-title">{{ cate.main_title }}</span>
+					  <span class="toggle-sub-menu"></span>
 					</div>
-		</a>		</div><div class="tm-button-wrapper" >		<a  class="tm-button style-border tm-button-sm tm-button-full-wide  open-modal-register" href="#">		<div class="button-content-wrapper">
-
-			
-							<span class="button-text">Register</span>
-			
-			
-					</div>
-		</a>		</div>
-				
-				
-				
-				
+				  </a>
+				  <ul class="sub-menu children mega-menu">
+					<li class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305">
+					  <div class="mega-menu-content">
+						<div data-elementor-type="wp-post" data-elementor-id="1298" class="elementor elementor-1298">
+						  <!-- Your Elementor content here -->
+						  <div class="elementor-section elementor-top-section elementor-element elementor-element-8e1d000 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch" data-id="8e1d000" data-element_type="section">
+							<div class="elementor-container elementor-column-gap-extended">
+							  <div class="elementor-row">
+								<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-4e2db18" data-id="4e2db18" data-element_type="column">
+								  <div class="elementor-column-wrap elementor-element-populated">
+									<div class="elementor-widget-wrap">
+									  {% for cat in cate.category_set.all %}
+									  <div class="elementor-element elementor-element-16d8c3b elementor-widget elementor-widget-heading" data-id="16d8c3b" data-element_type="widget" data-widget_type="heading.default">
+										<div class="elementor-widget-container">
+										  <h2 class="elementor-heading-title elementor-size-default">{{ cat.cat_title }}</h2>
+										</div>
+									  </div>
+			  
+									  <div class="elementor-element elementor-element-c5d41c6 elementor-widget elementor-widget-tm-simple-list" data-id="c5d41c6" data-element_type="widget" data-widget_type="tm-simple-list.default">
+										<div class="elementor-widget-container">
+										  <div class="minimog-simple-list minimog-simple-list--style-03">
+											{% for sub_cat in cat.sub_categories_set.all %}
+											<div class="item elementor-repeater-item-2e6a9a8 truncated">
+											  <a class="link" href="{% url 'core:sub-category' sub_cat.sub_cat_title %}">{{ sub_cat.sub_cat_title }}</a>
+											</div>
+											{% endfor %}
+										  </div>
+										</div>
+									  </div>
+									  {% endfor %}
+									</div>
+								  </div>
+								</div>
+								<div
+										class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
+										data-id="877ceeb"
+										data-element_type="column"
+									  >
+										<div
+										  class="elementor-column-wrap elementor-element-populated"
+										>
+										  <div class="elementor-widget-wrap">
+											<div
+											  class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner"
+											  data-id="9c6cc46"
+											  data-element_type="widget"
+											  data-widget_type="tm-banner.default"
+											>
+											  <div
+												class="elementor-widget-container"
+											  >
+												<a
+												  class="minimog-banner minimog-box link-secret"
+												  href=""
+												>
+												  <div class="minimog-image">
+													<div
+													  class="image ll-background ll-background-unload"
+													  data-src="{{cate.image.url}}"
+													></div>
+												  </div>
+												  <div class="content-wrap">
+													<div
+													  class="content-wrap__inner"
+													>
+													  <h3 class="title">
+														{{cate.main_title}}
+													  </h3>
+													</div>
+													<div
+													  class="content-wrap__bottom"
+													>
+													  <div
+														class="tm-button-wrapper"
+													  >
+														<div
+														  class="tm-button style-bottom-line tm-button-nm"
+														>
+														  <div
+															class="button-content-wrapper"
+														  >
+															<span
+															  class="button-text"
+															  >Shop Now</span
+															>
+														  </div>
+														</div>
+													  </div>
+													</div>
+												  </div>
+												</a>
+											  </div>
+											</div>
+										  </div>
+										</div>
+									  </div>
+							  </div>
 							</div>
+						  </div>
+						</div>
+					  </div>
+					</li>
+				  </ul>
+				</li>
+				{% endfor %}
+			   
+			   
+				 
+				</ul>
+			  </div>
+			</div>
+  
+			<div class="mobile-menu-components">
+			  <div class="mobile-menu-my-account">
+				<span class="button-icon"
+				  ><svg
+					width="22"
+					height="22"
+					viewBox="0 0 22 22"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				  >
+					<path
+					  d="M14.5156 12.875C15.9479 12.875 17.1719 13.3958 18.1875 14.4375C19.2292 15.4531 19.75 16.6771 19.75 18.1094V19.125C19.75 19.6458 19.5677 20.0885 19.2031 20.4531C18.8385 20.8177 18.3958 21 17.875 21H4.125C3.60417 21 3.16146 20.8177 2.79688 20.4531C2.43229 20.0885 2.25 19.6458 2.25 19.125V18.1094C2.25 16.6771 2.75781 15.4531 3.77344 14.4375C4.8151 13.3958 6.05208 12.875 7.48438 12.875C7.82292 12.875 8.31771 12.9792 8.96875 13.1875C9.64583 13.3958 10.3229 13.5 11 13.5C11.6771 13.5 12.3542 13.3958 13.0312 13.1875C13.7083 12.9792 14.2031 12.875 14.5156 12.875ZM17.875 19.125V18.1094C17.875 17.1979 17.5365 16.4167 16.8594 15.7656C16.2083 15.0885 15.4271 14.75 14.5156 14.75C14.4375 14.75 14.0208 14.8542 13.2656 15.0625C12.5365 15.2708 11.7812 15.375 11 15.375C10.2188 15.375 9.45052 15.2708 8.69531 15.0625C7.96615 14.8542 7.5625 14.75 7.48438 14.75C6.57292 14.75 5.77865 15.0885 5.10156 15.7656C4.45052 16.4167 4.125 17.1979 4.125 18.1094V19.125H17.875ZM14.9844 10.6094C13.8906 11.7031 12.5625 12.25 11 12.25C9.4375 12.25 8.10938 11.7031 7.01562 10.6094C5.92188 9.51562 5.375 8.1875 5.375 6.625C5.375 5.0625 5.92188 3.73438 7.01562 2.64062C8.10938 1.54688 9.4375 1 11 1C12.5625 1 13.8906 1.54688 14.9844 2.64062C16.0781 3.73438 16.625 5.0625 16.625 6.625C16.625 8.1875 16.0781 9.51562 14.9844 10.6094ZM13.6562 3.96875C12.9271 3.23958 12.0417 2.875 11 2.875C9.95833 2.875 9.07292 3.23958 8.34375 3.96875C7.61458 4.69792 7.25 5.58333 7.25 6.625C7.25 7.66667 7.61458 8.55208 8.34375 9.28125C9.07292 10.0104 9.95833 10.375 11 10.375C12.0417 10.375 12.9271 10.0104 13.6562 9.28125C14.3854 8.55208 14.75 7.66667 14.75 6.625C14.75 5.58333 14.3854 4.69792 13.6562 3.96875Z"
+					  fill="#000000"
+					/></svg
+				></span>
+				<span class="button-text">My Account</span>
+			  </div>
+			  <div class="tm-button-wrapper mobile-menu-login-btn">
+				<a
+				  class="tm-button style-flat tm-button-sm tm-button-full-wide open-modal-login"
+				  href="#"
+				>
+				  <div class="button-content-wrapper">
+					<span class="button-text">Log in</span>
+				  </div>
+				</a>
+			  </div>
+			  <div class="tm-button-wrapper">
+				<a
+				  class="tm-button style-border tm-button-sm tm-button-full-wide open-modal-register"
+				  href="{% url 'userauths:sign-up' %}"
+				>
+				  <div class="button-content-wrapper">
+					<span class="button-text">Register</span>
+				  </div>
+				</a>
+			  </div>
+			</div>
+		  </div>
 		</div>
-	</div>
-</div>
-<div id="page-mobile-tabs" class="page-mobile-tabs">
-	<div class="tabs">
-	  <a
-		href="/"
-		class="mobile-tab-link"
-		aria-label="Home"
-	  >
-		<div class="icon">
-		  <svg
-			width="22"
-			height="22"
-			viewBox="0 0 22 22"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
+	  </div>
+	  <div id="page-mobile-tabs" class="page-mobile-tabs">
+		<div class="tabs">
+		  <a
+			href="/"
+			class="mobile-tab-link"
+			aria-label="Home"
 		  >
-			<path
-			  d="M21.779 10.6767L12.369 2.94569C11.9843 2.62539 11.4995 2.45 10.999 2.45C10.4984 2.45 10.0136 2.62539 9.62892 2.94569L0.218899 10.6767C0.157352 10.7282 0.106553 10.7913 0.0694048 10.8625C0.0322563 10.9336 0.00948516 11.0114 0.00239165 11.0913C-0.00470186 11.1712 0.00402122 11.2518 0.0280628 11.3284C0.0521044 11.405 0.0909935 11.476 0.14251 11.5376L0.533623 12.0074C0.637642 12.1316 0.786713 12.2094 0.948074 12.2237C1.10943 12.238 1.26988 12.1877 1.39415 12.0838L2.44336 11.2221V18.3381C2.44426 18.662 2.57333 18.9724 2.80234 19.2014C3.03136 19.4304 3.34171 19.5595 3.66559 19.5604H8.55451C8.87838 19.5595 9.18873 19.4304 9.41775 19.2014C9.64677 18.9724 9.77583 18.662 9.77674 18.3381V14.3659H12.2212V18.3381C12.2221 18.662 12.3512 18.9724 12.5802 19.2014C12.8092 19.4304 13.1195 19.5595 13.4434 19.5604H18.3323C18.6547 19.5597 18.9638 19.4319 19.1926 19.2049C19.4214 18.9778 19.5515 18.6697 19.5546 18.3473V11.2213L20.6061 12.0853C20.7303 12.1892 20.8908 12.2395 21.0521 12.2252C21.2135 12.2109 21.3626 12.1331 21.4666 12.0089L21.8573 11.5395C21.909 11.4778 21.948 11.4065 21.9721 11.3296C21.9961 11.2528 22.0048 11.172 21.9975 11.0918C21.9902 11.0116 21.9672 10.9337 21.9297 10.8624C21.8922 10.7912 21.841 10.7281 21.779 10.6767V10.6767ZM17.7155 17.727H14.0545V13.7548C14.0536 13.4309 13.9246 13.1206 13.6956 12.8915C13.4665 12.6625 13.1562 12.5335 12.8323 12.5326H9.16562C8.84174 12.5335 8.53139 12.6625 8.30238 12.8915C8.07336 13.1206 7.9443 13.4309 7.94339 13.7548V17.727H4.2767V9.71646L10.999 4.19274L17.7212 9.71417L17.7155 17.727Z"
-			  fill="black"
-			/>
-		  </svg>
+			<div class="icon">
+			  <svg
+				width="22"
+				height="22"
+				viewBox="0 0 22 22"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			  >
+				<path
+				  d="M21.779 10.6767L12.369 2.94569C11.9843 2.62539 11.4995 2.45 10.999 2.45C10.4984 2.45 10.0136 2.62539 9.62892 2.94569L0.218899 10.6767C0.157352 10.7282 0.106553 10.7913 0.0694048 10.8625C0.0322563 10.9336 0.00948516 11.0114 0.00239165 11.0913C-0.00470186 11.1712 0.00402122 11.2518 0.0280628 11.3284C0.0521044 11.405 0.0909935 11.476 0.14251 11.5376L0.533623 12.0074C0.637642 12.1316 0.786713 12.2094 0.948074 12.2237C1.10943 12.238 1.26988 12.1877 1.39415 12.0838L2.44336 11.2221V18.3381C2.44426 18.662 2.57333 18.9724 2.80234 19.2014C3.03136 19.4304 3.34171 19.5595 3.66559 19.5604H8.55451C8.87838 19.5595 9.18873 19.4304 9.41775 19.2014C9.64677 18.9724 9.77583 18.662 9.77674 18.3381V14.3659H12.2212V18.3381C12.2221 18.662 12.3512 18.9724 12.5802 19.2014C12.8092 19.4304 13.1195 19.5595 13.4434 19.5604H18.3323C18.6547 19.5597 18.9638 19.4319 19.1926 19.2049C19.4214 18.9778 19.5515 18.6697 19.5546 18.3473V11.2213L20.6061 12.0853C20.7303 12.1892 20.8908 12.2395 21.0521 12.2252C21.2135 12.2109 21.3626 12.1331 21.4666 12.0089L21.8573 11.5395C21.909 11.4778 21.948 11.4065 21.9721 11.3296C21.9961 11.2528 22.0048 11.172 21.9975 11.0918C21.9902 11.0116 21.9672 10.9337 21.9297 10.8624C21.8922 10.7912 21.841 10.7281 21.779 10.6767V10.6767ZM17.7155 17.727H14.0545V13.7548C14.0536 13.4309 13.9246 13.1206 13.6956 12.8915C13.4665 12.6625 13.1562 12.5335 12.8323 12.5326H9.16562C8.84174 12.5335 8.53139 12.6625 8.30238 12.8915C8.07336 13.1206 7.9443 13.4309 7.94339 13.7548V17.727H4.2767V9.71646L10.999 4.19274L17.7212 9.71417L17.7155 17.727Z"
+				  fill="black"
+				/>
+			  </svg>
+			</div>
+		  </a>
+		  <a
+			href="http://192.168.1.23:8000/sub-category/Cellular%20Window%20Blinds/"
+			class="mobile-tab-link"
+			aria-label="Shop"
+		  >
+			<div class="icon">
+			  <svg
+				width="22"
+				height="22"
+				viewBox="0 0 22 22"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			  >
+				<path
+				  d="M1 4.125V17.875C1 18.3958 1.18229 18.8385 1.54688 19.2031C1.91146 19.5677 2.35417 19.75 2.875 19.75H19.125C19.6458 19.75 20.0885 19.5677 20.4531 19.2031C20.8177 18.8385 21 18.3958 21 17.875V4.125C21 3.60417 20.8177 3.16146 20.4531 2.79688C20.0885 2.43229 19.6458 2.25 19.125 2.25H2.875C2.35417 2.25 1.91146 2.43229 1.54688 2.79688C1.18229 3.16146 1 3.60417 1 4.125ZM10.0625 4.125V10.0625H2.875V4.35938C2.875 4.30729 2.90104 4.25521 2.95312 4.20312C3.00521 4.15104 3.05729 4.125 3.10938 4.125H10.0625ZM2.875 11.9375H10.0625V17.875H3.10938C3.05729 17.875 3.00521 17.849 2.95312 17.7969C2.90104 17.7448 2.875 17.6927 2.875 17.6406V11.9375ZM11.9375 17.875V11.9375H19.125V17.6406C19.125 17.6927 19.099 17.7448 19.0469 17.7969C18.9948 17.849 18.9427 17.875 18.8906 17.875H11.9375ZM19.125 10.0625H11.9375V4.125H18.8906C18.9427 4.125 18.9948 4.15104 19.0469 4.20312C19.099 4.25521 19.125 4.30729 19.125 4.35938V10.0625Z"
+				  fill="black"
+				/>
+			  </svg>
+			</div>
+		  </a>
+		  <a
+			href=""
+			class="mobile-tab-link has-badge wishlist-link"
+			aria-label="Wishlist"
+		  >
+			<div class="icon">
+			  <svg
+				width="22"
+				height="22"
+				viewBox="0 0 22 22"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			  >
+				<path
+				  d="M20.425 7.71875C20.9458 7.77083 21.2844 8.04427 21.4406 8.53906C21.5969 9.03385 21.4927 9.46354 21.1281 9.82812L16.9875 13.8516L17.9641 19.5547C18.0422 20.0495 17.8729 20.4401 17.4562 20.7266C17.0396 21.0391 16.6099 21.0781 16.1672 20.8438L11.05 18.1875L5.93281 20.8438C5.4901 21.1042 5.06042 21.0781 4.64375 20.7656C4.22708 20.4531 4.05781 20.0495 4.13594 19.5547L5.1125 13.8516L0.971875 9.82812C0.607292 9.46354 0.503125 9.03385 0.659375 8.53906C0.815625 8.04427 1.15417 7.77083 1.675 7.71875L7.37812 6.85938L9.91719 1.70312C10.1516 1.23438 10.5292 1 11.05 1C11.5708 1 11.9484 1.23438 12.1828 1.70312L14.7219 6.85938L20.425 7.71875ZM14.9953 13.1875L18.9016 9.35938L13.4719 8.57812L11.05 3.65625L8.62812 8.57812L3.19844 9.35938L7.10469 13.1875L6.20625 18.6172L11.05 16.0391L15.8937 18.6172L14.9953 13.1875Z"
+				  fill="#000000"
+				/>
+			  </svg>
+			  <span class="icon-badge">1</span>
+			</div>
+		  </a>
+		  <a
+			href="/cart"
+			class="mini-cart__button has-badge mobile-tab-link"
+			aria-label="Cart"
+		  >
+			<div class="icon">
+			  <svg
+				width="22"
+				height="22"
+				viewBox="0 0 22 22"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			  >
+				<path
+				  d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z"
+				  fill="#000000"
+				/>
+			  </svg>
+			  <div class="icon-badge mini-cart-badge cart-items-count" data-count="16">{{ request.session.cart_data_obj|length }}</div>
+			</div></a
+		  >
+		  <a
+			href=""
+			class="page-open-popup-search mobile-tab-link"
+			aria-label="Search"
+		  >
+			<div class="icon">
+			  <svg
+				width="22"
+				height="22"
+				viewBox="0 0 22 22"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			  >
+				<path
+				  d="M20.8438 19.3203C21.0781 19.5286 21.0781 19.75 20.8438 19.9844L19.9844 20.8438C19.75 21.0781 19.5286 21.0781 19.3203 20.8438L14.5938 16.1172C14.4896 16.013 14.4375 15.9089 14.4375 15.8047V15.2578C12.901 16.5859 11.1302 17.25 9.125 17.25C6.88542 17.25 4.97135 16.4557 3.38281 14.8672C1.79427 13.2786 1 11.3646 1 9.125C1 6.88542 1.79427 4.97135 3.38281 3.38281C4.97135 1.79427 6.88542 1 9.125 1C11.3646 1 13.2786 1.79427 14.8672 3.38281C16.4557 4.97135 17.25 6.88542 17.25 9.125C17.25 11.1302 16.5859 12.901 15.2578 14.4375H15.8047C15.9349 14.4375 16.0391 14.4896 16.1172 14.5938L20.8438 19.3203ZM4.71094 13.5391C5.9349 14.763 7.40625 15.375 9.125 15.375C10.8438 15.375 12.3151 14.763 13.5391 13.5391C14.763 12.3151 15.375 10.8438 15.375 9.125C15.375 7.40625 14.763 5.9349 13.5391 4.71094C12.3151 3.48698 10.8438 2.875 9.125 2.875C7.40625 2.875 5.9349 3.48698 4.71094 4.71094C3.48698 5.9349 2.875 7.40625 2.875 9.125C2.875 10.8438 3.48698 12.3151 4.71094 13.5391Z"
+				  fill="#000000"
+				/>
+			  </svg>
+			</div>
+		  </a>
 		</div>
-	  </a>
-	  <a
-		href="http://192.168.1.23:8000/sub-category/Cellular%20Window%20Blinds/"
-		class="mobile-tab-link"
-		aria-label="Shop"
-	  >
-		<div class="icon">
-		  <svg
-			width="22"
-			height="22"
-			viewBox="0 0 22 22"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		  >
-			<path
-			  d="M1 4.125V17.875C1 18.3958 1.18229 18.8385 1.54688 19.2031C1.91146 19.5677 2.35417 19.75 2.875 19.75H19.125C19.6458 19.75 20.0885 19.5677 20.4531 19.2031C20.8177 18.8385 21 18.3958 21 17.875V4.125C21 3.60417 20.8177 3.16146 20.4531 2.79688C20.0885 2.43229 19.6458 2.25 19.125 2.25H2.875C2.35417 2.25 1.91146 2.43229 1.54688 2.79688C1.18229 3.16146 1 3.60417 1 4.125ZM10.0625 4.125V10.0625H2.875V4.35938C2.875 4.30729 2.90104 4.25521 2.95312 4.20312C3.00521 4.15104 3.05729 4.125 3.10938 4.125H10.0625ZM2.875 11.9375H10.0625V17.875H3.10938C3.05729 17.875 3.00521 17.849 2.95312 17.7969C2.90104 17.7448 2.875 17.6927 2.875 17.6406V11.9375ZM11.9375 17.875V11.9375H19.125V17.6406C19.125 17.6927 19.099 17.7448 19.0469 17.7969C18.9948 17.849 18.9427 17.875 18.8906 17.875H11.9375ZM19.125 10.0625H11.9375V4.125H18.8906C18.9427 4.125 18.9948 4.15104 19.0469 4.20312C19.099 4.25521 19.125 4.30729 19.125 4.35938V10.0625Z"
-			  fill="black"
-			/>
-		  </svg>
-		</div>
-	  </a>
-	  <a
-		href=""
-		class="mobile-tab-link has-badge wishlist-link"
-		aria-label="Wishlist"
-	  >
-		<div class="icon">
-		  <svg
-			width="22"
-			height="22"
-			viewBox="0 0 22 22"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		  >
-			<path
-			  d="M20.425 7.71875C20.9458 7.77083 21.2844 8.04427 21.4406 8.53906C21.5969 9.03385 21.4927 9.46354 21.1281 9.82812L16.9875 13.8516L17.9641 19.5547C18.0422 20.0495 17.8729 20.4401 17.4562 20.7266C17.0396 21.0391 16.6099 21.0781 16.1672 20.8438L11.05 18.1875L5.93281 20.8438C5.4901 21.1042 5.06042 21.0781 4.64375 20.7656C4.22708 20.4531 4.05781 20.0495 4.13594 19.5547L5.1125 13.8516L0.971875 9.82812C0.607292 9.46354 0.503125 9.03385 0.659375 8.53906C0.815625 8.04427 1.15417 7.77083 1.675 7.71875L7.37812 6.85938L9.91719 1.70312C10.1516 1.23438 10.5292 1 11.05 1C11.5708 1 11.9484 1.23438 12.1828 1.70312L14.7219 6.85938L20.425 7.71875ZM14.9953 13.1875L18.9016 9.35938L13.4719 8.57812L11.05 3.65625L8.62812 8.57812L3.19844 9.35938L7.10469 13.1875L6.20625 18.6172L11.05 16.0391L15.8937 18.6172L14.9953 13.1875Z"
-			  fill="#000000"
-			/>
-		  </svg>
-		  <span class="icon-badge">1</span>
-		</div>
-	  </a>
-	  <a
-		href="/cart"
-		class="mini-cart__button has-badge mobile-tab-link"
-		aria-label="Cart"
-	  >
-		<div class="icon">
-		  <svg
-			width="22"
-			height="22"
-			viewBox="0 0 22 22"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		  >
-			<path
-			  d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z"
-			  fill="#000000"
-			/>
-		  </svg>
-		  <div class="icon-badge mini-cart-badge cart-items-count" data-count="16">{{ request.session.cart_data_obj|length }}</div>
-		</div></a
-	  >
-	  <a
-		href=""
-		class="page-open-popup-search mobile-tab-link"
-		aria-label="Search"
-	  >
-		<div class="icon">
-		  <svg
-			width="22"
-			height="22"
-			viewBox="0 0 22 22"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		  >
-			<path
-			  d="M20.8438 19.3203C21.0781 19.5286 21.0781 19.75 20.8438 19.9844L19.9844 20.8438C19.75 21.0781 19.5286 21.0781 19.3203 20.8438L14.5938 16.1172C14.4896 16.013 14.4375 15.9089 14.4375 15.8047V15.2578C12.901 16.5859 11.1302 17.25 9.125 17.25C6.88542 17.25 4.97135 16.4557 3.38281 14.8672C1.79427 13.2786 1 11.3646 1 9.125C1 6.88542 1.79427 4.97135 3.38281 3.38281C4.97135 1.79427 6.88542 1 9.125 1C11.3646 1 13.2786 1.79427 14.8672 3.38281C16.4557 4.97135 17.25 6.88542 17.25 9.125C17.25 11.1302 16.5859 12.901 15.2578 14.4375H15.8047C15.9349 14.4375 16.0391 14.4896 16.1172 14.5938L20.8438 19.3203ZM4.71094 13.5391C5.9349 14.763 7.40625 15.375 9.125 15.375C10.8438 15.375 12.3151 14.763 13.5391 13.5391C14.763 12.3151 15.375 10.8438 15.375 9.125C15.375 7.40625 14.763 5.9349 13.5391 4.71094C12.3151 3.48698 10.8438 2.875 9.125 2.875C7.40625 2.875 5.9349 3.48698 4.71094 4.71094C3.48698 5.9349 2.875 7.40625 2.875 9.125C2.875 10.8438 3.48698 12.3151 4.71094 13.5391Z"
-			  fill="#000000"
-			/>
-		  </svg>
-		</div>
-	  </a>
-	</div>
-  </div>
+	  </div>
 <div class="cart-data-js">
 	<div data-value="{&quot;count&quot;:18,&quot;free_shipping_class_only&quot;:0}" class="cart-data-info"></div>
 </div>
