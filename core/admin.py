@@ -4,8 +4,18 @@ from core.models import *
 class ProductImagesAdmin(admin.TabularInline):
     model = ProductImages
 
+
+class ProductVariantImagesAdmin(admin.TabularInline):
+    model = ProductVariantImages
+    extra = 1  # This allows adding multiple images at once in the admin
+
+class ProductVarientAdmin(admin.TabularInline):
+    model = ProductVarient
+    inlines = [ProductVariantImagesAdmin]
+
+
 class ProductAdmin(admin.ModelAdmin):
-    inlines = [ProductImagesAdmin]
+    inlines = [ProductImagesAdmin, ProductVarientAdmin, ProductVariantImagesAdmin]
     list_display = ['company_name', 'main_category', 'category', 'sub_category', 'title', 'price', 'featured', 'product_status']
     list_filter = ['company_name', 'main_category', 'category', 'sub_category', 'featured', 'product_status']  # Add fields you want to filter by
     search_fields = ['title', 'description']  # Add fields you want to search by

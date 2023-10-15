@@ -130,6 +130,7 @@ def product(request, title):
     main_product = get_object_or_404(Product, title=title)
     related_products = Product.objects.filter(company_name=main_product.company_name).exclude(pk=main_product.pk)[:10]
     product_images = ProductImages.objects.filter(product=main_product)
+    product_varients = ProductVarient.objects.filter(product=main_product)
     related_company = main_product.company_name
     related_subcategory = main_product.sub_category
 
@@ -139,6 +140,7 @@ def product(request, title):
         "product_images": product_images,
         "related_company": related_company,
         "related_subcategory": related_subcategory,
+        "product_varients" : product_varients,
     }
     return render(request, "core/product.html", context)
 

@@ -219,6 +219,50 @@ class ProductImages(models.Model):
         verbose_name_plural = "Product Images"
 
 
+class ProductVarient(models.Model):
+    pid = ShortUUIDField(unique=True, max_length=30, prefix="sub_cat", alphabet="abcdefgh12345") 
+    image = models.ImageField(upload_to=user_directory_path, default="productvarient.jpg")
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    title = models.CharField(max_length=100, default="Product Varient")
+    meta_description = models.CharField(max_length=100)
+    meta_title = models.CharField(max_length=100)
+    meta_tag = models.CharField(max_length=100)
+    description = models.TextField(null=True, blank=True, default="This is the product")
+    price = models.DecimalField(max_digits=99999999999999, decimal_places=2, default="1.99")
+    old_price = models.DecimalField(max_digits=99999999999, decimal_places=2, default="2.99")
+    specifications = models.TextField(null=True, blank=True)
+    product_status = models.CharField(choices=STATUS, max_length=10, default="in_review")
+    color = models.CharField(choices=COLOR, max_length=10, default="black")
+    status = models.BooleanField(default=True)
+    in_stock = models.BooleanField(default=True)
+    sku = ShortUUIDField(unique=True, max_length=50, prefix="sku", alphabet="12345678900")
+    updated = models.DateTimeField(null=True)
+    date = models.DateField(auto_now_add=True)
+
+
+    class Meta:
+        verbose_name_plural = "Product Varient"
+
+    def variant_images(self):
+        return ProductVariantImages.objects.filter(product_variant=self)
+    
+    def __str__(self):
+        return self.title
+
+    def product_varient_image(self):
+        return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
+    
+
+class ProductVariantImages(models.Model):
+    product_variant = models.ForeignKey(ProductVarient, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to=user_directory_path, default="productvarient.jpg")
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    date = models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = "Product Variant Images"
 
 class CartOrder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

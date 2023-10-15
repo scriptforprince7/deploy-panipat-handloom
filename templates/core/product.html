@@ -1525,6 +1525,22 @@ media="all"
 			<div class="label">Estimated Delivery:</div>
 			<div class="value">10 - 17 Aug, 2023</div>
 		</div>
+			<!-- {% for varient in product_varients %}
+		<h1>{{ varient.title }}</h1>
+		<img src="{{ varient.image.url }}" alt="">
+		<p>{{ varient.meta_description }}</p>
+		<p>{{ varient.price }}</p>
+		<p>{{ varient.old_price }}</p>
+		<p>{{ varient.pid }}</p>
+
+		
+		{% for image in varient.variant_images.all %}
+			<img src="{{ image.image.url }}" alt="">
+		{% empty %}
+			<p>No variant images available.</p>
+		{% endfor %}
+	{% endfor %} -->
+
 	
 			<div class="item product-meta-shipping-return">
 			<div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M509.5 184.6L458.9 32.8C452.4 13.2 434.1 0 413.4 0H98.6c-20.7 0-39 13.2-45.5 32.8L2.5 184.6c-1.6 4.9-2.5 10-2.5 15.2V464c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V199.8c0-5.2-.8-10.3-2.5-15.2zM32 199.8c0-1.7.3-3.4.8-5.1L83.4 42.9C85.6 36.4 91.7 32 98.6 32H240v168H32v-.2zM480 464c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V232h448v232zm0-264H272V32h141.4c6.9 0 13 4.4 15.2 10.9l50.6 151.8c.5 1.6.8 3.3.8 5.1v.2z"/></svg></div>
@@ -1532,6 +1548,48 @@ media="all"
 			<div class="value">On all orders over <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">₹</span>999.00</bdi></span></div>
 		</div>
 	</div>
+	<style>
+		.row-isw-swatch {
+			display: flex; /* Use flexbox to align items horizontally */
+			align-items: center; /* Align items vertically in the center */
+		}
+	
+		.isw-swatch {
+			margin-right: 10px; /* Adjust the margin between circles as needed */
+		}
+	
+		.term-shape.circle-image {
+			width: 54px; /* Set your desired width */
+			height: 54px; /* Set your desired height */
+			border-radius: 50%; /* Makes the shape circular */
+			overflow: hidden; /* Ensures the image stays within the circle */
+		}
+	
+		.term-shape.circle-image img {
+			width: 100%; /* Makes the image fill the circular container */
+			height: auto; /* Maintains aspect ratio of the image */
+		}
+	</style>
+	<div class="variations" style="margin-top: 1rem;margin-bottom: 0.4rem;">
+		<div class="row-isw-swatch">
+			<div class="label">
+				<label for="pa_color">Variants:</label>
+			</div>
+		</div>
+		<div class="row-isw-swatch">
+			{% for varient in product_varients %}
+			<div class="isw-swatch isw-swatch--isw_color" data-attribute="pa_color">
+				<a href="#" aria-label="{{ varient.title }}" title="{{ varient.title }}" class="isw-term term-link hint--top" data-term="">
+					<div class="term-shape circle-image">
+						<img src="{{ varient.image.url }}" alt="{{ varient.title }}">
+					</div>
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	
+	
 	<div>
 		<div class="quantity" style="margin-bottom: 0.6rem;margin-top: 0.4rem;">
 			<input
