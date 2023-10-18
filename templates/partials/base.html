@@ -1415,6 +1415,7 @@
       type="text/css"
       media="all"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
       rel="stylesheet"
       id="elementor-post-4-css"
@@ -2260,12 +2261,11 @@ src="{% static 'assets/js/function.js' %}"
                     class="product-category-dropdown menu__container sm sm-simple sm-vertical"
                     data-sm-options='{"mainMenuSubOffsetX":-15,"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17,"keepInViewport":false}'
                   >
-                    {% for p in main_cat %}
+                  {% for p in main_cat %}
                     <li
                       class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"
                     >
-                      <a
-                        href=""
+                      <a href=""
                         ><div class="menu-item-wrap">
                           <span class="menu-item-icon"
                             ><svg
@@ -2304,11 +2304,7 @@ src="{% static 'assets/js/function.js' %}"
                             >{{p.main_title}}</span
                           ><span class="toggle-sub-menu"> </span></div
                       ></a>
-
                       <ul class="sub-menu children mega-menu">
-
-                        {% for cat in p.category_set.all %}
-
                         <li
                           class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305"
                         >
@@ -2329,11 +2325,10 @@ src="{% static 'assets/js/function.js' %}"
                                       class="elementor-container elementor-column-gap-extended"
                                     >
                                       <div class="elementor-row">
-                                        
-                                        
+                                        {% for cat in p.category_set.all %}
                                         <div
-                                          class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-4e2db18"
-                                          data-id="4e2db18"
+                                          class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-8b6c475"
+                                          data-id="8b6c475"
                                           data-element_type="column"
                                         >
                                           <div
@@ -2343,44 +2338,123 @@ src="{% static 'assets/js/function.js' %}"
                                               class="elementor-widget-wrap"
                                             >
                                               <div
-                                                class="elementor-element elementor-element-16d8c3b elementor-widget elementor-widget-heading"
-                                                data-id="16d8c3b"
+                                                class="elementor-element elementor-element-60475cc elementor-widget elementor-widget-heading"
+                                                data-id="60475cc"
                                                 data-element_type="widget"
                                                 data-widget_type="heading.default"
                                               >
                                                 <div
                                                   class="elementor-widget-container"
                                                 >
-                                                 <a href="{% url 'core:inner-category' cat.cat_title %}"><h2
-                                                  class="elementor-heading-title elementor-size-default"
-                                                >
-                                                  {{cat.cat_title}}
-                                                </h2></a>
-                                                </div>
-                                              </div>
-                                              <div
-                                                class="elementor-element elementor-element-5d6d640 elementor-widget elementor-widget-spacer"
-                                                data-id="5d6d640"
-                                                data-element_type="widget"
-                                                data-widget_type="spacer.default"
-                                              >
-                                                <div
-                                                  class="elementor-widget-container"
-                                                >
-                                                  <div
-                                                    class="elementor-spacer"
+                                                <style>
+                                                  /*! elementor - v3.10.0 - 09-01-2023 */
+                                                  .elementor-column
+                                                    .elementor-spacer-inner {
+                                                    height: var(
+                                                      --spacer-size
+                                                    );
+                                                  }
+                                                  .e-con {
+                                                    --container-widget-width: 100%;
+                                                  }
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer,
+                                                  .e-con
+                                                    > .elementor-widget-spacer {
+                                                    width: var(
+                                                      --container-widget-width,
+                                                      var(
+                                                        --spacer-size
+                                                      )
+                                                    );
+                                                    --align-self: var(
+                                                      --container-widget-align-self,
+                                                      initial
+                                                    );
+                                                    --flex-shrink: 0;
+                                                  }
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container,
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer,
+                                                  .e-con
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container,
+                                                  .e-con
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer {
+                                                    height: 100%;
+                                                  }
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer
+                                                    > .elementor-spacer-inner,
+                                                  .e-con
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer
+                                                    > .elementor-spacer-inner {
+                                                    height: var(
+                                                      --container-widget-height,
+                                                      var(
+                                                        --spacer-size
+                                                      )
+                                                    );
+                                                  }
+                                                </style>
+                                                 <style>
+                                                  /*! elementor - v3.10.0 - 09-01-2023 */
+                                                  .elementor-heading-title {
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    line-height: 1;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title[class*="elementor-size-"]
+                                                    > a {
+                                                    color: inherit;
+                                                    font-size: inherit;
+                                                    line-height: inherit;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-small {
+                                                    font-size: 15px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-medium {
+                                                    font-size: 19px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-large {
+                                                    font-size: 29px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-xl {
+                                                    font-size: 39px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-xxl {
+                                                    font-size: 59px;
+                                                  }
+                                                </style>
+                                                  <h2
+                                                    class="elementor-heading-title elementor-size-default"
                                                   >
-                                                    <div
-                                                      class="elementor-spacer-inner"
-                                                    ></div>
-                                                  </div>
+                                                    {{cat.cat_title}}
+                                                  </h2>
                                                 </div>
                                               </div>
+                                              {% for sub_cat in cat.sub_categories_set.all %}
                                               <div
-                                                class="elementor-element elementor-element-c5d41c6 elementor-widget elementor-widget-tm-simple-list"
-                                                data-id="c5d41c6"
+                                                class="elementor-element elementor-element-e8afc0b elementor-widget elementor-widget-tm-simple-list"
+                                                data-id="e8afc0b"
                                                 data-element_type="widget"
-                                                data-widget_type="tm-simple-list.default"
+                                                data-widget_type="tm-simple-list.default" style="margin-top: 0.3rem;"
                                               >
                                                 <div
                                                   class="elementor-widget-container"
@@ -2408,61 +2482,58 @@ src="{% static 'assets/js/function.js' %}"
                                                       padding: 20px;
                                                   }
                                               </style>
-                                              
-                                              <div class="minimog-simple-list minimog-simple-list--style-03">
-                                                  {% for sub_cat in cat.sub_categories_set.all %}
-                                                  <div class="item elementor-repeater-item-9c988d6 truncated">
-                                                    <a class="link" href="{% url 'core:sub-category' sub_cat.sub_cat_title %}">
-                                                        {{ sub_cat.sub_cat_title }}
-                                                    </a>
-                                                    <i class="dropdown-icon"></i>
-                                                    <div class="dropdown-container">
-                                                      <ul>
-                                                        {% for company in sub_cat.company_name_set.all %}
-                                                            {% with company_name=company.company_name_title %}
-                                                                {% if company_name %}
-                                                                    <a href="{% url 'core:sub-category' sub_cat_title=sub_cat.sub_cat_title %}#{{ company.sid }}">
-                                                                        <li>{{ company_name }}</li>
-                                                                    </a>
-                                                                {% else %}
-                                                                    <li>No brands available</li>
-                                                                {% endif %}
-                                                            {% endwith %}
-                                                        {% empty %}
-                                                            <li>No brands available</li>
-                                                        {% endfor %}
-                                                    </ul>
+                                                  <div
+                                                    class="minimog-simple-list minimog-simple-list--style-03"
+                                                  >
+                                                    <div
+                                                      class="item elementor-repeater-item-9c988d6 truncated"
+                                                    >
+                                                      <a
+                                                        class="link"
+                                                        href="{% url 'core:sub-category' sub_cat.sub_cat_title %}"
+                                                      >
+                                                        {{sub_cat.sub_cat_title}}
+                                                      </a><i class="dropdown-icon"></i>
+                                                      <div class="dropdown-container">
+                                                        <ul>
+                                                          {% for company in sub_cat.company_name_set.all %}
+                                                              {% with company_name=company.company_name_title %}
+                                                                  {% if company_name %}
+                                                                      <a href="{% url 'core:sub-category' sub_cat_title=sub_cat.sub_cat_title %}#{{ company.sid }}">
+                                                                          <li>{{ company_name }}</li>
+                                                                      </a>
+                                                                  {% else %}
+                                                                      <li>No brands available</li>
+                                                                  {% endif %}
+                                                              {% endwith %}
+                                                          {% empty %}
+                                                              <li>No brands available</li>
+                                                          {% endfor %}
+                                                      </ul>
+                                                      </div>
                                                     </div>
+                                                  </div>
                                                 </div>
-                                                
-                                                  {% endfor %}
                                               </div>
-                                              
+                                              {% endfor %}
                                               <script>
-                                                  document.addEventListener("DOMContentLoaded", function() {
-                                                      const dropdownIcons = document.querySelectorAll('.dropdown-icon');
-                                                      
-                                                      dropdownIcons.forEach(icon => {
-                                                          icon.addEventListener('click', () => {
-                                                              const dropdownContainer = icon.nextElementSibling;
-                                                              dropdownContainer.style.display = (dropdownContainer.style.display === 'none' || dropdownContainer.style.display === '') ? 'block' : 'none';
-                                                          });
-                                                      });
-                                                  });
-                                              </script>
-                                              
-                                            
-                                                                                          
-                                              
-
-                                                </div>
-                                              </div>
+                                                document.addEventListener("DOMContentLoaded", function() {
+                                                    const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+                                                    
+                                                    dropdownIcons.forEach(icon => {
+                                                        icon.addEventListener('click', () => {
+                                                            const dropdownContainer = icon.nextElementSibling;
+                                                            dropdownContainer.style.display = (dropdownContainer.style.display === 'none' || dropdownContainer.style.display === '') ? 'block' : 'none';
+                                                        });
+                                                    });
+                                                });
+                                            </script>
                                             </div>
                                           </div>
                                         </div>
+                                        {% endfor %}
 
-
-
+                                        
                                         <div
                                           class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
                                           data-id="877ceeb"
@@ -2504,7 +2575,7 @@ src="{% static 'assets/js/function.js' %}"
                                                         <h3
                                                           class="title"
                                                         >
-                                                        Shop 
+                                                         {{p.main_title}}
                                                         </h3>
                                                       </div>
                                                       <div
@@ -2535,7 +2606,6 @@ src="{% static 'assets/js/function.js' %}"
                                             </div>
                                           </div>
                                         </div>
-                                        
                                       </div>
                                     </div>
                                   </section>
@@ -2544,14 +2614,9 @@ src="{% static 'assets/js/function.js' %}"
                             </div>
                           </div>
                         </li>
-
-                        {% endfor %}
-                        
                       </ul>
-
                     </li>
                     {% endfor %}
-                 
                   </ul>
                 </nav>
               </div>
