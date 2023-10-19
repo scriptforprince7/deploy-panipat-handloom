@@ -1087,18 +1087,6 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
 												  </div>
 												</div>
 												{% endfor %}
-												<script>
-												  document.addEventListener("DOMContentLoaded", function() {
-													  const dropdownIcons = document.querySelectorAll('.dropdown-icon');
-													  
-													  dropdownIcons.forEach(icon => {
-														  icon.addEventListener('click', () => {
-															  const dropdownContainer = icon.nextElementSibling;
-															  dropdownContainer.style.display = (dropdownContainer.style.display === 'none' || dropdownContainer.style.display === '') ? 'block' : 'none';
-														  });
-													  });
-												  });
-											  </script>
 											  </div>
 											</div>
 										  </div>
@@ -3351,5 +3339,17 @@ var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"
 /* ]]> */
 </script>
 <script type='text/javascript' src='https://minimog-4437.kxcdn.com/megamog/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min.js?ver=1.7.8' id='wpforms-elementor-js'></script>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+		
+		dropdownIcons.forEach(icon => {
+			icon.addEventListener('click', () => {
+				const dropdownContainer = icon.nextElementSibling;
+				dropdownContainer.style.display = (dropdownContainer.style.display === 'none' || dropdownContainer.style.display === '') ? 'block' : 'none';
+			});
+		});
+	});
+</script>
 </body>
 </html>

@@ -19,8 +19,10 @@ def index(request):
     window_blind_brands = Company_name.objects.filter(window_blinds_brands=True)
     carpet_tile_office = Company_name.objects.filter(carpet_tile_for_office_brands=True)
     rugs_brands = Company_name.objects.filter(rugs_brands=True)
+    pillow_brands = Company_name.objects.filter(pillow_brands=True)
     hospital_floor_walls = Company_name.objects.filter(hospital_walls_brands=True)
     wooden_laminate = Company_name.objects.filter(wooden_laminate_flooring_brands=True)
+    pvc_rubber = Company_name.objects.filter(pvc_rubber_flooring_brands=True)
     curtain_rods_channel = Company_name.objects.filter(curtains_rods_channel_brands=True)
     foam_material = Company_name.objects.filter(foam_material_brands=True)
     awning_canopy = Company_name.objects.filter(awning_canopy_brands=True)
@@ -35,8 +37,10 @@ def index(request):
         "window_blind_brands": window_blind_brands,
         "carpet_tile_office": carpet_tile_office,
         "rugs_brands": rugs_brands,
+        "pillow_brands": pillow_brands,
         "hospital_floor_walls": hospital_floor_walls,
         "wooden_laminate": wooden_laminate,
+        "pvcrubber": pvc_rubber,
         "curtain_rods_channel": curtain_rods_channel,
         "foam_material": foam_material,
         "awning_canopy": awning_canopy,
