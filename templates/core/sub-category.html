@@ -1819,9 +1819,9 @@ id="dokan-util-helper-js"
 					<div class="page-sidebar-content-wrap">
 						<div class="page-sidebar-content">
 							
-							<div id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><h6 class="sidebar-top-heading">Filters</h6></div></div><div id="minimog-wp-widget-product-categories-layered-nav-2" class="widget minimog-wp-widget-product-categories-layered-nav minimog-wp-widget-filter"><input type="hidden" class="widget-instance" data-name="Minimog_WP_Widget_Product_Categories_Layered_Nav" data-instance="{&quot;title&quot;:&quot;Categories&quot;,&quot;display_type&quot;:&quot;list&quot;,&quot;list_style&quot;:&quot;normal&quot;,&quot;items_count&quot;:&quot;off&quot;,&quot;show_hierarchy&quot;:0}"/><p class="widget-title heading">Categories</p><div class="widget-content" ><div class="widget-content-inner"><ul class="show-display-list show-items-count-off list-style-normal">
+							<div id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><h6 class="sidebar-top-heading">Filters</h6></div></div><div id="minimog-wp-widget-product-categories-layered-nav-2" class="widget minimog-wp-widget-product-categories-layered-nav minimog-wp-widget-filter"><input type="hidden" class="widget-instance" data-name="" data-instance="{&quot;title&quot;:&quot;Categories&quot;,&quot;display_type&quot;:&quot;list&quot;,&quot;list_style&quot;:&quot;normal&quot;,&quot;items_count&quot;:&quot;off&quot;,&quot;show_hierarchy&quot;:0}"/><p class="widget-title heading">Categories</p><div class="widget-content" ><div class="widget-content-inner"><ul class="show-display-list show-items-count-off list-style-normal">
 								{% for resc in related_sub_categories %}
-								<li class="wc-layered-nav-term"><a href="{% url 'core:sub-category' resc.sub_cat_title %}" class="filter-link">{{resc.sub_cat_title}}</a></li>
+								<li class="wc-layered-nav-term"><a href="{% url 'core:sub-category' resc.sub_cat_title %}" class="">{{resc.sub_cat_title}}</a></li>
 								{% endfor %}
 								
 								
@@ -1968,17 +1968,7 @@ id="dokan-util-helper-js"
 						<div class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%;"><img  src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20450%20450%22%3E%3C%2Fsvg%3E" width="450" height="450" alt="product_furniture_07_2" data-src="{{product.image.url}}" class=" ll-image" /></div>					</div>
 				
 				</a>			</div>
-			<div class="product-actions">
-			<div class="product-action wishlist-btn style-01 icon-star hint--bounce hint--left"
-		     data-hint="Add to wishlist">
-			<a href="" class="woosw-btn woosw-btn-1595" data-id="1595" data-product_name="Adde Chair" data-product_image="{{product.image.url}}">Add to wishlist</a>		</div>
 			
-				<div class="product-action quick-view-btn style-01 hint--bounce hint--left"
-		     data-hint="Quick view"
-		     data-pid="1595">
-			<a class="quick-view-icon" href="#">Quick view</a>
-		</div>
-		</div>
 		</div>
 
 		<div class="product-info">
