@@ -240,6 +240,9 @@ def payment_failed_view(request):
 def com_name(request):
     return render(request, "core/sub-category.html")
 
+def robots_txt(request):
+    return render(request, "core/robots.txt")
+
 
 
         

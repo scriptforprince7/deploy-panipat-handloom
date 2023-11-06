@@ -19,4 +19,5 @@ urlpatterns = [
     path('paypal/', include('paypal.standard.ipn.urls')),
     path("payment-completed/", payment_completed_view, name="payment-completed"),
     path("payment-failed/", payment_failed_view, name="payment-failed"),
+    path("robots.txt/", robots_txt, name="robots_txt"),
 ]

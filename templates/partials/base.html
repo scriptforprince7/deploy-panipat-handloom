@@ -1648,7 +1648,7 @@ src="{% static 'assets/js/function.js' %}"
     class="home page-template-default page page-id-327 wp-embed-responsive theme-minimog woocommerce-multi-currency-GBP woocommerce-no-js desktop desktop-menu primary-nav-rendering header-sticky-enable page-has-mobile-tabs page-has-no-sidebar page-blocks-style-normal title-bar-none woocommerce elementor-default elementor-kit-4 elementor-page elementor-page-327 dokan-theme-minimog"
   >
 
-                                    <style>
+                                    <!-- <style>
      .call-button {
       position: fixed;
       bottom: 20px;
@@ -1848,37 +1848,33 @@ src="{% static 'assets/js/function.js' %}"
   <a href="#" id="enquiryButton">
     <div class="call-button-icon">
       <i class="fas fa-envelope"></i> <!-- Replace with an envelope icon for enquiry -->
-    </div>
+    <!-- </div>
   </a>
-  <a href="https://api.whatsapp.com/send?phone=919899073000" target="_blank" rel="noopener noreferrer">
-    <div class="call-button-icon">
-      <i class="fab fa-whatsapp"></i>
-    </div>
-  </a>
+  
   <div class="call-button-content">
-    <!-- Form for enquiry -->
+    
     <form id="enquiryForm" class="enquiry-form" style="display: none;">
       <p class="phone-number">Enquiry Form</p>
-      <!-- Add your form fields here -->
+     
       <input type="text" placeholder="Name" />
       <input type="email" placeholder="Email" />
       <textarea placeholder="Message"></textarea>
       <button type="submit">Submit</button>
     </form>
   </div>
-</div>
+</div>  -->
 
-<div class="modal-overlay" id="enquiryModal">
+<!-- <div class="modal-overlay" id="enquiryModal">
   <div class="modal-content">
-    <!-- Form for enquiry -->
+    
     <form id="enquiryForm" class="enquiry-form">
       <p class="phone-number">Enquiry Form</p>
-      <!-- Add your form fields here -->
+     
       <input type="text" placeholder="Name" />
       <input type="email" placeholder="Email" />
-      <input type="tel" placeholder="Phone Number" /> <!-- Phone number input -->
+      <input type="tel" placeholder="Phone Number" /> 
       <select name="category" id="category">
-        <!-- Category dropdown -->
+       
         <option value="General">Product</option>
         <option value="Sales">Window Treatment</option>
         <option value="Support">Wall Decor</option>
@@ -1887,7 +1883,7 @@ src="{% static 'assets/js/function.js' %}"
         <option value="Support">Flooring</option>
         <option value="Support">Door Mats</option>
         <option value="Support">Exteriors</option>
-        <!-- Add more options as needed -->
+        
       </select>
       <textarea placeholder="Message"></textarea>
       <button type="submit" class="submit-button">Submit</button>
@@ -1895,29 +1891,27 @@ src="{% static 'assets/js/function.js' %}"
   </div>
 </div>
 
-
-
 <script>
-  // JavaScript to handle modal popup
+  
   const enquiryButton = document.getElementById("enquiryButton");
   const enquiryModal = document.getElementById("enquiryModal");
 
   enquiryButton.addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the default link behavior
-    openEnquiryModal(); // Open the modal
+    event.preventDefault();
+    openEnquiryModal(); 
   });
 
   function openEnquiryModal() {
-    enquiryModal.style.display = "block"; // Show the modal
+    enquiryModal.style.display = "block";
   }
 
-  // Close the modal when the user clicks outside of it
+  
   window.addEventListener("click", function (event) {
     if (event.target === enquiryModal) {
-      enquiryModal.style.display = "none"; // Close the modal
+      enquiryModal.style.display = "none";
     }
   });
-</script>
+</script> -->
 
 
     <div id="page" class="site">
@@ -2245,7 +2239,7 @@ src="{% static 'assets/js/function.js' %}"
     <div class="container-broad">
       <div class="header-below-wrap">
         <div class="header-below-left header-col-start">
-          <div class="header-content-inner lingrad">
+          <!-- <div class="header-content-inner lingrad">
             <div
               id="header-categories-nav"
               class="header-categories-nav"
@@ -2610,7 +2604,7 @@ src="{% static 'assets/js/function.js' %}"
                 </nav>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         
         <div class="header-below-center header-col-center lingrad">
@@ -2625,66 +2619,321 @@ src="{% static 'assets/js/function.js' %}"
                   class="menu__container sm sm-simple"
                   data-sm-options='{"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17}'
                 >
-                  <li
-                    class=""
-                  >
-                    <a href=""
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-title">Home</span>
-                      </div></a
+                {% for p in main_cat %}
+                    <li
+                      class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"
                     >
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"
-                  >
-                    <a
-                      href="http://127.0.0.1:8000/shop-category/Wall%20Decor/"
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-title">Shop</span>
-                      </div></a
-                    >
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"
-                  >
-                    <a href="#"
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-title">About</span>
-                      </div></a
-                    >
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"
-                  >
-                    <a
-                      href="
-                      "
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-title">Blog</span>
-                      </div></a
-                    >
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"
-                  >
-                    <a href="#"
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-title">Reach Us</span>
-                      </div></a
-                    >
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"
-                  >
-                    <a
-                      href=""
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-title"
-                          >Store List</span
+                      <a href=""
+                        ><div class="menu-item-wrap">
+                         <span class="menu-item-title"
+                            >{{p.main_title}}</span
+                          ><span class="toggle-sub-menu"> </span></div
+                      ></a>
+                      <ul class="sub-menu children mega-menu">
+                        <li
+                          class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305"
                         >
-                      </div></a
-                    >
-                  </li>
+                          <div class="mega-menu-content">
+                            <div
+                              data-elementor-type="wp-post"
+                              data-elementor-id="1298"
+                              class="elementor elementor-1298"
+                            >
+                              <div class="elementor-inner">
+                                <div class="elementor-section-wrap">
+                                  <section
+                                    class="elementor-section elementor-top-section elementor-element elementor-element-8e1d000 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
+                                    data-id="8e1d000"
+                                    data-element_type="section"
+                                  >
+                                    <div
+                                      class="elementor-container elementor-column-gap-extended"
+                                    >
+                                      <div class="elementor-row">
+                                        {% for cat in p.category_set.all %}
+                                        <div
+                                          class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-8b6c475"
+                                          data-id="8b6c475"
+                                          data-element_type="column"
+                                        >
+                                          <div
+                                            class="elementor-column-wrap elementor-element-populated"
+                                          >
+                                            <div
+                                              class="elementor-widget-wrap"
+                                            >
+                                              <div
+                                                class="elementor-element elementor-element-60475cc elementor-widget elementor-widget-heading"
+                                                data-id="60475cc"
+                                                data-element_type="widget"
+                                                data-widget_type="heading.default"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                <style>
+                                                  /*! elementor - v3.10.0 - 09-01-2023 */
+                                                  .elementor-column
+                                                    .elementor-spacer-inner {
+                                                    height: var(
+                                                      --spacer-size
+                                                    );
+                                                  }
+                                                  .e-con {
+                                                    --container-widget-width: 100%;
+                                                  }
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer,
+                                                  .e-con
+                                                    > .elementor-widget-spacer {
+                                                    width: var(
+                                                      --container-widget-width,
+                                                      var(
+                                                        --spacer-size
+                                                      )
+                                                    );
+                                                    --align-self: var(
+                                                      --container-widget-align-self,
+                                                      initial
+                                                    );
+                                                    --flex-shrink: 0;
+                                                  }
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container,
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer,
+                                                  .e-con
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container,
+                                                  .e-con
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer {
+                                                    height: 100%;
+                                                  }
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer
+                                                    > .elementor-spacer-inner,
+                                                  .e-con
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer
+                                                    > .elementor-spacer-inner {
+                                                    height: var(
+                                                      --container-widget-height,
+                                                      var(
+                                                        --spacer-size
+                                                      )
+                                                    );
+                                                  }
+                                                </style>
+                                                 <style>
+                                                  /*! elementor - v3.10.0 - 09-01-2023 */
+                                                  .elementor-heading-title {
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    line-height: 1;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title[class*="elementor-size-"]
+                                                    > a {
+                                                    color: inherit;
+                                                    font-size: inherit;
+                                                    line-height: inherit;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-small {
+                                                    font-size: 15px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-medium {
+                                                    font-size: 19px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-large {
+                                                    font-size: 29px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-xl {
+                                                    font-size: 39px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-xxl {
+                                                    font-size: 59px;
+                                                  }
+                                                </style>
+                                                  <h2
+                                                    class="elementor-heading-title elementor-size-default"
+                                                  >
+                                                    {{cat.cat_title}}
+                                                  </h2>
+                                                </div>
+                                              </div>
+                                              {% for sub_cat in cat.sub_categories_set.all %}
+                                              <div
+                                                class="elementor-element elementor-element-e8afc0b elementor-widget elementor-widget-tm-simple-list"
+                                                data-id="e8afc0b"
+                                                data-element_type="widget"
+                                                data-widget_type="tm-simple-list.default" style="margin-top: 0.3rem;"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                <style>
+                                                  .dropdown-icon {
+                                                      display: inline-block;
+                                                      width: 8px; 
+                                                      height: 8px;
+                                                      border-left: 2px solid rgb(101, 96, 96);
+                                                      border-bottom: 2px solid rgb(101, 96, 96);
+                                                      transform: rotate(-45deg); 
+                                                      margin-left: 5px; /* Add margin to the left of the dropdown icon */
+                                                      cursor: pointer; /* Change cursor to indicate interactivity */
+                                                  }
+                                                  
+                                                  .dropdown-container {
+                                                      display: none;
+                                                      margin-top: 5px;
+                                                      padding: 10px;
+                                                      border: 1px solid #ccc;
+                                                      background-color: white;
+                                                      position: absolute;
+                                                      z-index: 1;
+                                                      padding: 20px;
+                                                  }
+                                              </style>
+                                                  <div
+                                                    class="minimog-simple-list minimog-simple-list--style-03"
+                                                  >
+                                                    <div
+                                                      class="item elementor-repeater-item-9c988d6 truncated"
+                                                    >
+                                                      <a
+                                                        class="link"
+                                                        href="{% url 'core:sub-category' sub_cat.sub_cat_title %}"
+                                                      >
+                                                        {{sub_cat.sub_cat_title}}
+                                                      </a><i class="dropdown-icon"></i>
+                                                      <div class="dropdown-container">
+                                                        <ul>
+                                                          {% for company in sub_cat.company_name_set.all %}
+                                                              {% with company_name=company.company_name_title %}
+                                                                  {% if company_name %}
+                                                                      <a href="{% url 'core:sub-category' sub_cat_title=sub_cat.sub_cat_title %}#{{ company.sid }}">
+                                                                          <li style="padding-bottom: 10px;">{{ forloop.counter }}. {{ company_name }}</li>
+                                                                      </a>
+                                                                  {% else %}
+                                                                      <li>No brands available</li>
+                                                                  {% endif %}
+                                                              {% endwith %}
+                                                          {% empty %}
+                                                              <li>No brands available</li>
+                                                          {% endfor %}
+                                                      </ul>
+                                                      
+                                                      
+                                                      
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              {% endfor %}
+                                              
+                                            </div>
+                                          </div>
+                                        </div>
+                                        {% endfor %}
+
+                                        
+                                        <div
+                                          class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
+                                          data-id="877ceeb"
+                                          data-element_type="column"
+                                        >
+                                          <div
+                                            class="elementor-column-wrap elementor-element-populated"
+                                          >
+                                            <div
+                                              class="elementor-widget-wrap"
+                                            >
+                                              <div
+                                                class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner"
+                                                data-id="9c6cc46"
+                                                data-element_type="widget"
+                                                data-widget_type="tm-banner.default"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                  <a
+                                                    class="minimog-banner minimog-box link-secret"
+                                                    href=""
+                                                  >
+                                                    <div
+                                                      class="minimog-image"
+                                                    >
+                                                      <div
+                                                        class="image ll-background ll-background-unload"
+                                                        data-src="{{p.image.url}}"
+                                                      ></div>
+                                                    </div>
+                                                    <div
+                                                      class="content-wrap"
+                                                    >
+                                                      <div
+                                                        class="content-wrap__inner"
+                                                      >
+                                                        <h3
+                                                          class="title"
+                                                        >
+                                                         {{p.main_title}}
+                                                        </h3>
+                                                      </div>
+                                                      <div
+                                                        class="content-wrap__bottom"
+                                                      >
+                                                        <div
+                                                          class="tm-button-wrapper"
+                                                        >
+                                                          <div
+                                                            class="tm-button style-bottom-line tm-button-nm"
+                                                          >
+                                                            <div
+                                                              class="button-content-wrapper"
+                                                            >
+                                                              <span
+                                                                class="button-text"
+                                                                >Shop
+                                                                Now</span
+                                                              >
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </section>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    {% endfor %}
                 </ul>
               </nav>
             </div>
@@ -3794,33 +4043,53 @@ src="{% static 'assets/js/function.js' %}"
     <div id="woosw_wishlist" class="woosw-popup woosw-popup-center"></div>
 
     <style>
-      .tm-demo-options-toolbar a{
-        color: white;
-      }
+    #social-icons {
+    display: none;
+    position: fixed;
+    top: 50%; /* Adjust the vertical position as needed */
+    right: 0;
+    transform: translateY(-50%);
+    /* z-index: 9999; */
+}
+
     </style>
     
+    <div class="tm-demo-options-toolbar" id="social-icons">
+      <a href="https://www.instagram.com/thepanipathandloom1976/" class="toggle-quick-options open-quick-options hint--bounce hint--left hint--black" aria-label="Instagram">
+          <img src="{% static 'wp-content/themes/minimog/assets/images/insta.jpg' %}" alt="Instagram Icon">
+      </a>
+      <a href="https://www.facebook.com/thepanipathandloom" class="hint--bounce hint--left hint--black" aria-label="Facebook">
+          <img src="{% static 'wp-content/themes/minimog/assets/images/facebook.png' %}" alt="Facebook Icon">
+      </a>
+      <a href="https://twitter.com/HandloomPanipat" class="hint--bounce hint--left hint--black" aria-label="Twitter">
+          <img src="{% static 'wp-content/themes/minimog/assets/images/twitter.png' %}" alt="Twitter Icon">
+      </a>
+      <a href="https://www.linkedin.com/in/panipathandloom/" class="hint--bounce hint--left hint--black" aria-label="LinkedIn">
+          <img src="{% static 'wp-content/themes/minimog/assets/images/linkedin.png' %}" alt="LinkedIn Icon">
+      </a>
+      <a href="https://api.whatsapp.com/send/?phone=%2B919899073000&text&type=phone_number&app_absent=0" class="hint--bounce hint--left hint--black" aria-label="WhatsApp">
+          <img src="{% static 'wp-content/themes/minimog/assets/images/whatsapp.png' %}" alt="WhatsApp Icon">
+      </a>
+      <a href="https://www.youtube.com/@thepanipathandloom" class="hint--bounce hint--left hint--black" aria-label="YouTube">
+        <img src="{% static 'wp-content/themes/minimog/assets/images/youtube.png' %}" alt="YouTube Icon">
+    </a>
+  </div>
 
-    <div class="tm-demo-options-toolbar">
-      <a href="https://www.instagram.com/thepanipathandloom1976/" class="toggle-quick-options open-quick-options hint--bounce hint--left hint--black" aria-label="Instagram" style="background-color: #bc2a8d;">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.facebook.com/thepanipathandloom" class="hint--bounce hint--left hint--black" aria-label="Facebook" style="background-color: #1877f2;">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.youtube.com/@thepanipathandloom" class="hint--bounce hint--left hint--black" aria-label="YouTube" style="background-color: #ff0000;">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://twitter.com/HandloomPanipat" class="hint--bounce hint--left hint--black" aria-label="Twitter" style="background-color: #1da1f2;">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/panipathandloom/" class="hint--bounce hint--left hint--black" aria-label="Twitter" style="background-color: #0077b5;">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://api.whatsapp.com/send/?phone=%2B919899073000&text&type=phone_number&app_absent=0" class="hint--bounce hint--left hint--black" aria-label="WhatsApp" style="background-color: #25d366;">
-        <i class="fab fa-whatsapp"></i>
-      </a>      
-    </div>
-    
+  <script>
+    $(document).ready(function() {
+    var socialIcons = $('#social-icons');
+    var sliderHeight = $('.elementor-top-section').outerHeight();
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > sliderHeight) {
+            socialIcons.fadeIn();
+        } else {
+            socialIcons.fadeOut();
+        }
+    });
+});
+
+  </script>
 
     <div class="minimog-modal modal-demo-preview" id="modal-demo-preview"></div>
     
@@ -5393,15 +5662,40 @@ src="{% static 'assets/js/function.js' %}"
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-          const dropdownIcons = document.querySelectorAll('.dropdown-icon');
-          
-          dropdownIcons.forEach(icon => {
-              icon.addEventListener('click', () => {
-                  const dropdownContainer = icon.nextElementSibling;
-                  dropdownContainer.style.display = (dropdownContainer.style.display === 'none' || dropdownContainer.style.display === '') ? 'block' : 'none';
-              });
-          });
-      });
+        const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+        let timeoutId;
+    
+        dropdownIcons.forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                const dropdownContainer = icon.nextElementSibling;
+                dropdownContainer.style.display = 'block';
+            });
+    
+            icon.addEventListener('mouseleave', () => {
+                const dropdownContainer = icon.nextElementSibling;
+                // Use setTimeout to delay hiding the dropdown content by 500 milliseconds (adjust the delay as needed)
+                timeoutId = setTimeout(() => {
+                    dropdownContainer.style.display = 'none';
+                }, 500);
+            });
+    
+            // Hide the dropdown content when mouse leaves the dropdown container
+            const dropdownContainer = icon.nextElementSibling;
+            dropdownContainer.addEventListener('mouseenter', () => {
+                // If the mouse enters the dropdown container before the timeout, clear the timeout to prevent hiding the dropdown content
+                clearTimeout(timeoutId);
+            });
+    
+            dropdownContainer.addEventListener('mouseleave', () => {
+                // If the mouse leaves the dropdown container, hide the dropdown content after a delay (500 milliseconds in this case)
+                timeoutId = setTimeout(() => {
+                    dropdownContainer.style.display = 'none';
+                }, 50);
+            });
+        });
+    });
+    
+    
   </script>
   </body>
 </html>
