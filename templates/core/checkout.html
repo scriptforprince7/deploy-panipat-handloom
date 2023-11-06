@@ -213,292 +213,45 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
 			<link rel="apple-touch-icon-precomposed" href="{% static 'wp-content/themes/minimog/assets/images/thepaniapathandloom.png' %}">
 			<meta name="msapplication-TileImage" content="{% static 'wp-content/themes/minimog/assets/images/thepaniapathandloom.png' %}">
 				<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+				<script>
+					"use strict";
+					
+					!function() {
+					  var t = window.driftt = window.drift = window.driftt || [];
+					  if (!t.init) {
+						if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+						t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+						t.factory = function(e) {
+						  return function() {
+							var n = Array.prototype.slice.call(arguments);
+							return n.unshift(e), t.push(n), t;
+						  };
+						}, t.methods.forEach(function(e) {
+						  t[e] = t.factory(e);
+						}), t.load = function(t) {
+						  var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+						  o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+						  var i = document.getElementsByTagName("script")[0];
+						  i.parentNode.insertBefore(o, i);
+						};
+					  }
+					}();
+					drift.SNIPPET_VERSION = '0.3.1';
+					drift.load('mcktnm7k4bhg');
+					</script>
 	</head>
 
 <body class="page-template-default page page-id-8 wp-embed-responsive theme-minimog woocommerce-checkout woocommerce-page woocommerce-no-js desktop desktop-menu primary-nav-rendering header-sticky-enable page-has-mobile-tabs page-has-no-sidebar page-blocks-style-normal title-bar-standard-03 title-bar-has-post-title woocommerce elementor-default elementor-kit-4 dokan-theme-minimog" >
-
-	<style>
-		.call-button {
-		 position: fixed;
-		 bottom: 20px;
-		 right: 20px;
-		 /* Add styles for both icons */
-		 display: flex;
-		 flex-direction: column;
-		 align-items: center;
-		 margin-bottom: 70px;
-		 margin-right: 15px;
-	   }
-   
-	   .call-button-icon {
-		 width: 60px;
-		 height: 60px;
-		 background-color: #25d366; /* Change the WhatsApp icon background color */
-		 border-radius: 50%;
-		 display: flex;
-		 align-items: center;
-		 justify-content: center;
-		 cursor: pointer;
-		 transition: transform 0.3s ease-in-out;
-		 z-index: 9999; /* Higher z-index value to appear above other elements */
-	   }
-   
-	   .call-button-icon i {
-		 font-size: 24px;
-		 color: #fff; /* Change the WhatsApp icon color */
-	   }
-   
-	   .call-button-icon-phone {
-		 width: 60px;
-		 height: 60px;
-		 background-color: #f00; /* Change the call icon background color */
-		 border-radius: 50%;
-		 display: flex;
-		 align-items: center;
-		 justify-content: center;
-		 cursor: pointer;
-		 transition: transform 0.3s ease-in-out;
-		 z-index: 9999; /* Higher z-index value to appear above other elements */
-		 margin-top: 10px; /* Adjust the distance between WhatsApp and call icons */
-	   }
-   
-	   .call-button-icon {
-	   margin-bottom: 5px; /* Add space below the enquiry button */
-	 }
-   
-	   .call-button-icon-phone i {
-		 font-size: 24px;
-		 color: #fff; /* Change the call icon color */
-	   }
-   
-	   .call-button:hover .call-button-icon,
-	   .call-button:hover .call-button-icon-phone {
-		 transform: scale(1.1);
-	   }
-   
-	   .call-button-content {
-		 display: none;
-		 position: absolute;
-		 top: -60px;
-		 right: -20px;
-		 width: 160px;
-		 padding: 10px;
-		 background-color: #fff;
-		 color: #000;
-		 border-radius: 4px;
-		 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-		 animation: slide-down 0.3s ease-in-out forwards;
-		 transform-origin: top center;
-		 z-index: 9999; /* Higher z-index value to appear above other elements */
-		 text-align: center;
-	   }
-   
-	   .call-button-content::after {
-		 content: '';
-		 position: absolute;
-		 top: 100%;
-		 left: 50%;
-		 transform: translateX(-50%);
-		 border-top: 10px solid #fff;
-		 border-left: 10px solid transparent;
-		 border-right: 10px solid transparent;
-	   }
-   
-	   @keyframes slide-down {
-		 0% {
-		   opacity: 0;
-		   transform: translateY(-20px);
-		 }
-		 100% {
-		   opacity: 1;
-		   transform: translateY(0);
-		 }
-	   }
-   
-	   .phone-number {
-		 margin: 0;
-		 font-size: 18px;
-		 font-weight: bold;
-		 color: #f00; /* Change the phone number color */
-		 margin-bottom: 10px;
-	   }
-   
-	   .call-button:hover .call-button-icon i {
-		 color: #fff; /* Change the WhatsApp icon color on hover */
-	   }
-   
-	   .call-button:hover .call-button-icon-phone i {
-		 color: #FFFFFF; /* Change the call icon color on hover */
-	   }
-   
-	   .call-button:hover .call-button-content {
-		 background-color: #fffff; /* Change the background color of content on hover */
-		 color: black; /* Change the text color of content on hover */
-	   }
-   
-	   .call-button-content::after {
-		 border-top-color: #f00; /* Change the arrow color of content on hover */
-	   }
-	   .call-button {
-	   position: fixed;
-	   bottom: 20px;
-	   right: 20px;
-	   z-index: 9999; /* Higher z-index value to appear above other elements */
-	 }
-   
-	 .modal-overlay {
-	   display: none;
-	   position: fixed;
-	   top: 0;
-	   left: 0;
-	   width: 100%;
-	   height: 100%;
-	   background-color: rgba(255, 255, 255, 0.9); /* White background with opacity */
-	   z-index: 9999; /* Ensure the modal is above other content */
-	 }
-   
-	 /* Styles for the modal content */
-	 .modal-content {
-	   position: absolute;
-	   top: 50%;
-	   left: 50%;
-	   transform: translate(-50%, -50%);
-	   background-color: #fff; /* White background */
-	   padding: 20px;
-	   border-radius: 5px;
-	   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	   z-index: 10000; /* Ensure the modal content is above the overlay */
-	 }
-   
-	 .enquiry-form input[type="text"],
-	 .enquiry-form input[type="email"],
-	 .enquiry-form input[type="tel"],
-	 .enquiry-form input[type="category"],
-	 .enquiry-form textarea {
-	   margin-bottom: 10px; /* Adjust the margin as needed */
-	 }
-   
-	 .submit-button {
-	 background-color: #ec0f82;
-	 /* Add any other button styles you need */
-	 color: #fff; /* Text color */
-	 /* padding: 10px 20px; Adjust padding as needed */
-	 border: none;
-	 border-radius: 5px;
-   }
-   .phone-number {
-	 /* Create a linear gradient background for text */
-	 background: linear-gradient(45deg, #e6317b, #bd529c, #6b94ce);
-	 background-clip: text;
-	 -webkit-background-clip: text; /* For older browsers */
-	 color: transparent; /* Set text color to transparent */
-	 padding: 10px; /* Adjust padding as needed */
-	 border-radius: 5px;
-	 font-size: 1.8rem;
-	 text-align: center; /* Center the text within the element */
-   }
-   
-   .call-button-icon {
-	 background-color: #ec0f82;
-	 /* Add any other styles you need for the icon container */
-   }
-   
-   @media (max-width: 767px) {
-    .call-button {
-      right: -4px;
-      bottom: 1px;
-    }
-  }
-   
-   </style>
-   
-   
-   <div class="call-button" id="callButton">
-	 <a href="#" id="enquiryButton">
-	   <div class="call-button-icon">
-		 <i class="fas fa-envelope"></i> <!-- Replace with an envelope icon for enquiry -->
-	   </div>
-	 </a>
-	 <a href="https://api.whatsapp.com/send?phone=919899073000" target="_blank" rel="noopener noreferrer">
-	   <div class="call-button-icon">
-		 <i class="fab fa-whatsapp"></i>
-	   </div>
-	 </a>
-	 <div class="call-button-content">
-	   <!-- Form for enquiry -->
-	   <form id="enquiryForm" class="enquiry-form" style="display: none;">
-		 <p class="phone-number">Enquiry Form</p>
-		 <!-- Add your form fields here -->
-		 <input type="text" placeholder="Name" />
-		 <input type="email" placeholder="Email" />
-		 <textarea placeholder="Message"></textarea>
-		 <button type="submit">Submit</button>
-	   </form>
-	 </div>
-   </div>
-   
-   <div class="modal-overlay" id="enquiryModal">
-	 <div class="modal-content">
-	   <!-- Form for enquiry -->
-	   <form id="enquiryForm" class="enquiry-form">
-		 <p class="phone-number">Enquiry Form</p>
-		 <!-- Add your form fields here -->
-		 <input type="text" placeholder="Name" />
-		 <input type="email" placeholder="Email" />
-		 <input type="tel" placeholder="Phone Number" /> <!-- Phone number input -->
-		 <select name="category" id="category">
-		   <!-- Category dropdown -->
-		   <option value="General">Product</option>
-		   <option value="Sales">Window Treatment</option>
-		   <option value="Support">Wall Decor</option>
-		   <option value="Support">Bed Decor</option>
-		   <option value="Support">Upholstery</option>
-		   <option value="Support">Flooring</option>
-		   <option value="Support">Door Mats</option>
-		   <option value="Support">Exteriors</option>
-		   <!-- Add more options as needed -->
-		 </select>
-		 <textarea placeholder="Message"></textarea>
-		 <button type="submit" class="submit-button">Submit</button>
-	   </form>
-	 </div>
-   </div>
-   
-   
-   
-   <script>
-	 // JavaScript to handle modal popup
-	 const enquiryButton = document.getElementById("enquiryButton");
-	 const enquiryModal = document.getElementById("enquiryModal");
-   
-	 enquiryButton.addEventListener("click", function (event) {
-	   event.preventDefault(); // Prevent the default link behavior
-	   openEnquiryModal(); // Open the modal
-	 });
-   
-	 function openEnquiryModal() {
-	   enquiryModal.style.display = "block"; // Show the modal
-	 }
-   
-	 // Close the modal when the user clicks outside of it
-	 window.addEventListener("click", function (event) {
-	   if (event.target === enquiryModal) {
-		 enquiryModal.style.display = "none"; // Close the modal
-	   }
-	 });
-   </script>
-
-
 
 <div id="page" class="site">
 	<div class="content-wrapper">
 				
         <header
-        id="page-header"
-        class="page-header header-06 nav-links-hover-style-line header-dark header-sticky-dark-logo header-icon-set-01 header-icon-badge-large"
-      >
-        <div class="page-header-place-holder"></div>
-		<div id="page-header-inner" class="page-header-inner" data-sticky="1">
+          id="page-header"
+          class="page-header header-06 nav-links-hover-style-line header-dark header-sticky-dark-logo header-icon-set-01 header-icon-badge-large"
+        >
+          <div class="page-header-place-holder"></div>
+          <div id="page-header-inner" class="page-header-inner" data-sticky="1">
             <div class="header-above hide-on-pinned hide-sm">
               <div class="container-broad">
                 <div class="header-above-wrap">
@@ -816,7 +569,7 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
     <div class="container-broad">
       <div class="header-below-wrap">
         <div class="header-below-left header-col-start">
-          <div class="header-content-inner lingrad">
+          <!-- <div class="header-content-inner lingrad">
             <div
               id="header-categories-nav"
               class="header-categories-nav"
@@ -826,361 +579,362 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
                   <span class="nav-toggle-bars fa fa-bars"></span>
                   Shop by Categories
                 </span>
-				<nav class="category-menu">
-					<ul
-					  id="menu-product-categories"
-					  class="product-category-dropdown menu__container sm sm-simple sm-vertical"
-					  data-sm-options='{"mainMenuSubOffsetX":-15,"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17,"keepInViewport":false}'
-					>
-					{% for p in main_cat %}
-					  <li
-						class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"
-					  >
-						<a href=""
-						  ><div class="menu-item-wrap">
-							<span class="menu-item-icon"
-							  ><svg
-								width="20"
-								height="20"
-								viewBox="0 0 20 20"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							  >
-								<path
-								  d="M8.125 13.125V6.25H16.25C16.913 6.25 17.5489 6.51339 18.0178 6.98223C18.4866 7.45107 18.75 8.08696 18.75 8.75V13.125"
-								  stroke="black"
-								  stroke-linecap="round"
-								  stroke-linejoin="round"
-								/>
-								<path
-								  d="M1.25 16.25V3.75"
-								  stroke="black"
-								  stroke-linecap="round"
-								  stroke-linejoin="round"
-								/>
-								<path
-								  d="M1.25 13.125H18.75V16.25"
-								  stroke="black"
-								  stroke-linecap="round"
-								  stroke-linejoin="round"
-								/>
-								<path
-								  d="M8.125 6.25H1.25"
-								  stroke="black"
-								  stroke-linecap="round"
-								  stroke-linejoin="round"
-								/>
-							  </svg> </span
-							><span class="menu-item-title"
-							  >{{p.main_title}}</span
-							><span class="toggle-sub-menu"> </span></div
-						></a>
-						<ul class="sub-menu children mega-menu">
-						  <li
-							class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305"
-						  >
-							<div class="mega-menu-content">
-							  <div
-								data-elementor-type="wp-post"
-								data-elementor-id="1298"
-								class="elementor elementor-1298"
-							  >
-								<div class="elementor-inner">
-								  <div class="elementor-section-wrap">
-									<section
-									  class="elementor-section elementor-top-section elementor-element elementor-element-8e1d000 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
-									  data-id="8e1d000"
-									  data-element_type="section"
-									>
-									  <div
-										class="elementor-container elementor-column-gap-extended"
-									  >
-										<div class="elementor-row">
-										  {% for cat in p.category_set.all %}
-										  <div
-											class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-8b6c475"
-											data-id="8b6c475"
-											data-element_type="column"
-										  >
-											<div
-											  class="elementor-column-wrap elementor-element-populated"
-											>
-											  <div
-												class="elementor-widget-wrap"
-											  >
-												<div
-												  class="elementor-element elementor-element-60475cc elementor-widget elementor-widget-heading"
-												  data-id="60475cc"
-												  data-element_type="widget"
-												  data-widget_type="heading.default"
-												>
-												  <div
-													class="elementor-widget-container"
-												  >
-												  <style>
-													/*! elementor - v3.10.0 - 09-01-2023 */
-													.elementor-column
-													  .elementor-spacer-inner {
-													  height: var(
-														--spacer-size
-													  );
-													}
-													.e-con {
-													  --container-widget-width: 100%;
-													}
-													.e-con-inner
-													  > .elementor-widget-spacer,
-													.e-con
-													  > .elementor-widget-spacer {
-													  width: var(
-														--container-widget-width,
-														var(
-														  --spacer-size
-														)
-													  );
-													  --align-self: var(
-														--container-widget-align-self,
-														initial
-													  );
-													  --flex-shrink: 0;
-													}
-													.e-con-inner
-													  > .elementor-widget-spacer
-													  > .elementor-widget-container,
-													.e-con-inner
-													  > .elementor-widget-spacer
-													  > .elementor-widget-container
-													  > .elementor-spacer,
-													.e-con
-													  > .elementor-widget-spacer
-													  > .elementor-widget-container,
-													.e-con
-													  > .elementor-widget-spacer
-													  > .elementor-widget-container
-													  > .elementor-spacer {
-													  height: 100%;
-													}
-													.e-con-inner
-													  > .elementor-widget-spacer
-													  > .elementor-widget-container
-													  > .elementor-spacer
-													  > .elementor-spacer-inner,
-													.e-con
-													  > .elementor-widget-spacer
-													  > .elementor-widget-container
-													  > .elementor-spacer
-													  > .elementor-spacer-inner {
-													  height: var(
-														--container-widget-height,
-														var(
-														  --spacer-size
-														)
-													  );
-													}
-												  </style>
-												   <style>
-													/*! elementor - v3.10.0 - 09-01-2023 */
-													.elementor-heading-title {
-													  padding: 0;
-													  margin: 0;
-													  line-height: 1;
-													}
-													.elementor-widget-heading
-													  .elementor-heading-title[class*="elementor-size-"]
-													  > a {
-													  color: inherit;
-													  font-size: inherit;
-													  line-height: inherit;
-													}
-													.elementor-widget-heading
-													  .elementor-heading-title.elementor-size-small {
-													  font-size: 15px;
-													}
-													.elementor-widget-heading
-													  .elementor-heading-title.elementor-size-medium {
-													  font-size: 19px;
-													}
-													.elementor-widget-heading
-													  .elementor-heading-title.elementor-size-large {
-													  font-size: 29px;
-													}
-													.elementor-widget-heading
-													  .elementor-heading-title.elementor-size-xl {
-													  font-size: 39px;
-													}
-													.elementor-widget-heading
-													  .elementor-heading-title.elementor-size-xxl {
-													  font-size: 59px;
-													}
-												  </style>
-													<h2
-													  class="elementor-heading-title elementor-size-default"
-													>
-													  {{cat.cat_title}}
-													</h2>
-												  </div>
-												</div>
-												{% for sub_cat in cat.sub_categories_set.all %}
-												<div
-												  class="elementor-element elementor-element-e8afc0b elementor-widget elementor-widget-tm-simple-list"
-												  data-id="e8afc0b"
-												  data-element_type="widget"
-												  data-widget_type="tm-simple-list.default" style="margin-top: 0.3rem;"
-												>
-												  <div
-													class="elementor-widget-container"
-												  >
-												  <style>
-													.dropdown-icon {
-														display: inline-block;
-														width: 8px; 
-														height: 8px;
-														border-left: 2px solid rgb(101, 96, 96);
-														border-bottom: 2px solid rgb(101, 96, 96);
-														transform: rotate(-45deg); 
-														margin-left: 5px; /* Add margin to the left of the dropdown icon */
-														cursor: pointer; /* Change cursor to indicate interactivity */
-													}
-													
-													.dropdown-container {
-														display: none;
-														margin-top: 5px;
-														padding: 10px;
-														border: 1px solid #ccc;
-														background-color: white;
-														position: absolute;
-														z-index: 1;
-														padding: 20px;
-													}
-												</style>
-													<div
-													  class="minimog-simple-list minimog-simple-list--style-03"
-													>
-													  <div
-														class="item elementor-repeater-item-9c988d6 truncated"
-													  >
-														<a
-														  class="link"
-														  href="{% url 'core:sub-category' sub_cat.sub_cat_title %}"
-														>
-														  {{sub_cat.sub_cat_title}}
-														</a><i class="dropdown-icon"></i>
-														<div class="dropdown-container">
-														  <ul>
-															{% for company in sub_cat.company_name_set.all %}
-																{% with company_name=company.company_name_title %}
-																	{% if company_name %}
-																		<a href="{% url 'core:sub-category' sub_cat_title=sub_cat.sub_cat_title %}#{{ company.sid }}">
-																			<li>{{ company_name }}</li>
-																		</a>
-																	{% else %}
-																		<li>No brands available</li>
-																	{% endif %}
-																{% endwith %}
-															{% empty %}
-																<li>No brands available</li>
-															{% endfor %}
-														</ul>
-														</div>
-													  </div>
-													</div>
-												  </div>
-												</div>
-												{% endfor %}
-											  </div>
-											</div>
-										  </div>
-										  {% endfor %}
-  
-										  
-										  <div
-											class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
-											data-id="877ceeb"
-											data-element_type="column"
-										  >
-											<div
-											  class="elementor-column-wrap elementor-element-populated"
-											>
-											  <div
-												class="elementor-widget-wrap"
-											  >
-												<div
-												  class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner"
-												  data-id="9c6cc46"
-												  data-element_type="widget"
-												  data-widget_type="tm-banner.default"
-												>
-												  <div
-													class="elementor-widget-container"
-												  >
-													<a
-													  class="minimog-banner minimog-box link-secret"
-													  href=""
-													>
-													  <div
-														class="minimog-image"
-													  >
-														<div
-														  class="image ll-background ll-background-unload"
-														  data-src="{{p.image.url}}"
-														></div>
-													  </div>
-													  <div
-														class="content-wrap"
-													  >
-														<div
-														  class="content-wrap__inner"
-														>
-														  <h3
-															class="title"
-														  >
-														   {{p.main_title}}
-														  </h3>
-														</div>
-														<div
-														  class="content-wrap__bottom"
-														>
-														  <div
-															class="tm-button-wrapper"
-														  >
-															<div
-															  class="tm-button style-bottom-line tm-button-nm"
-															>
-															  <div
-																class="button-content-wrapper"
-															  >
-																<span
-																  class="button-text"
-																  >Shop
-																  Now</span
-																>
-															  </div>
-															</div>
-														  </div>
-														</div>
-													  </div>
-													</a>
-												  </div>
-												</div>
-											  </div>
-											</div>
-										  </div>
-										</div>
-									  </div>
-									</section>
-								  </div>
-								</div>
-							  </div>
-							</div>
-						  </li>
-						</ul>
-					  </li>
-					  {% endfor %}
-					</ul>
-				  </nav>
+                <nav class="category-menu">
+                  <ul
+                    id="menu-product-categories"
+                    class="product-category-dropdown menu__container sm sm-simple sm-vertical"
+                    data-sm-options='{"mainMenuSubOffsetX":-15,"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17,"keepInViewport":false}'
+                  >
+                  {% for p in main_cat %}
+                    <li
+                      class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"
+                    >
+                      <a href=""
+                        ><div class="menu-item-wrap">
+                          <span class="menu-item-icon"
+                            ><svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 20 20"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.125 13.125V6.25H16.25C16.913 6.25 17.5489 6.51339 18.0178 6.98223C18.4866 7.45107 18.75 8.08696 18.75 8.75V13.125"
+                                stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M1.25 16.25V3.75"
+                                stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M1.25 13.125H18.75V16.25"
+                                stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M8.125 6.25H1.25"
+                                stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg> </span
+                          ><span class="menu-item-title"
+                            >{{p.main_title}}</span
+                          ><span class="toggle-sub-menu"> </span></div
+                      ></a>
+                      <ul class="sub-menu children mega-menu">
+                        <li
+                          class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305"
+                        >
+                          <div class="mega-menu-content">
+                            <div
+                              data-elementor-type="wp-post"
+                              data-elementor-id="1298"
+                              class="elementor elementor-1298"
+                            >
+                              <div class="elementor-inner">
+                                <div class="elementor-section-wrap">
+                                  <section
+                                    class="elementor-section elementor-top-section elementor-element elementor-element-8e1d000 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
+                                    data-id="8e1d000"
+                                    data-element_type="section"
+                                  >
+                                    <div
+                                      class="elementor-container elementor-column-gap-extended"
+                                    >
+                                      <div class="elementor-row">
+                                        {% for cat in p.category_set.all %}
+                                        <div
+                                          class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-8b6c475"
+                                          data-id="8b6c475"
+                                          data-element_type="column"
+                                        >
+                                          <div
+                                            class="elementor-column-wrap elementor-element-populated"
+                                          >
+                                            <div
+                                              class="elementor-widget-wrap"
+                                            >
+                                              <div
+                                                class="elementor-element elementor-element-60475cc elementor-widget elementor-widget-heading"
+                                                data-id="60475cc"
+                                                data-element_type="widget"
+                                                data-widget_type="heading.default"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                <style>
+                                                  /*! elementor - v3.10.0 - 09-01-2023 */
+                                                  .elementor-column
+                                                    .elementor-spacer-inner {
+                                                    height: var(
+                                                      --spacer-size
+                                                    );
+                                                  }
+                                                  .e-con {
+                                                    --container-widget-width: 100%;
+                                                  }
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer,
+                                                  .e-con
+                                                    > .elementor-widget-spacer {
+                                                    width: var(
+                                                      --container-widget-width,
+                                                      var(
+                                                        --spacer-size
+                                                      )
+                                                    );
+                                                    --align-self: var(
+                                                      --container-widget-align-self,
+                                                      initial
+                                                    );
+                                                    --flex-shrink: 0;
+                                                  }
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container,
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer,
+                                                  .e-con
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container,
+                                                  .e-con
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer {
+                                                    height: 100%;
+                                                  }
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer
+                                                    > .elementor-spacer-inner,
+                                                  .e-con
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer
+                                                    > .elementor-spacer-inner {
+                                                    height: var(
+                                                      --container-widget-height,
+                                                      var(
+                                                        --spacer-size
+                                                      )
+                                                    );
+                                                  }
+                                                </style>
+                                                 <style>
+                                                  /*! elementor - v3.10.0 - 09-01-2023 */
+                                                  .elementor-heading-title {
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    line-height: 1;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title[class*="elementor-size-"]
+                                                    > a {
+                                                    color: inherit;
+                                                    font-size: inherit;
+                                                    line-height: inherit;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-small {
+                                                    font-size: 15px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-medium {
+                                                    font-size: 19px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-large {
+                                                    font-size: 29px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-xl {
+                                                    font-size: 39px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-xxl {
+                                                    font-size: 59px;
+                                                  }
+                                                </style>
+                                                  <h2
+                                                    class="elementor-heading-title elementor-size-default"
+                                                  >
+                                                    {{cat.cat_title}}
+                                                  </h2>
+                                                </div>
+                                              </div>
+                                              {% for sub_cat in cat.sub_categories_set.all %}
+                                              <div
+                                                class="elementor-element elementor-element-e8afc0b elementor-widget elementor-widget-tm-simple-list"
+                                                data-id="e8afc0b"
+                                                data-element_type="widget"
+                                                data-widget_type="tm-simple-list.default" style="margin-top: 0.3rem;"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                <style>
+                                                  .dropdown-icon {
+                                                      display: inline-block;
+                                                      width: 8px; 
+                                                      height: 8px;
+                                                      border-left: 2px solid rgb(101, 96, 96);
+                                                      border-bottom: 2px solid rgb(101, 96, 96);
+                                                      transform: rotate(-45deg); 
+                                                      margin-left: 5px; /* Add margin to the left of the dropdown icon */
+                                                      cursor: pointer; /* Change cursor to indicate interactivity */
+                                                  }
+                                                  
+                                                  .dropdown-container {
+                                                      display: none;
+                                                      margin-top: 5px;
+                                                      padding: 10px;
+                                                      border: 1px solid #ccc;
+                                                      background-color: white;
+                                                      position: absolute;
+                                                      z-index: 1;
+                                                      padding: 20px;
+                                                  }
+                                              </style>
+                                                  <div
+                                                    class="minimog-simple-list minimog-simple-list--style-03"
+                                                  >
+                                                    <div
+                                                      class="item elementor-repeater-item-9c988d6 truncated"
+                                                    >
+                                                      <a
+                                                        class="link"
+                                                        href="{% url 'core:sub-category' sub_cat.sub_cat_title %}"
+                                                      >
+                                                        {{sub_cat.sub_cat_title}}
+                                                      </a><i class="dropdown-icon"></i>
+                                                      <div class="dropdown-container">
+                                                        <ul>
+                                                          {% for company in sub_cat.company_name_set.all %}
+                                                              {% with company_name=company.company_name_title %}
+                                                                  {% if company_name %}
+                                                                      <a href="{% url 'core:sub-category' sub_cat_title=sub_cat.sub_cat_title %}#{{ company.sid }}">
+                                                                          <li>{{ company_name }}</li>
+                                                                      </a>
+                                                                  {% else %}
+                                                                      <li>No brands available</li>
+                                                                  {% endif %}
+                                                              {% endwith %}
+                                                          {% empty %}
+                                                              <li>No brands available</li>
+                                                          {% endfor %}
+                                                      </ul>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              {% endfor %}
+                                              
+                                            </div>
+                                          </div>
+                                        </div>
+                                        {% endfor %}
+
+                                        
+                                        <div
+                                          class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
+                                          data-id="877ceeb"
+                                          data-element_type="column"
+                                        >
+                                          <div
+                                            class="elementor-column-wrap elementor-element-populated"
+                                          >
+                                            <div
+                                              class="elementor-widget-wrap"
+                                            >
+                                              <div
+                                                class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner"
+                                                data-id="9c6cc46"
+                                                data-element_type="widget"
+                                                data-widget_type="tm-banner.default"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                  <a
+                                                    class="minimog-banner minimog-box link-secret"
+                                                    href=""
+                                                  >
+                                                    <div
+                                                      class="minimog-image"
+                                                    >
+                                                      <div
+                                                        class="image ll-background ll-background-unload"
+                                                        data-src="{{p.image.url}}"
+                                                      ></div>
+                                                    </div>
+                                                    <div
+                                                      class="content-wrap"
+                                                    >
+                                                      <div
+                                                        class="content-wrap__inner"
+                                                      >
+                                                        <h3
+                                                          class="title"
+                                                        >
+                                                         {{p.main_title}}
+                                                        </h3>
+                                                      </div>
+                                                      <div
+                                                        class="content-wrap__bottom"
+                                                      >
+                                                        <div
+                                                          class="tm-button-wrapper"
+                                                        >
+                                                          <div
+                                                            class="tm-button style-bottom-line tm-button-nm"
+                                                          >
+                                                            <div
+                                                              class="button-content-wrapper"
+                                                            >
+                                                              <span
+                                                                class="button-text"
+                                                                >Shop
+                                                                Now</span
+                                                              >
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </section>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </nav>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         
         <div class="header-below-center header-col-center lingrad">
@@ -1195,66 +949,321 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
                   class="menu__container sm sm-simple"
                   data-sm-options='{"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17}'
                 >
-                  <li
-                    class=""
-                  >
-                    <a href=""
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-title">Home</span>
-                      </div></a
+                {% for p in main_cat %}
+                    <li
+                      class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"
                     >
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"
-                  >
-                    <a
-                      href="http://127.0.0.1:8000/shop-category/Wall%20Decor/"
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-title">Shop</span>
-                      </div></a
-                    >
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"
-                  >
-                    <a href="#"
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-title">About</span>
-                      </div></a
-                    >
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"
-                  >
-                    <a
-                      href="
-                      "
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-title">Blog</span>
-                      </div></a
-                    >
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"
-                  >
-                    <a href="#"
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-title">Reach Us</span>
-                      </div></a
-                    >
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"
-                  >
-                    <a
-                      href=""
-                      ><div class="menu-item-wrap">
-                        <span class="menu-item-title"
-                          >Store List</span
+                      <a href=""
+                        ><div class="menu-item-wrap">
+                         <span class="menu-item-title"
+                            >{{p.main_title}}</span
+                          ><span class="toggle-sub-menu"> </span></div
+                      ></a>
+                      <ul class="sub-menu children mega-menu">
+                        <li
+                          class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305"
                         >
-                      </div></a
-                    >
-                  </li>
+                          <div class="mega-menu-content">
+                            <div
+                              data-elementor-type="wp-post"
+                              data-elementor-id="1298"
+                              class="elementor elementor-1298"
+                            >
+                              <div class="elementor-inner">
+                                <div class="elementor-section-wrap">
+                                  <section
+                                    class="elementor-section elementor-top-section elementor-element elementor-element-8e1d000 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
+                                    data-id="8e1d000"
+                                    data-element_type="section"
+                                  >
+                                    <div
+                                      class="elementor-container elementor-column-gap-extended"
+                                    >
+                                      <div class="elementor-row">
+                                        {% for cat in p.category_set.all %}
+                                        <div
+                                          class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-8b6c475"
+                                          data-id="8b6c475"
+                                          data-element_type="column"
+                                        >
+                                          <div
+                                            class="elementor-column-wrap elementor-element-populated"
+                                          >
+                                            <div
+                                              class="elementor-widget-wrap"
+                                            >
+                                              <div
+                                                class="elementor-element elementor-element-60475cc elementor-widget elementor-widget-heading"
+                                                data-id="60475cc"
+                                                data-element_type="widget"
+                                                data-widget_type="heading.default"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                <style>
+                                                  /*! elementor - v3.10.0 - 09-01-2023 */
+                                                  .elementor-column
+                                                    .elementor-spacer-inner {
+                                                    height: var(
+                                                      --spacer-size
+                                                    );
+                                                  }
+                                                  .e-con {
+                                                    --container-widget-width: 100%;
+                                                  }
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer,
+                                                  .e-con
+                                                    > .elementor-widget-spacer {
+                                                    width: var(
+                                                      --container-widget-width,
+                                                      var(
+                                                        --spacer-size
+                                                      )
+                                                    );
+                                                    --align-self: var(
+                                                      --container-widget-align-self,
+                                                      initial
+                                                    );
+                                                    --flex-shrink: 0;
+                                                  }
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container,
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer,
+                                                  .e-con
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container,
+                                                  .e-con
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer {
+                                                    height: 100%;
+                                                  }
+                                                  .e-con-inner
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer
+                                                    > .elementor-spacer-inner,
+                                                  .e-con
+                                                    > .elementor-widget-spacer
+                                                    > .elementor-widget-container
+                                                    > .elementor-spacer
+                                                    > .elementor-spacer-inner {
+                                                    height: var(
+                                                      --container-widget-height,
+                                                      var(
+                                                        --spacer-size
+                                                      )
+                                                    );
+                                                  }
+                                                </style>
+                                                 <style>
+                                                  /*! elementor - v3.10.0 - 09-01-2023 */
+                                                  .elementor-heading-title {
+                                                    padding: 0;
+                                                    margin: 0;
+                                                    line-height: 1;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title[class*="elementor-size-"]
+                                                    > a {
+                                                    color: inherit;
+                                                    font-size: inherit;
+                                                    line-height: inherit;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-small {
+                                                    font-size: 15px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-medium {
+                                                    font-size: 19px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-large {
+                                                    font-size: 29px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-xl {
+                                                    font-size: 39px;
+                                                  }
+                                                  .elementor-widget-heading
+                                                    .elementor-heading-title.elementor-size-xxl {
+                                                    font-size: 59px;
+                                                  }
+                                                </style>
+                                                  <h2
+                                                    class="elementor-heading-title elementor-size-default"
+                                                  >
+                                                    {{cat.cat_title}}
+                                                  </h2>
+                                                </div>
+                                              </div>
+                                              {% for sub_cat in cat.sub_categories_set.all %}
+                                              <div
+                                                class="elementor-element elementor-element-e8afc0b elementor-widget elementor-widget-tm-simple-list"
+                                                data-id="e8afc0b"
+                                                data-element_type="widget"
+                                                data-widget_type="tm-simple-list.default" style="margin-top: 0.3rem;"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                <style>
+                                                  .dropdown-icon {
+                                                      display: inline-block;
+                                                      width: 8px; 
+                                                      height: 8px;
+                                                      border-left: 2px solid rgb(101, 96, 96);
+                                                      border-bottom: 2px solid rgb(101, 96, 96);
+                                                      transform: rotate(-45deg); 
+                                                      margin-left: 5px; /* Add margin to the left of the dropdown icon */
+                                                      cursor: pointer; /* Change cursor to indicate interactivity */
+                                                  }
+                                                  
+                                                  .dropdown-container {
+                                                      display: none;
+                                                      margin-top: 5px;
+                                                      padding: 10px;
+                                                      border: 1px solid #ccc;
+                                                      background-color: white;
+                                                      position: absolute;
+                                                      z-index: 1;
+                                                      padding: 20px;
+                                                  }
+                                              </style>
+                                                  <div
+                                                    class="minimog-simple-list minimog-simple-list--style-03"
+                                                  >
+                                                    <div
+                                                      class="item elementor-repeater-item-9c988d6 truncated"
+                                                    >
+                                                      <a
+                                                        class="link"
+                                                        href="{% url 'core:sub-category' sub_cat.sub_cat_title %}"
+                                                      >
+                                                        {{sub_cat.sub_cat_title}}
+                                                      </a><i class="dropdown-icon"></i>
+                                                      <div class="dropdown-container">
+                                                        <ul>
+                                                          {% for company in sub_cat.company_name_set.all %}
+                                                              {% with company_name=company.company_name_title %}
+                                                                  {% if company_name %}
+                                                                      <a href="{% url 'core:sub-category' sub_cat_title=sub_cat.sub_cat_title %}#{{ company.sid }}">
+                                                                          <li style="padding-bottom: 10px;">{{ forloop.counter }}. {{ company_name }}</li>
+                                                                      </a>
+                                                                  {% else %}
+                                                                      <li>No brands available</li>
+                                                                  {% endif %}
+                                                              {% endwith %}
+                                                          {% empty %}
+                                                              <li>No brands available</li>
+                                                          {% endfor %}
+                                                      </ul>
+                                                      
+                                                      
+                                                      
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              {% endfor %}
+                                              
+                                            </div>
+                                          </div>
+                                        </div>
+                                        {% endfor %}
+
+                                        
+                                        <div
+                                          class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
+                                          data-id="877ceeb"
+                                          data-element_type="column"
+                                        >
+                                          <div
+                                            class="elementor-column-wrap elementor-element-populated"
+                                          >
+                                            <div
+                                              class="elementor-widget-wrap"
+                                            >
+                                              <div
+                                                class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner"
+                                                data-id="9c6cc46"
+                                                data-element_type="widget"
+                                                data-widget_type="tm-banner.default"
+                                              >
+                                                <div
+                                                  class="elementor-widget-container"
+                                                >
+                                                  <a
+                                                    class="minimog-banner minimog-box link-secret"
+                                                    href=""
+                                                  >
+                                                    <div
+                                                      class="minimog-image"
+                                                    >
+                                                      <div
+                                                        class="image ll-background ll-background-unload"
+                                                        data-src="{{p.image.url}}"
+                                                      ></div>
+                                                    </div>
+                                                    <div
+                                                      class="content-wrap"
+                                                    >
+                                                      <div
+                                                        class="content-wrap__inner"
+                                                      >
+                                                        <h3
+                                                          class="title"
+                                                        >
+                                                         {{p.main_title}}
+                                                        </h3>
+                                                      </div>
+                                                      <div
+                                                        class="content-wrap__bottom"
+                                                      >
+                                                        <div
+                                                          class="tm-button-wrapper"
+                                                        >
+                                                          <div
+                                                            class="tm-button style-bottom-line tm-button-nm"
+                                                          >
+                                                            <div
+                                                              class="button-content-wrapper"
+                                                            >
+                                                              <span
+                                                                class="button-text"
+                                                                >Shop
+                                                                Now</span
+                                                              >
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </section>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    {% endfor %}
                 </ul>
               </nav>
             </div>
@@ -1325,7 +1334,7 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
             </div>
             {% endif %}
           </div>
-      </header>
+        </header>
 
 				<div id="page-title-bar" class="page-title-bar page-title-bar-standard-03">
 	<div class="page-title-bar-bg"></div>
@@ -3341,15 +3350,40 @@ var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"
 <script type='text/javascript' src='https://minimog-4437.kxcdn.com/megamog/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min.js?ver=1.7.8' id='wpforms-elementor-js'></script>
 <script>
 	document.addEventListener("DOMContentLoaded", function() {
-		const dropdownIcons = document.querySelectorAll('.dropdown-icon');
-		
-		dropdownIcons.forEach(icon => {
-			icon.addEventListener('click', () => {
-				const dropdownContainer = icon.nextElementSibling;
-				dropdownContainer.style.display = (dropdownContainer.style.display === 'none' || dropdownContainer.style.display === '') ? 'block' : 'none';
-			});
-		});
-	});
+	  const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+	  let timeoutId;
+  
+	  dropdownIcons.forEach(icon => {
+		  icon.addEventListener('mouseenter', () => {
+			  const dropdownContainer = icon.nextElementSibling;
+			  dropdownContainer.style.display = 'block';
+		  });
+  
+		  icon.addEventListener('mouseleave', () => {
+			  const dropdownContainer = icon.nextElementSibling;
+			  // Use setTimeout to delay hiding the dropdown content by 500 milliseconds (adjust the delay as needed)
+			  timeoutId = setTimeout(() => {
+				  dropdownContainer.style.display = 'none';
+			  }, 500);
+		  });
+  
+		  // Hide the dropdown content when mouse leaves the dropdown container
+		  const dropdownContainer = icon.nextElementSibling;
+		  dropdownContainer.addEventListener('mouseenter', () => {
+			  // If the mouse enters the dropdown container before the timeout, clear the timeout to prevent hiding the dropdown content
+			  clearTimeout(timeoutId);
+		  });
+  
+		  dropdownContainer.addEventListener('mouseleave', () => {
+			  // If the mouse leaves the dropdown container, hide the dropdown content after a delay (500 milliseconds in this case)
+			  timeoutId = setTimeout(() => {
+				  dropdownContainer.style.display = 'none';
+			  }, 50);
+		  });
+	  });
+  });
+  
+  
 </script>
 </body>
 </html>
