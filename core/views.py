@@ -243,6 +243,29 @@ def com_name(request):
 def robots_txt(request):
     return render(request, "core/robots.txt")
 
+def arch(request):
+    architectures = Architecture.objects.filter(featured=True)
+    architecture = Architecture.objects.filter(featured=False)
+    archi = Architecture.objects.all()
+
+    context = {
+        "architectures": architectures,
+        "architecture": architecture,
+        "archi": archi,
+
+    }
+    return render(request, "arch/index.html", context)
+
+def arch_name(request, name):
+    architecture = get_object_or_404(Architecture, name=name)
+    arch_images = ArchitectureImages.objects.filter(architecture=architecture)
+
+    context = {
+        "architecture": architecture,
+        "arch_images": arch_images,
+    }
+    return render(request, "arch/portfolio-details.html", context)
+
 
 
         

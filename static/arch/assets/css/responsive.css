@@ -1,0 +1,180 @@
+/* Extra Large Deveice: 1280px. */
+
+@media only screen and (min-width: 1199px) and (max-width: 1220px) {    
+ 
+	 
+}
+
+/* Large Deveice: 1280px. */
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {    
+
+
+}
+
+/* Tablet Layout: 768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+
+	.header-area .navigation{
+		background: #fff;
+	}
+
+	#home-2 .hero-area-content .section-title h1 br {
+		display: none;
+	  }
+
+	  .pb-100 {
+		padding-bottom: 60px;
+	  }
+
+	  .team-section .theme-btn {
+		display: none;
+	  }
+
+}
+
+/* Mobile Layout: 320px. */
+
+@media only screen and (max-width: 767px) {
+    
+	#home-2 .hero-area-content .section-title h1 br {
+		display: none;
+	  }
+
+	  .about-bg-wrapper {
+		margin-top: 60px;
+	  }
+
+	  .service-section.section-padding.pb-90 {
+		padding-bottom: 30px;
+	  }
+
+	  .project-section .mt-60 {
+		margin-top: 30px;
+	  }
+
+	  .contact-form {
+		margin-top: 30px;
+	  }
+
+	  p.privacy {
+		text-align: center;
+	  }
+
+	  .footer-bottom p{
+		text-align: center;
+	  }
+
+	  .team-section .theme-btn {
+		display: none;
+	  }
+
+	  .cta-area h2 br {
+		display: none;
+	  }
+ 
+	 
+}
+
+/* Wide Mobile Layout: 480px. */
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    
+	.header-area .navigation{
+		background: #fff;
+	}
+
+	.feature-item-wrap{
+		margin-bottom: 90px;
+	  }
+
+	  .service-content-wrap{
+		margin-top: 60px;
+	  }
+
+	  .single-counter-box {
+		margin-bottom: 30px;
+	}
+
+	.about-content-wrap.pr-60 {
+		text-align: left;
+	  }
+
+	.about-bg-two{
+		margin-top: 30px;
+	}
+
+	.single-testimonial-author{
+		margin-bottom: 30px;
+	}
+
+	.testimonal-slider-content p{
+		font-size: 17px;
+		line-height: 27px;
+	}
+
+	.faq-section-gallery{
+		margin-top: 30px;
+	}
+
+	.footer-area p{
+		font-size: 16px;
+	}
+
+	.project-gallery img {
+		width: 120px;
+		margin: 5px;
+	  }
+	  .project-gallery {
+		text-align: center;
+		margin-top: 30px;
+	  }
+
+	  .pr-60 {
+		padding-right: 0;
+	  }
+
+	.about-content-wrap.pr-60 {
+		text-align: left;
+	  }
+
+	  .service-content-wrap{
+		margin-top: 60px;
+	  }
+
+	  .footer-widget{
+		margin-top: 30px;
+	  }
+
+	  .project-gallery{
+		text-align: center;
+	  }
+
+	  .footer-bottom{
+		text-align: center;
+	  }
+
+	  .section-title p::before{
+		display: none;
+	  }
+
+	  .testimonial-section{
+		display: none;
+	  }
+
+}
+
+
+/* Landscape View  */
+
+@media (orientation:landscape) and (max-width: 767px){
+	.main-menu .navbar .navbar-collapse{
+		max-height: 220px !important;
+	}
+
+	.blog-search-wrap {
+		margin-top: 100px;
+	  }
+ }

@@ -335,6 +335,47 @@ class Address(models.Model):
     class Meta:
         verbose_name_plural = "Address"
 
+
+class Architecture(models.Model):
+    aid = ShortUUIDField(unique=True, max_length=30, prefix="arch", alphabet="abcdefgh12345")
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    name = models.CharField(max_length=100, default="CJS BHATIA...")
+    contact = models.CharField(max_length=100, default="+91-")
+    email = models.CharField(max_length=100, default="@gmail.com")
+    address = models.CharField(max_length=100, default="South Delhi...")
+    description = models.TextField(null=True, blank=True, default="about yourself...")
+    instagram = models.CharField(max_length=100, default="@instagram.com")
+    facebook = models.CharField(max_length=100, default="@facebook.com")
+    linkedin = models.CharField(max_length=100, default="@linkedin.com")
+    twitter = models.CharField(max_length=100, default="@twitter.com")
+    meta_description = models.CharField(max_length=100)
+    meta_title = models.CharField(max_length=100)
+    meta_tag = models.CharField(max_length=100)
+    featured = models.BooleanField(default=False)
+    sku = ShortUUIDField(unique=True, max_length=50, prefix="sku", alphabet="12345678900")
+    date = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(null=True)
+    image = models.ImageField(upload_to=user_directory_path, default="architecture.jpg")
+
+    class Meta:
+        verbose_name_plural = "Architecture"
+
+    def arch_image(self):
+        return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
+    
+    def __str__(self):
+        return self.name
+    
+class ArchitectureImages(models.Model):
+    images = models.ImageField(upload_to="architecture-images", default="architecture.jpg")
+    architecture = models.ForeignKey(Architecture, on_delete=models.SET_NULL, null=True)
+    date = models.DateField(auto_now_add=True)
+
+
+    class Meta:
+        verbose_name_plural = "Architecture Project Images"
+
+
         
 
 

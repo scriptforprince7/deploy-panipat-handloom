@@ -4,6 +4,9 @@ from core.models import *
 class ProductImagesAdmin(admin.TabularInline):
     model = ProductImages
 
+class ArchitectureImagesAdmin(admin.TabularInline):
+    model = ArchitectureImages
+
 
 class ProductVariantImagesAdmin(admin.TabularInline):
     model = ProductVariantImages
@@ -18,6 +21,12 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductImagesAdmin, ProductVarientAdmin, ProductVariantImagesAdmin]
     list_display = ['company_name', 'main_category', 'category', 'sub_category', 'title', 'price', 'featured', 'product_status']
     list_filter = ['company_name', 'main_category', 'category', 'sub_category', 'featured', 'product_status']  # Add fields you want to filter by
+    search_fields = ['title', 'description']  # Add fields you want to search by
+
+class ArchitectureAdmin(admin.ModelAdmin):
+    inlines = [ArchitectureImagesAdmin]
+    list_display = ['name', 'contact', 'email', 'address', 'description', 'instagram', 'facebook', 'linkedin', 'twitter', 'featured']
+    list_filter = ['name', 'featured', 'contact', 'address', 'email']  # Add fields you want to filter by
     search_fields = ['title', 'description']  # Add fields you want to search by
 
 
@@ -57,6 +66,7 @@ class AddressAdmin(admin.ModelAdmin):
     list_display = ['user', 'address', 'status']              
 
 admin.site.register(Product, ProductAdmin)
+admin.site.register(Architecture, ArchitectureAdmin)
 admin.site.register(Main_category, MainCategoryAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Company_name, CompanyNameAdmin)
