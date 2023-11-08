@@ -4307,95 +4307,30 @@ src="{% static 'assets/js/function.js' %}"
         </div>
         <div class="page-mobile-menu-content scroll-y">
           <ul class="mobile-nav-tabs" role="tablist">
-            <li
-              class="active"
-              id="tab-title-main-menu"
-              aria-controls="tab-content-main-menu"
-              role="tab"
-              aria-selected="true"
-              tabindex="0"
-            >
-              Menu
-            </li>
-            <li
-              id="tab-title-cat-menu"
-              aria-controls="tab-content-cat-menu"
-              role="tab"
-              aria-selected="false"
-              tabindex="-1"
-            >
-              Categories
-            </li>
+              <li
+                  class="active"
+                  id="tab-title-cat-menu"
+                  aria-controls="tab-content-cat-menu"
+                  role="tab"
+                  aria-selected="true"
+                  tabindex="0"
+              >
+                  Categories
+              </li>
+              <li
+                  id="tab-title-main-menu"
+                  aria-controls="tab-content-main-menu"
+                  role="tab"
+                  aria-selected="false"
+                  tabindex="-1"
+              >
+                  Menu
+              </li>
           </ul>
-
+      
           <div class="mobile-menu-nav-menus">
-            <div
-              class="mobile-nav-tab mobile-nav-tab-main-menu"
-              id="tab-content-main-menu"
-              aria-labelledby="tab-title-main-menu"
-              role="tabpanel"
-              tabindex="0"
-              aria-expanded="true"
-            >
-              <ul id="mobile-menu-primary" class="menu__container">
-                <li
-                  class="menu-item-open-modal-demo-preview menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-327 current_page_item menu-item-330 level-1"
-                >
-                  <a href=""
-                    ><div class="menu-item-wrap">
-                      <span class="menu-item-title">Home</span>
-                    </div></a
-                  >
-                </li>
-                <li
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"
-                >
-                  <a href=""
-                    ><div class="menu-item-wrap">
-                      <span class="menu-item-title">Shop</span>
-                    </div></a
-                  >
-                </li>
-                <li
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"
-                >
-                  <a href="#"
-                    ><div class="menu-item-wrap">
-                      <span class="menu-item-title">Products</span>
-                    </div></a
-                  >
-                </li>
-                <li
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"
-                >
-                  <a href=""
-                    ><div class="menu-item-wrap">
-                      <span class="menu-item-title">Blog</span>
-                    </div></a
-                  >
-                </li>
-                <li
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"
-                >
-                  <a href="#"
-                    ><div class="menu-item-wrap">
-                      <span class="menu-item-title">Features</span>
-                    </div></a
-                  >
-                </li>
-                <li
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"
-                >
-                  <a href="{% url 'userauths:sign-out' %}"
-                    ><div class="menu-item-wrap">
-                      <span class="menu-item-title">Store List</span>
-                    </div></a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <div
+              <!-- Categories Tab Content -->
+              <div
               class="mobile-nav-tab mobile-nav-tab-cat-menu"
               id="tab-content-cat-menu"
               aria-labelledby="tab-title-cat-menu"
@@ -4560,8 +4495,77 @@ src="{% static 'assets/js/function.js' %}"
                
               </ul>
             </div>
-          </div>
+      
+              <!-- Menu Tab Content -->
+              <div
+              class="mobile-nav-tab mobile-nav-tab-main-menu"
+              id="tab-content-main-menu"
+              aria-labelledby="tab-title-main-menu"
+              role="tabpanel"
+              tabindex="0"
+              aria-expanded="true"
+            >
+              <ul id="mobile-menu-primary" class="menu__container">
+                <li
+                  class="menu-item-open-modal-demo-preview menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-327 current_page_item menu-item-330 level-1"
+                >
+                  <a href="/"
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Home</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"
+              >
+                <a href="/about-us"
+                  ><div class="menu-item-wrap">
+                    <span class="menu-item-title">About Us</span>
+                  </div></a
+                >
+              </li>
+                <li
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"
+                >
+                  <a href=""
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Shop</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"
+                >
+                  <a href="/architectures"
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Architect's</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"
+                >
+                  <a href=""
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Blog</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"
+                >
+                  <a href="/contact-us"
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Store List</span>
+                    </div></a
+                  >
+                </li>
+              </ul>
+            </div>
 
+
+          </div>
+      
           <div class="mobile-menu-components">
             <div class="mobile-menu-my-account">
               <span class="button-icon"
@@ -4600,9 +4604,12 @@ src="{% static 'assets/js/function.js' %}"
               </a>
             </div>
           </div>
-        </div>
+      </div>
+
+
       </div>
     </div>
+
     <div id="page-mobile-tabs" class="page-mobile-tabs">
       <div class="tabs">
         <a

@@ -22,4 +22,6 @@ urlpatterns = [
     path("robots.txt/", robots_txt, name="robots_txt"),
     path("architectures/", arch, name="arch"),
     path("architectures/<name>/", arch_name, name="arch_name"),
+    path("about-us/", about, name="about-us"),
+    path("contact-us", contact, name="contact-us"),
 ]

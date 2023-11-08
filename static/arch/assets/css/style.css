@@ -2336,9 +2336,6 @@ h5.slick-slide img {
   }
 }
 
-.project-info-wrap {
-  margin-top: 80px;
-}
 @media (max-width: 767px) {
   .project-info-wrap {
     margin-top: 40px;

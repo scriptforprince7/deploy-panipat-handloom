@@ -1,60 +1,51 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from iideainformatics.it/html/devgalaxy/architex/portfolio-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Nov 2023 08:48:51 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
-    <title>Architex | Architecture & Interior Design HTML Template</title>
+    <title>{{architecture.name}} | Architect & Interior Design | The Panipat Handloom</title>
 
     <!--Favicon-->
-    <link rel="icon" href="assets/img/favicon.png" type="image/png">
+    <link rel="icon" href="{% static "wp-content/themes/minimog-child-demo/assets/demos/megamog/tph.png/" %}" type="image/png">
     <!-- Bootstrap CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/bootstrap.min.css" %}" rel="stylesheet">
     <!-- Line Awesome CSS -->
-    <link href="assets/css/line-awesome.min.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/line-awesome.min.css" %}" rel="stylesheet">
     <!-- Font Awesome CSS -->
-    <link href="assets/css/fontAwesomePro.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/fontAwesomePro.css" %}" rel="stylesheet">
     <!-- Animate CSS-->
-    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/animate.css" %}" rel="stylesheet">
     <!-- Bar Filler CSS -->
-    <link href="assets/css/barfiller.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/barfiller.css" %}" rel="stylesheet">
     <!-- Magnific Popup Video -->
-    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/magnific-popup.css" %}" rel="stylesheet">
     <!-- Flaticon CSS -->
-    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/flaticon.css" %}" rel="stylesheet">
     <!-- Owl Carousel CSS -->
-    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/owl.carousel.css" %}" rel="stylesheet">
     <!-- Slick Slider CSS -->
-    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/slick.css" %}" rel="stylesheet">
     <!-- Nice Select  -->
-    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/nice-select.css" %}" rel="stylesheet">
     <!-- Back to Top -->
-    <link href="assets/css/backToTop.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/backToTop.css" %}" rel="stylesheet">
     <!-- Metis Menu -->
-    <link href="assets/css/metismenu.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/metismenu.css" %}" rel="stylesheet">
     <!-- Style CSS -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="{% static "arch/assets/css/style.css" %}" rel="stylesheet">
     <!-- Responsive CSS -->
-    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="{% static "assets/css/responsive.css" %}" rel="stylesheet">
 
     <!-- jquery -->
-    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="{% static "arch/assets/js/jquery-1.12.4.min.js" %}"></script>
 </head>
 
 <body>
-
-    <!-- preloader -->
-    <div class="preloader">
-        <div class="spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-        </div>
-    </div>
-
     <!-- Mouse Cursor  -->
     <div class="mouseCursor cursor-outer"></div>
     <div class="mouseCursor cursor-inner"><span>Drag</span></div>
@@ -65,53 +56,27 @@
         <div class="navigation">
             <div class="container">
                 <div class="header-inner-box">
-                    <a href="index-2.html" class="logo">Architex</a>
+                    <a href="/" class="logo"> <img src="{% static 'wp-content/themes/minimog-child-demo/assets/demos/megamog/tph.png' %}" alt="" width="161"
+					height="80"> </a>
 
                     <div class="main-menu d-none d-lg-block">
                         <ul>
-                            <li><a href="#">Home <i class="las la-angle-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li><a href="index-2.html">Home - One</a></li>
-                                    <li><a href="index-3.html">Home - Two</a></li>
-                                    <li><a href="index-4.html">Home - Three</a></li> 
-                                </ul>
+                            <li><a href="/architectures">Home</a>
                             </li>
-                            <li><a href="#">Pages <i class="las la-angle-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="team.html">Our Team</a></li>
-                                    <li><a href="price.html">Pricing Plans</a></li>
-                                    <li><a href="faq.html">FAQ Page</a></li>                                    
-                                </ul>
+                            <li><a href="#projects">Projects</a>
                             </li>
-                            <li><a href="#">Portfolio <i class="las la-angle-down"></i></a>
+                            <li><a href="#">Architects <i class="las la-angle-down"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="portfolio-standard.html">Standard</a></li>
-                                    <li><a href="portfolio-gallery.html">Gallery</a></li>
-                                    <li><a href="portfolio-slider.html">Slider</a></li>
-                                    <li class="nav-item">
-                                        <a href="#">List Layouts <i class="las la-arrow-right"></i>
-                                            <span class="sub-nav-toggler"></span>
-                                        </a>
-                                        <ul class="sub-menu-two">
-                                            <li><a href="list-layout-2.html">Two Columns</a></li>
-                                            <li><a href="list-layout-3.html">Three Columns</a></li>
-                                            <li><a href="list-layout-4.html">Four Columns</a></li>
-                                        </ul>
+                                    {% for arch in archi %}
+                                    <li><a href="{% url 'core:arch_name' arch.name %}">{{arch.name}}</a></li>
                                     </li>
-
-                                    <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                    {% endfor %}
                                 </ul>
                             </li>
-                            <li><a href="#">Blog <i class="las la-angle-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog.html">Blogs</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                </ul>
+                            <li><a href="#blog">Blog</a>
                             </li>
                             
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>                            
                     </div>
 
@@ -137,53 +102,53 @@
                                     <ul class="metismenu" id="mobile-menu">
                                         <li><a class="has-arrow" href="#">Homes</a>
                                             <ul class="sub-menu">
-                                                <li><a href="index-2.html">Home - One</a></li>
-                                                <li><a href="index-3.html">Home - Two</a></li>
-                                                <li><a href="index-4.html">Home - Three</a></li> 
+                                                <li><a href="">Home - One</a></li>
+                                                <li><a href="">Home - Two</a></li>
+                                                <li><a href="">Home - Three</a></li> 
                                             </ul>
                                         </li>
                                         <li><a class="has-arrow" href="#">Pages</a>
                                             <ul class="sub-menu">
-                                                <li><a href="about.html">About</a></li>
-                                                <li><a href="services.html">Services</a></li>
-                                                <li><a href="team.html">Our Team</a></li>
-                                                <li><a href="price.html">Pricing Plans</a></li>
-                                                <li><a href="faq.html">FaQ Page</a></li>                                                
+                                                <li><a href="">About</a></li>
+                                                <li><a href="">Services</a></li>
+                                                <li><a href="">Our Team</a></li>
+                                                <li><a href="">Pricing Plans</a></li>
+                                                <li><a href="">FaQ Page</a></li>                                            
                                             </ul>
                                         </li>
                                         <li><a class="has-arrow" href="#">Portfolio</a>
                                             <ul class="sub-menu">
-                                                <li><a href="portfolio-standard.html">Standard</a></li>
-                                                <li><a href="portfolio-gallery.html">Gallery</a></li>
-                                                <li><a href="portfolio-slider.html">Slider</a></li>
+                                                <li><a href="">Standard</a></li>
+                                                <li><a href="">Gallery</a></li>
+                                                <li><a href="">Slider</a></li>
                                                 <li class="nav-item">
                                                     <a href="#">List Layouts <i class="las la-arrow-right"></i>
                                                         <span class="sub-nav-toggler"></span>
                                                     </a>
                                                     <ul class="sub-menu-two">
-                                                        <li><a href="list-layout-2.html">Two Columns</a></li>
-                                                        <li><a href="list-layout-3.html">Three Columns</a></li>
-                                                        <li><a href="list-layout-4.html">Four Columns</a></li>
+                                                        <li><a href="">Two Columns</a></li>
+                                                        <li><a href="">Three Columns</a></li>
+                                                        <li><a href="">Four Columns</a></li>
                                                     </ul>
                                                 </li>
         
-                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                                <li><a href="">Portfolio Details</a></li>
                                             </ul>
                                         </li>
                                         <li><a class="has-arrow" href="#">Blog</a>
                                             <ul class="sub-menu">
-                                                <li><a href="blog.html">Blogs</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                                <li><a href="">Blogs</a></li>
+                                                <li><a href="">Blog Details</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="">Contact</a></li>
                                         
                                     </ul>
                                 </nav>  
                                 <div class="action-bar">
                                     <a href="mailto:info@architex.com"><i class="las la-envelope"></i>info@architex.com</a>
                                     <a href="tel:123-456-7890"><i class="fal fa-phone"></i>123-456-7890</a>
-                                    <a href="contact.html" class="theme-btn bordered-btn">Contact Us</a>
+                                    <a href="" class="theme-btn bordered-btn">Contact Us</a>
                                 </div>      
                             </div>                            
                         </div>
@@ -192,77 +157,91 @@
                 </div>
             </div>
         </div>        
-</div>
+    </div>
 
 <!-- Project Details  -->
 
 <div class="single-project-section section-padding pb-60">
     <div class="container">
-        <div class="row pb-60">
-            <div class="col-xl-6 col-lg-6">
+        <div class="row pb-0">
+            <div class="col-xl-6 col-lg-6 text-center">
                 <div class="section-title">                    
-                    <h1>Portfolio Details</h1>
-                    <h6><a href="index-4.html">Home /</a> Project / Project Details</h6>
+                    <h1 class="gradient-text">{{architecture.name}}</h1>
+                    <h6><a href="/architectures">Architect /</a> {{architecture.name}}</h6>
                 </div>                
             </div>            
         </div>
+        <style>
+            .gradient-text {
+background: -webkit-linear-gradient(20deg, rgba(255, 0, 120, 1) 15%, rgba(0, 199, 255, 1) 100%);
+-webkit-background-clip: text;
+color: transparent;
+}
+
+        </style>
 
         <div class="row">
             <div class="project-details-wrapper">
-                <div class="project-feature-img">
-                    <img src="assets/img/project/feature-img.jpg" alt="">
-                </div>
                 <div class="row mt-60">
-                    <div class="col-xl-9">
+                    <div class="col-xl-7">
                         <div class="project-details">
-                            <h2>Cubic Home</h2>
-                            <p>Lorem ipsum dolors sit amet, cons the ctetu isci elit sed do eiusmod eterorew llum ididuntt ut ores et oremis ipsum dolors sit amet, cons ectetur adipisci elit, sed do eiusmod tempor incp tate velit ese. Ultrices vitae nus auctor eu augue ut lectus arcu. Eu non diam phasellus vest ibulum lorem sed risus ultricies. Sed vulputate mi sit amet mauris commodo quis. Vulp utate odio ut enim blandit volutpat maecenas volutpat blandit. Penatibus et magnis dis parturient montes. Aliquam ut porttitor leo a diam. Lobortis scelerisque fermentum dui.</p> <br>
-                            <p>Aliquam ut porttitor leo a diam. Lobortis scelerisque fermentum dui faucibus in ornare neque aliquam vestibulum. Sed enim ut sem viverra aliquet eget sit amet. Enim blandit volutpat maecenas volutpat blandit aliquam. Sed enim ut sem viverra aliquet eget sit amet. Enim blandit volutpat maecenas volutpat blandit aliquam.</p>
+                            <p>{{architecture.description}}</p> <br>
                         </div>
-                    </div>
-                    <div class="col-xl-3">
                         <div class="project-info-wrap">
                             <div class="project-info">
-                                <h6>Year:</h6>
-                                <p>2023</p>
-                            </div>
-                            <div class="project-info">
-                                <h6>Client:</h6>
-                                <p>Private Residence</p>
-                            </div>
-                            <div class="project-info">
                                 <h6>Architect:</h6>
-                                <p>Mouroushi Hikoma</p>
+                                <p>{{architecture.name}}</p>
+                            </div>
+                            <div class="project-info">
+                                <h6>Contact:</h6>
+                                <p>{{architecture.contact}}</p>
+                            </div>
+                            <div class="project-info">
+                                <h6>Email:</h6>
+                                <p>{{architecture.email}}</p>
                             </div>
                             <div class="project-info">
                                 <h6>Location:</h6>
-                                <p>Bali, Indonesia</p>
+                                <p>{{architecture.address}}</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="project-details-img">
-                    <div class="row mt-30">
-                        <div class="col-xl-6">
-                            <img src="assets/img/portfolio/2.jpg" alt="">
-                        </div>
-                        <div class="col-xl-6">
-                            <img src="assets/img/portfolio/6.jpg" alt="">
-                        </div>
+                    <div class="col-xl-5">
+                       
+                            <img src="{{architecture.image.url}}" alt="">
+                        
                     </div>
                 </div>
-                <div class="counter-section section-padding pt-60 pb-30">
+                <div class="row pt-50">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="section-title">                    
+                            <h1 class="gradient-text">Make your house better....</h1>                         
+                        </div>    
+                        <p>We carefully planned and paid close attention to every detail in this home. Each area is now a perfect mix of beauty and practicality, giving you a living space that goes beyond the usual</p>   
+                        <hr>         
+                    </div>            
+                </div>
+                <div class="project-details-img">
+                    <div class="row mt-0">
+                        {% for arch_img in arch_images %}
+                        <div class="col-xl-6">
+                            <img src="{{arch_img.images.url}}" alt="">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="counter-section section-padding pt-60 pb-30 phone-hid">
                     <div class="container">
                         <div class="row gx-5">
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <div class="single-counter-box">
-                                    <p class="counter-number"><span>8670</span></p>
+                                    <p class="counter-number"><span>80</span></p>
                                     <h6>Site Area</h6>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <div class="single-counter-box">
-                                    <p class="counter-number"><span>6700</span></p>
+                                    <p class="counter-number"><span>70</span></p>
                                     <h6>Building Surface</h6>
                                 </div>
                             </div>
@@ -281,76 +260,33 @@
                         </div>
                     </div>
                 </div>
-                <h3>Design Concept</h3>
-                <p>Phasellus scelerisque sapien vitae tellus sodales dapibus. Fusce et ultricies arcu, non viverra turpis. Aliquam dignissim lacus non turpis posuere fringilla. Cras volutpat, elit vel bibendum convallis, sem justo fringilla ipsum, et aliquet elit odio non purus. Vestibulum fringilla erat ac laoreet convallis. Suspendisse potenti. Sed ligula nisi, iaculis vitae rhoncus nec, scelerisque non felis.</p> <br>
-                <p>Quisque ac scelerisque velit. Suspendisse at libero venenatis, lacinia eros quis, fringilla justo. Suspendisse potenti. Aenean eget ipsum dapibus, tempus odio id, sollicitudin risus. Phasellus volutpat mi vel sapien tincidunt gravida. Sed vel egestas ipsum. Proin eleifend libero facilisis libero malesuada, vitae venenatis mi fringilla.</p>
-                <h3>Conclusion</h3>
-                <p>Maecenas elementum sem eu purus pulvinar, eget luctus metus fringilla. Donec gravida mollis arcu, ut placerat ex. Nunc purus odio, porta ac imperdiet sit amet, feugiat nec mauris. Ut malesuada orci mattis tempor ultrices. Phasellus pulvinar arcu leo, id finibus diam bibendum ac. Suspendisse potenti. Fusce vestibulum vel leo et volutpat. Etiam vel porta nulla. Morbi arcu urna, consequat id suscipit non, posuere nec nisi. Proin feugiat rutrum dignissim.</p>
             </div>
-
+            <style>
+                @media (max-width: 767px) {
+  .phone-hid {
+    display: none;
+  }
+}
+            </style>
 
         </div>
         
     </div>
 </div>
-
-    
-
-    <!-- Footer Area -->
-
-    <footer class="footer-area">
-        <div class="container">
-            <div class="footer-up">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a href="index-2.html" class="logo">Architex</a>
-                        <p>Consectetur adipisicing elit. <br> maxime dolor voluptatibus natus
-                        </p>
-                    </div>
-                    <div class="col-lg-2 col-md-6">
-                        <h5>Office</h5>
-                        <p>Australia- <br>
-                            175 24th Street, Office 3567
-                            Melbourn, EA 265
-                        </p>
-                        <div class="company-email">
-                            <a href="#">info@architex.com</a>
-                        </div>
-                        <div class="phone-number">
-                            <p>+18-4675826</p>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-2 offset-lg-1 col-md-6 com-sm-12">
-                        <h5>Links</h5>
-                        <ul>
-                            <li>
-                                <a href="about.html">About</a>
-                                <a href="services.html">Services</a>
-                                <a href="portfolio-gallery.html">Portfolio</a>
-                                <a href="price.html">Pricing</a>
-                                <a href="faq.html"> FAQ</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <h5>Get in Touch</h5>
-                        <ul>
-                            <li>
-                                <div class="social-area">
-                                    <a href="#"><i class="lab la-facebook-f"></i>Facebook</a>
-                                    <a href="#"><i class="lab la-instagram"></i>Instagram</a>
-                                    <a href="#"><i class="lab la-twitter"></i>Twitter</a>
-                                    <a href="#"><i class="la la-skype"></i>Skype</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
+<div class="cta-area d-flex align-items-center bg-cover" data-background="{% static "arch/assets/img/cta-bg.jpg" %}">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 text-center">
+                <div class="section-title">                    
+                    <h2 class="text-white">Let's start your new <br> dream project</h2>
                 </div>
+                <a href="/architectures#contact" class="theme-btn">Contact Us</a>
             </div>
         </div>
-    </footer>
+    </div>
+</div>
+
 
     <!-- Footer Bottom Area -->
 
@@ -358,10 +294,10 @@
         <div class="container">
             <div class="row justify-content-center align-items-center justify-content-center">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <p class="copyright-line">© 2023 Architex. All rights reserved.</p>
+                    <p class="copyright-line">© 2023 The Panipat Handloom. All rights reserved.</p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <p class="privacy">Privacy Policy | Terms &amp; Conditions</p>
+                    <p class="privacy">Design & Developed by: <b>Prince Sachdeva</b></p>
                 </div>
             </div>
         </div>
@@ -378,14 +314,14 @@
         </div>
         <div class="logo-side mb-30">
             <div class="logo">
-                <a href="index-2.html" class="logo">Architex</a>
+                <a href="" class="logo">Architex</a>
             </div>
         </div>
         <div class="side-info">
             <div class="contact-list mb-40">
                 <!-- <h4>About</h4> -->
                 <p>We must explain to you how all seds this mistakens idea off denouncing</p>
-                <img src="assets/img/offcanvas-img.jpg" alt="">
+                <img src="{% static "assets/img/offcanvas-img.jpg" %}" alt="">
 
                 <div class="mt-30 mb-30">
                     <a href="contact.html" class="bordered-btn">Get In Touch</a>
@@ -412,39 +348,36 @@
 
 
     <!-- Popper JS -->
-    <script src="assets/js/popper.min.js"></script>
+    <script src="{% static "arch/assets/js/popper.min.js" %}"></script>
     <!-- Bootstrap JS -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{% static "arch/assets/js/bootstrap.min.js" %}"></script>
     <!-- Wow JS -->
-    <script src="assets/js/wow.min.js"></script>
+    <script src="{% static "arch/assets/js/wow.min.js" %}"></script>
     <!-- Way Points JS -->
-    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="{% static "arch/assets/js/jquery.waypoints.min.js" %}"></script>
     <!-- Counter Up JS -->
-    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="{% static "arch/assets/js/jquery.counterup.min.js" %}"></script>
     <!-- Owl Carousel JS -->
-    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="{% static "arch/assets/js/owl.carousel.min.js" %}"></script>
     <!-- Slick Slider JS -->
-    <script src="assets/js/slick.min.js"></script>
+    <script src="{% static "arch/assets/js/slick.min.js" %}"></script>
     <!-- Magnific Popup JS -->
-    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="{% static "arch/assets/js/magnific-popup.min.js" %}"></script>
     <!-- Isotope JS -->
-    <script src="assets/js/isotope-3.0.6-min.js"></script>
+    <script src="{% static "arch/assets/js/isotope-3.0.6-min.js" %}"></script>
     <!-- Sticky JS -->
-    <script src="assets/js/jquery.sticky.js"></script>
+    <script src="{% static "arch/assets/js/jquery.sticky.js" %}"></script>
     <!-- Nice Select JS -->
-    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="{% static "arch/assets/js/jquery.nice-select.min.js" %}"></script>
     <!-- Back To Top JS -->
-    <script src="assets/js/backToTop.js"></script>
+    <script src="{% static "arch/assets/js/backToTop.js" %}"></script>
     <!-- Metis Menu JS -->
-    <script src="assets/js/metismenu.js"></script>
+    <script src="{% static "arch/assets/js/metismenu.js" %}"></script>
     <!-- Progress Bar JS -->
-    <script src="assets/js/jquery.barfiller.js"></script>
+    <script src="{% static "arch/assets/js/jquery.barfiller.js" %}"></script>
     <!-- Circle Progress Bar JS -->
-    <script src="assets/js/circle-progress.min.js"></script>
+    <script src="{% static "arch/assets/js/circle-progress.min.js" %}"></script>
     <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="{% static "arch/assets/js/main.js" %}"></script>
 </body>
-
-
-<!-- Mirrored from iideainformatics.it/html/devgalaxy/architex/portfolio-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Nov 2023 08:48:52 GMT -->
 </html>

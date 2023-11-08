@@ -266,6 +266,12 @@ def arch_name(request, name):
     }
     return render(request, "arch/portfolio-details.html", context)
 
+def about(request):
+    return render(request, "core/about-us.html")
+
+def contact(request):
+    return render(request, "core/contact-us.html")
+
 
 
         
