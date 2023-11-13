@@ -3320,11 +3320,28 @@
       </div>
     </section>
 
+    <style>
+      /* Apply basic styles to the video container */
+      .video-containerr {
+        max-width: 85%; /* Adjust this value to your desired maximum width */
+        margin: 0 auto; /* Center the container horizontally */
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 2rem;
+      }
     
+      /* Add additional mobile-responsive styles as needed */
+      @media (max-width: 768px) {
+        /* For screens with a width of 768px or less */
+        .video-containerr {
+          max-width: 100%; /* Reset the maximum width for smaller screens if needed */
+        }
+      }
+    </style>
 
-       
-       
-
+    <div class="video-containerr">
+     <a href="/architectures"><img src="{% static "arch/assets/img/archi.jpg" %}" alt=""></a> 
+    </div>
                   <section class="elementor-section elementor-top-section elementor-element elementor-element-18fd70a elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch" data-id="18fd70a" data-element_type="section">
                     <div class="elementor-container elementor-column-gap-extended">
                       <div class="elementor-row">
