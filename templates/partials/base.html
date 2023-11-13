@@ -2072,7 +2072,7 @@ src="{% static 'assets/js/function.js' %}"
                         <ul
                           class="menu currency-switcher-menu woo-multi-currency-menu"
                         >
-                          <li class="menu-item-has-children">
+                          <li class="">
                             <a href="#">
                               <span class="current-currency-text">INR</span>
                             </a>
@@ -3108,7 +3108,7 @@ src="{% static 'assets/js/function.js' %}"
                               >
                                 <div class="elementor-row">
                                   <div
-                                    class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-f3b2aae"
+                                    class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-f3b2aae phone-p-hid"
                                     data-id="f3b2aae"
                                     data-element_type="column"
                                   >
@@ -3246,7 +3246,7 @@ src="{% static 'assets/js/function.js' %}"
                                     </div>
                                   </div>
                                   <div
-                                    class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-83113c6"
+                                    class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-83113c6 phone-p-hid"
                                     data-id="83113c6"
                                     data-element_type="column"
                                   >
@@ -3386,6 +3386,13 @@ src="{% static 'assets/js/function.js' %}"
                                 </div>
                               </div>
                             </section>
+                            <style>
+                                @media screen and (max-width: 767px) {
+        .phone-p-hid {
+            display: none;
+        }
+    }
+                            </style>
                             <div
                               class="elementor-element elementor-element-eae667e elementor-align-center elementor-widget elementor-widget-tm-separator"
                               data-id="eae667e"
@@ -3622,7 +3629,7 @@ src="{% static 'assets/js/function.js' %}"
                             data-element_type="widget"
                             data-widget_type="tm-heading.default"
                           >
-                            <div class="elementor-widget-container">
+                            <!-- <div class="elementor-widget-container">
                               <div
                                 class="tm-modern-heading tm-modern-heading--style-01 tm-modern-heading--highlight-style-01"
                               >
@@ -3642,7 +3649,7 @@ src="{% static 'assets/js/function.js' %}"
                                   </h2>
                                 </div>
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                           <div
                             class="elementor-element elementor-element-6a60b67 elementor-widget elementor-widget-tm-heading"
@@ -3662,7 +3669,7 @@ src="{% static 'assets/js/function.js' %}"
                                   </h4>
                                 </div>
 
-                                <div class="heading-primary-wrap">
+                                <div class="heading-primary-wrap phone-p-hid">
                                   <h2
                                     class="heading-primary elementor-heading-title"
                                   >
@@ -3683,27 +3690,6 @@ src="{% static 'assets/js/function.js' %}"
                                 class="tm-social-networks style-icons layout-inline"
                               >
                                 <ul class="list">
-                                  <li
-                                    class="item elementor-repeater-item-91655ef"
-                                  >
-                                    <a
-                                      class="link"
-                                      aria-label="Linkedin"
-                                      href="#"
-                                      target="_blank"
-                                      rel="nofollow"
-                                    >
-                                      <svg
-                                        class="link-icon e-font-icon-svg e-fab-linkedin"
-                                        viewBox="0 0 384 512"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"
-                                        ></path>
-                                      </svg>
-                                    </a>
-                                  </li>
                                   <li
                                     class="item elementor-repeater-item-684001b"
                                   >
@@ -3767,6 +3753,7 @@ src="{% static 'assets/js/function.js' %}"
                                       </svg>
                                     </a>
                                   </li>
+                                  
                                 </ul>
                               </div>
                             </div>
@@ -4370,8 +4357,7 @@ src="{% static 'assets/js/function.js' %}"
               aria-labelledby="tab-title-cat-menu"
               role="tabpanel"
               tabindex="0"
-              hidden
-              aria-expanded="false"
+              aria-expanded="true"
             >
               <ul
                 id="menu-product-categories-1"
@@ -4536,8 +4522,9 @@ src="{% static 'assets/js/function.js' %}"
               id="tab-content-main-menu"
               aria-labelledby="tab-title-main-menu"
               role="tabpanel"
-              tabindex="0"
-              aria-expanded="true"
+              tabindex="-1"
+              hidden
+              aria-expanded="false"
             >
               <ul id="mobile-menu-primary" class="menu__container">
                 <li
@@ -4619,8 +4606,8 @@ src="{% static 'assets/js/function.js' %}"
             </div>
             <div class="tm-button-wrapper mobile-menu-login-btn">
               <a
-                class="tm-button style-flat tm-button-sm tm-button-full-wide open-modal-login"
-                href="#"
+                class="tm-button style-flat tm-button-sm tm-button-full-wide"
+                href="{% url 'userauths:sign-in' %}"
               >
                 <div class="button-content-wrapper">
                   <span class="button-text">Log in</span>
@@ -4629,7 +4616,7 @@ src="{% static 'assets/js/function.js' %}"
             </div>
             <div class="tm-button-wrapper">
               <a
-                class="tm-button style-border tm-button-sm tm-button-full-wide open-modal-register"
+                class="tm-button style-border tm-button-sm tm-button-full-wide"
                 href="{% url 'userauths:sign-up' %}"
               >
                 <div class="button-content-wrapper">
